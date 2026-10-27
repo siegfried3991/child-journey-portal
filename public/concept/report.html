@@ -1,0 +1,1906 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>成長志 · Research & project brief</title><style>*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:#233e34;background:#f5f4ee;font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang TC",sans-serif}a{color:#27694e;overflow-wrap:anywhere}.cover{background:#193e33;color:#f9f7ea;padding:65px max(6vw,24px)}.cover small{letter-spacing:3px;color:#cdd8bd}.cover h1{font-size:42px;line-height:1.3;margin:18px 0}.cover p{max-width:810px;color:#dce6d4}.cover a{color:#e4d3a9}.layout{max-width:1450px;display:grid;grid-template-columns:240px minmax(0,1fr);gap:40px;margin:auto;padding:35px 35px 80px}nav{position:sticky;top:20px;align-self:start;display:grid;font-size:13px;gap:12px}nav a{text-decoration:none}main{min-width:0;max-width:980px}section,details{padding:30px 35px;background:#fffef9;border:1px solid #dce3d4;border-radius:10px;margin-bottom:24px;scroll-margin-top:20px}h1{font-size:28px;line-height:1.4;margin:0 0 20px}h2{font-size:21px;margin:32px 0 15px}h3{font-size:17px;margin:25px 0 12px}p{margin:12px 0}li{margin-bottom:7px}table{border-collapse:collapse;width:100%;font-size:13px;line-height:1.6;margin:20px 0}td,th{padding:12px 10px;vertical-align:top;text-align:left;border-bottom:1px solid #dce3d4}th{background:#edf2e7}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f0f2eb;padding:16px;border-radius:5px;font-size:12px}code{font-size:.88em;overflow-wrap:anywhere}.table{overflow:auto}details summary{cursor:pointer;font-weight:650;font-size:18px}article{padding-top:25px}.intro{padding:18px 22px;background:#e7ecdf;border-left:4px solid #79916c;border-radius:4px}button{font:inherit;cursor:pointer;border:1px solid #aabca0;border-radius:5px;background:transparent;color:inherit;padding:8px 13px}.actions{display:flex;gap:18px;align-items:center;margin-top:20px;flex-wrap:wrap}footer{font-size:12px;color:#65725f;padding:25px;text-align:center}@media(max-width:900px){.layout{display:block;padding:20px}nav{position:static;display:flex;flex-wrap:wrap;margin-bottom:20px;gap:10px 20px}section,details{padding:22px}h1{font-size:25px}.cover h1{font-size:33px}}@media(max-width:600px){body{font-size:14px}.layout{padding:14px}section,details{padding:19px 16px}table{font-size:11px}td,th{padding:8px 5px}table{display:block;overflow:auto}h2{font-size:19px}.cover{padding:35px 22px}.cover h1{font-size:28px}}@media print{body{background:white;font-size:10pt}.layout{display:block;padding:0}.cover{padding:30px;background:white;color:#193e33;break-after:page}.cover p,.cover small{color:#354d3d}nav,.actions{display:none}section,details{border:0;padding:0;margin:0 0 25px;break-before:page}h1{font-size:23pt}h2{font-size:16pt}h3{font-size:13pt}table{font-size:9pt}tr{break-inside:avoid}details article{display:block!important}a{color:#214e39;text-decoration:none}@page{size:A4;margin:18mm}}
+</style></head><body><div class="cover"><small>RESEARCH & PROJECT BRIEF · 20 OCTOBER 2026</small><h1>成長志<br>A clearer picture of growing up.</h1><p>From homework and everyday experiences to a changing picture of who the student wants to become. ILO occupation references, Hong Kong qualifications, 50 Chinese abilities, and routes the family can review together.</p><div class="actions"><a href="index.html">← Open the interactive demonstration</a><button id="print">Print / save PDF</button><button id="expand">Expand all source investigations</button></div></div><div class="layout"><nav aria-label="Report contents"><a href="#design">Product design</a><a href="#decisions">Research decisions</a><a href="#evidence">Evidence & pathways</a><a href="#delivery">Implementation & delivery</a><a href="#abilities">50 Chinese abilities</a><a href="#ilo">ILO source investigation</a><a href="#hk">Hong Kong qualifications investigation</a><a href="#platform">Web, WeChat & privacy investigation</a></nav><main><div class="intro"><b>Recommended:</b> a private web portal with simple SVG scenes, evidence-led observations, and editable pathways. All records in the demonstration are fictional. WeChat physical-device testing and a production backend remain future work.</div><section id="design"><h1>成長志 / Child Journey — research-led product design</h1>
+<p>Prepared 20 October 2026. This is a fresh design for the expanded brief, with a working synthetic demonstration. The previous starter pack remains intact. The 50 proposed Chinese abilities have been retained as editable product vocabulary; they are not official game attributes or a psychometric instrument.</p>
+<h2>Decision in one paragraph</h2>
+<p>Build a private, mobile-first <strong>learning and life-planning portal with a light game-like presentation</strong>. The home page should answer: <strong>What is happening now? What is changing? What does the student want to explore? What is the next useful step?</strong> Use ILO ISCO-08 as the occupation reference, Hong Kong QF/SCS/SGC as qualification and competency reference material, and dated schoolwork, projects, feedback and student reflections as the actual evidence. Use ordinary web components and original SVG scenes first. Keep several possible futures visible and revise plans together when interests, circumstances or results change.</p>
+<h2>What “based on ILO and 香港資歷評審” means</h2>
+<p>There is no single official framework that measures a child&#39;s whole development and maps it mechanically to a career. The product therefore needs separate layers:</p>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Official or proposed?</th>
+<th>It answers</th>
+<th>It must not imply</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ILO ISCO-08 occupations</td>
+<td>Official reference</td>
+<td>What types of work exist, and what tasks do they involve?</td>
+<td>A career-fit score, intelligence ranking or complete industry list</td>
+</tr>
+<tr>
+<td>HKQF and qualifications register</td>
+<td>Official reference</td>
+<td>What recognised qualification is this, at which level, for which period?</td>
+<td>That a parent or this app can award a qualification</td>
+</tr>
+<tr>
+<td>SCS / SGC / vocational pathways</td>
+<td>Official reference</td>
+<td>Which work-related competencies and progressions are described?</td>
+<td>That school activities satisfy professional assessment requirements</td>
+</tr>
+<tr>
+<td>50 child skills and 15 exploration families</td>
+<td>Original product design</td>
+<td>What can this student practise and try?</td>
+<td>An ILO/HKCAAVQ-endorsed child assessment</td>
+</tr>
+<tr>
+<td>Evidence and aspirations</td>
+<td>Student/family/school records</td>
+<td>What actually happened, what does the student think, what next?</td>
+<td>A permanent label or guaranteed future outcome</td>
+</tr>
+</tbody></table>
+<p>ISCO-08 contains 10 major groups, 43 sub-major groups, 130 minor groups and 436 unit groups; a unit group can contain numerous job titles. Its skill levels describe occupational requirements, not the child&#39;s personal level. The published revision timetable targets discussion of a near-final draft in 2028. Continue using an explicit ISCO-08 version until a successor is actually adopted and migrated. <a href="https://isco.ilo.org/en/isco-08/">ILO overview</a>, <a href="https://isco.ilo.org/en/news/">revision programme</a>.</p>
+<p>The Hong Kong qualifications system has seven levels. Its GLD domains are <strong>知識及智能；過程；自主性及問責性；溝通、資訊及通訊科技及運算</strong>. These provide a useful organisation of evidence, but official qualification recognition and daily learning observations need different records and visual labels. <a href="https://www.hkqf.gov.hk/tc/qf-level">Hong Kong QF levels</a>.</p>
+<h2>The student should remain a person, not a total score</h2>
+<p>The homepage should show eight complementary areas. They need different forms of evidence rather than a universal 0–100 score:</p>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>What to retain</th>
+<th>Useful display and next action</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Academic learning / 學業</td>
+<td>Subject, curriculum, task, attempts, original grade/rubric, feedback and correction</td>
+<td>Comparable subject trend; unfinished tasks; one specific misconception to address</td>
+</tr>
+<tr>
+<td>Inquiry and making / 探究與創作</td>
+<td>Questions, experiments, drafts, prototypes and explanations</td>
+<td>Before/after work; what changed and why</td>
+</tr>
+<tr>
+<td>Communication / 表達與溝通</td>
+<td>Writing, speaking, listening, audience and language context</td>
+<td>Evidence cards showing independence and the next challenge</td>
+</tr>
+<tr>
+<td>Relationships / 人際與歸屬</td>
+<td>Contextual cooperation, listening, conflict repair and student perspective</td>
+<td>Narrative examples; discuss support and belonging, not popularity counts</td>
+</tr>
+<tr>
+<td>Values and responsibility / 價值與責任</td>
+<td>Decisions, reasons, commitments, effects on others, reflection and repair</td>
+<td>A reflective journal; never a morality, obedience or loyalty score</td>
+</tr>
+<tr>
+<td>Self-management / 自主與調適</td>
+<td>Planning, help-seeking, organisation and strategies tried</td>
+<td>A small routine to test; record environmental support, not blame</td>
+</tr>
+<tr>
+<td>Daily life and wellbeing / 生活與身心</td>
+<td>Optional student check-in, rest, activity, practical independence and support preferences</td>
+<td>Conversation prompts and manageable workload; no diagnosis from grades or behaviour</td>
+</tr>
+<tr>
+<td>Exploration and purpose / 興趣與方向</td>
+<td>Exposure, actual experience, interest before/after, values and aspirations</td>
+<td>Breadth of opportunities and a next experience; keep uncertainty legitimate</td>
+</tr>
+</tbody></table>
+<p>CASEL identifies self-awareness, self-management, social awareness, relationship skills and responsible decision-making as interconnected areas of social-emotional learning. These can inform the questions the portal asks; the proposed interface is not a validated CASEL assessment. <a href="https://casel.org/CASEL-sel-framework-11-2020/">CASEL framework</a>.</p>
+<p>Hong Kong EDB describes life planning as ongoing self-understanding, planning, reflection and revision connected to whole-person development. Its values-education guidance supports contextual discussion and judgement. The portal should let a family or school select relevant values and retain their source, rather than treating all cultural, civic or political attitudes as measurable attributes. <a href="https://lifeplanning.edb.gov.hk/en/school-administration/what-is-life-planning.html">EDB life planning</a>, <a href="https://www.edb.gov.hk/en/curriculum-development/4-key-tasks/moral-civic/">EDB values education</a>.</p>
+<h2>Screen design</h2>
+<h3>1. 成長總覽 — the home screen</h3>
+<p>Use an original classroom/home/community illustration, with an age-appropriate avatar and a configurable school emblem on the right. The demonstration uses a fictional 15-year-old and a fictional emblem. A production scene follows a timetable or manual setting; it is not proof of the student&#39;s physical location. On small screens the scene becomes a short banner and essential records remain ordinary selectable text.</p>
+<p>The first screen contains: current chapter or exploration theme; a short quotation written by the student; imminent tasks; the latest actionable feedback; evidence coverage across domains; the next low-cost experience; and a link to compare future routes. “12 of 50 skills have evidence” is a coverage indicator, not “24% of a complete person”. No radar chart is used to imply that incomparable qualities share a measurement scale.</p>
+<h3>2. 學習記錄 — from individual homework to patterns</h3>
+<p>Record homework, tests and examinations independently. Preserve absent, exempt, ungraded, late, missing, submitted and graded as distinct states. Keep raw numerator/denominator or school grade; a B+ and 34/40 should not silently become a blended average. Teachers&#39; weighting and conversion rules belong to a specific course, not a universal setting. Resits and corrections are linked attempts, not extra independent tests.</p>
+<p>Clicking an item opens original evidence, teacher feedback, linked learning objectives, the student&#39;s reflection, support received and the next action. Charts compare explicitly comparable series and show sample size and assessment dates. A changed syllabus, grading scale or assessment difficulty should break or annotate a trend.</p>
+<h3>3. 能力圖鑑 — 50 Chinese abilities</h3>
+<p>Group abilities into eight manageable areas; show all 50 on demand, not all on the homepage. An observation captures task, date, context, observer, student response, support and limitations. Proposed descriptions such as “with guidance”, “independent in this task” and “transferred to a new situation” remain separate from QF levels. Missing evidence is not low ability.</p>
+<p>The existing original list includes reading/writing/listening, reasoning/experimentation, programming/making, art/design, planning/reflection, empathy/cooperation, daily-life skills and movement. The detailed bilingual catalogue accompanies the project as JSON and in this report. The labels may be renamed with the child; no ability should become a fixed identity.</p>
+<h3>4. 職業探索 — the work world as discoverable territories</h3>
+<p>Provide a complete official major-group index and an editorial activity-led navigation. The demonstration has 15 exploration families with selected unit-code examples; it is not the complete ISCO catalogue. Occupations can appear in several families. Keep industry, sector, occupation, work setting and skills as separate tags; a hospital employs many kinds of workers.</p>
+<p>Every territory should offer a low-cost home/school activity, a practitioner conversation, a visit or workshop type, an age-adjusted project and a reflection prompt. Public-service and armed-forces occupation references can be explained in the full index without making weapons or combat activities part of child exploration. Paid activities should not receive more status than accessible school/community alternatives. Show costs, access needs, travel, language, adult supervision and eligibility before suggesting a real event.</p>
+<p>Research supports repeated exploration, experiences of work and conversations about futures. The OECD evidence is largely associative and cannot establish that any particular activity will cause success for this child. <a href="https://www.oecd.org/en/topics/career-guidance.html">OECD career guidance</a>.</p>
+<h3>5. 未來路線 — several futures, visible conditions</h3>
+<p>Start with the student&#39;s statement: “I want to make useful things”, “I care about animals”, “I enjoy explaining”, or “I am still exploring”. Translate it into two or three candidate routes with a shared near-term experiment, not a prematurely fixed job.</p>
+<p>Show each route as: <strong>now → subject/experience choices → programme/training → subsequent options</strong>. Each link has conditions, source, intake year, review date, cost/time considerations and uncertainty. Display academic, applied/vocational, apprenticeship and exploratory routes without status ranking. Course entry, credit transfer, professional recognition and actual offers are different milestones.</p>
+<p>When new results or circumstances arrive, generate a proposed change with its reason and alternatives. The student/family review it, retain the old version, and can reverse the decision. A low result should first prompt attention to learning needs, context and support; it should never silently erase an aspiration. See the evidence-and-pathways specification for the exact rules.</p>
+<h3>6. 家庭回顧 / portfolio — production feature</h3>
+<p>A weekly five-minute view: one accomplishment, one difficulty, one request for support and one next step. A term review: compare work samples and revisit route assumptions. Student-authored reflections stay visibly distinct from teacher/parent observations. Formal sharing is an intentional, scoped export with expiry and preview; grades and private notes are absent from a default WeChat share card.</p>
+<h2>Gentle game mechanics</h2>
+<p>Borrow the feeling of chapters, an explorable map, quests, a journal and visible completed projects. Do not reuse commercial assets or make achievements depend on relentless daily streaks. The demo deliberately has no numerical “total level”. A future reward can acknowledge completing a reflection or trying something new, with no inference that more clicks or hours equal skill. No public leaderboard, paid-experience multiplier, punishment for rest, or permanent label from a bad week.</p>
+<h2>Personalisation assumptions and open inputs</h2>
+<p>The demonstration is Traditional Chinese and uses invented secondary-school records. It does not identify the user&#39;s child, curriculum or school. The first real configuration needs age/year, curriculum, current subjects, reporting scales, student interests, target regions, languages, learning/access supports, household time/budget, who can see what and whether the app is for one family or a school. Residency/application category must be verified for admissions routes, not inferred from school location.</p>
+<p>Prototype decisions do not require those answers. Personalised admission routes and real-data deployment do.</p>
+<h2>Definition of success</h2>
+<p>A parent can understand the present situation within one minute; a student can see their own voice and choices; every suggested action has an explanation; every purported qualification or admission rule has a source; and the family can change direction without losing history. Launch success is demonstrated with observed usability and secure record handling, not the number of badges issued.</p>
+</section><section id="decisions"><h1>Research decisions and important boundaries</h1>
+<p>Checked 20 October 2026. Detailed source notes are in <code>research/ilo.md</code>, <code>research/hk-framework.md</code> and <code>research/platform.md</code>.</p>
+<h2>Findings that materially change the design</h2>
+<ol>
+<li><strong>ILO is a work classification, not a developmental rubric.</strong> Keep official codes for a reference index and use a separate child-friendly exploration taxonomy. A code can represent a cluster of jobs. Do not claim the demonstration includes all jobs.</li>
+<li><strong>香港資歷評審 is not a single set of child traits.</strong> HKQF, HKCAAVQ, QR, SCS, SGC, VQP, CAT and RPL have different purposes. Use exact terms. A school activity may relate to a competency theme without satisfying professional assessment conditions.</li>
+<li><strong>Aspirations should change without being erased.</strong> Store interest, exposure, demonstrated learning, application requirements and earned qualifications independently. Draft route changes from evidence and obtain human review before adopting them.</li>
+<li><strong>A web portal fits the task better than an engine-first game.</strong> Most interactions are forms, filters, tables, evidence and pathway comparisons. SVG is enough for the requested classroom illustration. Phaser is a free optional rendering layer if richer gameplay later earns its complexity. Godot remains technically possible but adds web-export constraints without solving the core problem.</li>
+<li><strong>GitHub and WeChat address different problems.</strong> GitHub can version code and research. A deployed authenticated app handles private student data. An H5 page can be designed for WeChat&#39;s browser, but real-device testing and account/domain checks are separate work. A Mini Program is an additional product, not a checkbox.</li>
+<li><strong>Public guidance is not an individual admissions decision.</strong> Requirements belong to a programme, intake and applicant category. Unknown evidence remains unknown. Minimum requirements do not predict offers. AP/IB/A-level/HKDSE scales must not be converted with an invented universal formula.</li>
+</ol>
+<h2>Scope of this completed research</h2>
+<p>The investigation reviewed official ILO taxonomy and revision information; Hong Kong QF/GLD, assessment authority, register, competency specifications and pathway material; education-route examples; whole-person and career-guidance references; free-engine and modern web documentation; GitHub hosting boundaries; Tencent/Weixin integration issues; and relevant mainland/Hong Kong privacy guidance.</p>
+<p>It produced a working sample portal, a product design, a proposed 50-ability catalogue, career-exploration examples, an evidence/pathway specification and a phased implementation plan. This is comprehensive product research within those boundaries, not a review of every occupation, every university, every national school system or every legal regime.</p>
+<h2>Evidence limitations to carry into development</h2>
+<ul>
+<li>No actual student record, curriculum, account, grade or interest was inspected. No school-platform integration exists.</li>
+<li>The full ISCO machine-readable corpus was not successfully retrieved by the research tools. Code examples are a reviewed seed; dataset rights and completeness remain ingestion work.</li>
+<li>Official Weixin developer pages were not retrievable in this run. Tencent documentation supports domain setup, but precise account entitlements and review conditions require verification in the eventual account.</li>
+<li>No physical iPhone/Android WeChat or mainland-network test has occurred. A mobile browser viewport is a design check only.</li>
+<li>No institution/programme was selected for a real application. Some linked examples concern a past or current intake; each source&#39;s applicable year must remain visible.</li>
+<li>No recognised qualification was verified for the student. QF-themed evidence tags are interpretations, not endorsements or equivalence determinations.</li>
+<li>Legal applicability depends on personal/family use versus service operation, geography and data flows. The research identifies boundaries and launch questions; it does not pronounce a universal compliance result.</li>
+<li>Technology choices are an engineering assessment. No head-to-head game-engine performance benchmark was run.</li>
+</ul>
+<h2>Source handling</h2>
+<p>Keep URL, document title, issuing body, edition/publication date where known, accessed date, applicable intake, rights status and claim supported. Separate a document&#39;s revision date from the date it was retrieved. Mark a cached source stale when its intake changes. Keep official data separate from editorial mappings and record rationale/reviewer on each mapping. Do not republish entire third-party corpora until item-specific reuse terms are confirmed.</p>
+<h2>What to build first</h2>
+<p>Start with a single-family private pilot: manually verified schoolwork, evidence attachments, student reflections, a small curated occupation set and two or three versioned routes. Make export, deletion, restore and household permissions work before integrations. Validate the experience with the student as well as the parent. Expand the occupation catalogue and detailed programme paths only as their sources and mappings are reviewed.</p>
+</section><section id="evidence"><h1>Evidence, abilities and pathway decisions</h1>
+<p>Status: implementation specification, version 1.0. Research checked 20 October 2026. Companion research: <code>research/hk-framework.md</code>. Ability catalogue: <code>data/abilities.json</code>, catalogue version 1, exactly 50 original portal abilities.</p>
+<h2>1. Product boundary</h2>
+<p>The portal connects what a student has done, what the evidence supports, what the student wants to explore and what a published route requires. It does not diagnose a child, certify professional competence, award QF credits or predict admission chances.</p>
+<p>Keep <strong>school results</strong>, <strong>skill observations</strong>, <strong>student interests</strong>, <strong>route requirements</strong> and <strong>earned qualifications</strong> separate. A completed homework can contribute evidence to several abilities, but its grade must never automatically increase a personality, ethics or QF score. The overview presents a short evidence-backed narrative and next actions, with the underlying records one tap away.</p>
+<p>Official reference boundaries:</p>
+<ul>
+<li>HKQF&#39;s four GLD domains describe qualification learning outcomes. Using their themes for school observations is our product adaptation. <a href="https://www.hkqf.gov.hk/tc/qf-level">HKQF domains</a>.</li>
+<li>SCS/SGC units and VQP are useful reference material for work-related learning and routes; a local task is not an assessment of the complete professional unit. <a href="https://www.hkqf.gov.hk/en/application-of-qf-deliverables">HKQF applications</a>.</li>
+<li>QF credits measure notional learning volume, rather than elapsed activity time. <a href="https://www.hkqf.gov.hk/en/qf-credit">QF credit</a>.</li>
+<li>Admission and credit transfer are distinct institutional decisions. <a href="https://www.hkqf.gov.hk/en/qf-cat">CAT</a>.</li>
+</ul>
+<h2>2. Semantic data model</h2>
+<p>All private rows carry <code>id</code>, <code>family_id</code>, <code>created_at</code>, <code>created_by</code>, <code>updated_at</code> and an optimistic-lock <code>revision</code>. Child records also carry <code>student_id</code>. Use stable opaque IDs, ISO dates and IANA time zones. Preserve source text and original attachments separately from interpreted fields. A nullable value is unknown unless an explicit status explains otherwise; zero is a real value.</p>
+<table>
+<thead>
+<tr>
+<th>Entity</th>
+<th>Required semantic fields</th>
+<th>Relationships and constraints</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>StudentProfileVersion</code></td>
+<td>effective date; display name; age band or optional birth date; school stage; curriculum track; teaching languages; country/region; learner preferences; consent/sharing controls</td>
+<td>Snapshot versions; no inferred nationality or legal residency. Keep sensitive dates and support notes out of ordinary exports</td>
+</tr>
+<tr>
+<td><code>ApplicantContextVersion</code></td>
+<td>target jurisdiction; application/intake year; qualification route; local/non-local/unknown status; status evidence; effective date</td>
+<td>Separate from everyday child profile. Residency classification is per jurisdiction/intake, verified by a human, not inferred from passport, school or IP address</td>
+</tr>
+<tr>
+<td><code>CourseEnrollment</code></td>
+<td>provider; school subject; academic year/term; curriculum; course/level code; start/end dates</td>
+<td>One subject can have several enrolments across schools/years</td>
+</tr>
+<tr>
+<td><code>Assessment</code></td>
+<td>enrolment; type (<code>homework</code>, <code>quiz</code>, <code>test</code>, <code>exam</code>, <code>project</code>, <code>practice</code>); title; issue/due dates; grading-policy version; assessed objectives; stakes</td>
+<td>Completion status separate from grade and submission status</td>
+</tr>
+<tr>
+<td><code>AssessmentAttempt</code></td>
+<td>assessment; attempt number; work date; submission date; result status; original mark/grade; scale version; marker; accommodations/support context; evidence links</td>
+<td>First attempt, retake and corrected work remain distinct. A correction never silently replaces the original</td>
+</tr>
+<tr>
+<td><code>GradeScaleVersion</code></td>
+<td>scale kind; ordered categories or numeric bounds; direction; allowed precision; missing/result statuses; curriculum/provider; effective dates</td>
+<td>Defines percentages, rubric categories, letter grades, AP scores, IB grades and HKDSE categories separately</td>
+</tr>
+<tr>
+<td><code>GradingPolicyVersion</code></td>
+<td>aggregation method; weights; exclusions; missing/retake rules; rounding stage; source; effective date</td>
+<td>Human-confirmed school policy only; retain policy used for each historical calculation</td>
+</tr>
+<tr>
+<td><code>RubricCriterionResult</code></td>
+<td>attempt; criterion; rubric version; original criterion mark/category; comment; assessor</td>
+<td>Provides the evidence for an ability interpretation. A total mark alone is insufficient</td>
+</tr>
+<tr>
+<td><code>EvidenceArtifact</code></td>
+<td>type; private storage reference; content hash; owner/uploader; captured date; origin; authenticity status; sharing scope; optional page/time locator</td>
+<td>Authenticity status: <code>unverified</code>, <code>reviewed</code>, <code>issuer_verified</code>, <code>disputed</code>. Do not imply that a hash proves authenticity</td>
+</tr>
+<tr>
+<td><code>EvidenceLink</code></td>
+<td>artifact; linked entity; locator; purpose; added by</td>
+<td>Many-to-many. An attachment does not itself imply assessment or consent to publish</td>
+</tr>
+<tr>
+<td><code>AbilityDefinition</code></td>
+<td>stable ID; Chinese/English name; category; local description; catalogue version</td>
+<td>Exact IDs from <code>data/abilities.json</code>; all 50 are portal-defined, not official HKQF/ISCO abilities</td>
+</tr>
+<tr>
+<td><code>SkillObservation</code></td>
+<td>ability; task/context; observable behaviour; support received; observation date; observer and role; local stage or <code>not_assessed</code>; evidence; interpretation; child response; review status</td>
+<td>Distinguish direct observation, child reflection and second-hand report. Multiple viewpoints may coexist</td>
+</tr>
+<tr>
+<td><code>ObservationReview</code></td>
+<td>observation; reviewer; decision; reason; date; superseded interpretation if any</td>
+<td><code>draft</code>, <code>reviewed</code>, <code>disputed</code>, <code>withdrawn</code>; never overwrite the child&#39;s differing account</td>
+</tr>
+<tr>
+<td><code>AbilitySummary</code></td>
+<td>student; ability; window; referenced observations; recent supported stage; context coverage; evidence count; summary method version</td>
+<td>Derived, reproducible view. No arithmetic average of ordinal stages; no total across abilities</td>
+</tr>
+<tr>
+<td><code>Reflection</code></td>
+<td>author; prompt; optional text; optional self-reported feeling/interest; date; visibility</td>
+<td>Voluntary. No sentiment analysis or mental-health diagnosis in MVP</td>
+</tr>
+<tr>
+<td><code>InterestStatement</code></td>
+<td>child-selected field/activity; curiosity strength or descriptive label; liked/disliked aspects; date; wants-to-repeat; optional evidence</td>
+<td>Interest may be high with low attainment, or low with high attainment; both are valid</td>
+</tr>
+<tr>
+<td><code>AspirationVersion</code></td>
+<td>child-authored goal; motivation; chosen status; horizon; alternatives; created/adopted dates</td>
+<td>A future profession is provisional. Allow “still exploring” and goals unrelated to paid work</td>
+</tr>
+<tr>
+<td><code>ActivityExperience</code></td>
+<td>activity; field/occupation references; expected learning; date; accessibility; adult supervision; participation state; reflection</td>
+<td>Attendance is participation evidence, not competence. Do not rank costlier activities above free ones</td>
+</tr>
+<tr>
+<td><code>FrameworkReference</code></td>
+<td>framework; official code/URI; title; edition; publisher; source URL; accessed date; official level if applicable</td>
+<td>Store ISCO codes, GLD domains, SCS/SGC UoCs and qualifications as distinct framework types</td>
+</tr>
+<tr>
+<td><code>FrameworkCrosswalk</code></td>
+<td>local ability; reference; relationship; rationale; context constraint; reviewer; version</td>
+<td>Relationships: <code>related_theme</code>, <code>partial_task_overlap</code>, <code>verified_qualification_reference</code>. Never auto-generate equivalence</td>
+</tr>
+<tr>
+<td><code>QualificationAward</code></td>
+<td>issuer; award title; award date; original qualification identifier; evidence; verification status; optional QR ID/QF level/credits and applicable registration period</td>
+<td>Only records an actual award. Planned course and unit references belong elsewhere</td>
+</tr>
+<tr>
+<td><code>ProgrammeVersion</code></td>
+<td>provider; programme; jurisdiction; qualification; delivery mode/language; duration; intake; application route; official source snapshot</td>
+<td>Programme versions can coexist for different intakes and applicant categories</td>
+</tr>
+<tr>
+<td><code>RequirementSetVersion</code></td>
+<td>programme/route; complete scope; intake; applicant applicability; structured expression; authoritative sources; effective/review dates; human review</td>
+<td>Versioned immutable input to evaluation; details below</td>
+</tr>
+<tr>
+<td><code>RequirementEvaluation</code></td>
+<td>requirement version; student snapshot; engine version; evaluated timestamp; result; per-predicate evidence/reasons</td>
+<td>Derived, immutable. No offer or prediction fields</td>
+</tr>
+<tr>
+<td><code>PathwayNode</code> / <code>PathwayEdge</code></td>
+<td>node kind; source/target; requirement version; claim type; transfer conditions; uncertainty; review date</td>
+<td>Graph includes school choices, experience, qualification, application and professional practice. No assumption every edge is guaranteed</td>
+</tr>
+<tr>
+<td><code>PathwayPlanVersion</code></td>
+<td>aspiration; chosen graph subset; constraints; actions; assumptions; evaluations; adoption record</td>
+<td>Draft revisions do not replace the adopted plan</td>
+</tr>
+<tr>
+<td><code>NextAction</code></td>
+<td>student-chosen objective; action; due/review date; support owner; linked evidence gap; success observation; state</td>
+<td>Limit active suggestions to a manageable number; allow pause/decline without penalty</td>
+</tr>
+<tr>
+<td><code>AuditEvent</code></td>
+<td>actor; action; entity/revision; timestamp; reason; before/after references</td>
+<td>Records imports, reviews, route adoption and corrections. Deletion also follows the privacy/retention policy; do not retain erased private text in audit payloads</td>
+</tr>
+</tbody></table>
+<p>Store source snapshots with title, publisher, URL, fetched date, edition/intake, relevant excerpt/locator and content hash. Store only the permitted material needed to substantiate a rule. A linked webpage is evidence of a published requirement, not proof that a learner meets it.</p>
+<h2>3. Grades and comparability</h2>
+<h3>Original results</h3>
+<p><code>result_status</code> is one of <code>not_yet_assessed</code>, <code>pending</code>, <code>graded</code>, <code>absent</code>, <code>exempt</code>, <code>missing_submission</code>, <code>withdrawn</code>, <code>invalidated</code>. A school may explicitly award zero for missing work; record the school&#39;s zero plus the relevant status/policy. The portal must not invent that zero.</p>
+<p>For numeric marks, keep <code>raw_value</code>, <code>maximum</code>, <code>minimum</code>, <code>unit</code>, <code>precision</code> and <code>scale_id</code>. For categorical grades, keep <code>original_label</code> and the official ordered category ID. HKDSE <code>5</code>, <code>5*</code>, <code>5**</code>, IB subject grades and AP grades are distinct categories/scales. Predicted grades carry <code>is_predicted=true</code>, predicting source and date, and must never satisfy a requirement for an actual award unless that requirement explicitly accepts predictions for that stage.</p>
+<h3>Valid comparisons</h3>
+<p>An assessment belongs to a <code>comparison_series_id</code> only after a teacher or authorised adult confirms that it measures sufficiently comparable objectives with the same scale and appropriately comparable difficulty/context. Store that decision and rationale. Different accommodations or access arrangements do not automatically invalidate a comparison; obtain context-sensitive review rather than penalising support.</p>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>Permitted display/calculation</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Same assessment, corrected submission</td>
+<td>Side-by-side attempts; labelled improvement on that task</td>
+</tr>
+<tr>
+<td>Comparable assessment series</td>
+<td>Trend within that series, sample count, dates and method</td>
+</tr>
+<tr>
+<td>Same numeric bounds, different content/difficulty</td>
+<td>Original marks side-by-side; no asserted mastery trend merely because both are percentages</td>
+</tr>
+<tr>
+<td>Different subjects/curricula</td>
+<td>Separate panels; no combined “intelligence” or universal grade</td>
+</tr>
+<tr>
+<td>Official aggregate defined by school</td>
+<td>Reproduce the published policy, label coverage and included assessments</td>
+</tr>
+<tr>
+<td>Missing weights or uncertain policy</td>
+<td>Show provisional individual results and “aggregate unavailable”</td>
+</tr>
+<tr>
+<td>Published external conversion</td>
+<td>Preserve source/version and purpose; never silently reuse for another institution or admission year</td>
+</tr>
+</tbody></table>
+<p>For a valid weighted numeric aggregation, use <code>sum(weight × normalized_score) / sum(included_weight)</code>, where normalization is authorised by the scale/policy and the denominator follows the school&#39;s missing-work policy. For a scale explicitly defined as points from zero to maximum, <code>normalized_score = raw / maximum</code>. Otherwise use the scale&#39;s declared transformation, never guess. Report coverage, e.g. “3 of 4 assessments; remaining result pending”. Do not silently renormalise pending weight unless the school policy specifies it. Keep full precision until the policy&#39;s rounding step.</p>
+<p>A chart may display normalized percentages for inspection only if it states the original marks and that percentage alone does not establish comparable difficulty. Avoid green/red career judgements from one low test.</p>
+<h2>4. Local observations and whole-child development</h2>
+<p>Local stages are <code>trying_with_support</code> (在協助下嘗試), <code>following_guidance</code> (按指引完成), <code>independent_in_context</code> (在此情境能獨立完成), and <code>transfer_and_explain</code> (能在新情境運用及解釋). <code>not_assessed</code> (未有足夠證據) is a separate missing state, not stage zero. These are not age norms or HKQF levels.</p>
+<p>Every reviewed stage must link to observable behaviour, a defined task and support context. An introductory task cannot establish advanced competence in the whole field. The default summary shows the latest reviewed, undisputed observation in context; broader claims require evidence across contexts and a reviewer explanation. Newer contradictory evidence shows “情境有差異，待討論”, rather than choosing whichever result looks better. No automatic age-based decay or demotion.</p>
+<p>Whole-child views include learning, relationships/belonging, responsibility/ethical reasoning, creative/practical exploration, autonomy and wellbeing. Wellbeing is a voluntary check-in and support conversation. Ethical reflection records a situation, affected people, choices, reasons, consequences, repair and next action. Examples: crediting sources; admitting an error; asking permission; respecting a refusal; sharing group work fairly. Never assign “morality 78/100”, infer dishonesty from a low mark, grade family beliefs, or create a compliance leaderboard. Social skill does not mean popularity or extroversion. Disability, neurodiversity, language learning and contextual support must not be converted into character deficits.</p>
+<h2>5. Cautious mapping of all 50 abilities to GLD themes</h2>
+<p>Codes below are product shorthand for official domains: <strong>K</strong> 知識及智能; <strong>P</strong> 過程; <strong>A</strong> 自主性及問責性; <strong>C</strong> 溝通、資訊及通訊科技及運算. The four names come from <a href="https://www.hkqf.gov.hk/tc/qf-level">HKQF</a>. The mappings are editorial proposals, not official equivalences or attainment claims. No QF numeric level is attached.</p>
+<p><code>theme</code> means the local skill commonly offers relevant learning evidence. <code>context_only</code> means attach a domain only when a particular task supports the rationale. <code>unmapped_core</code> means the central developmental attribute is not treated as a GLD competence; a related task may still map. All mappings require a versioned editorial review before production use. They never award additional points for having more tags.</p>
+<table>
+<thead>
+<tr>
+<th>Ability ID</th>
+<th>中文</th>
+<th>Proposed domains</th>
+<th>Relation / required evidence focus</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>reading</td>
+<td>閱讀</td>
+<td>K, C</td>
+<td>theme — understanding and communicating meaning from a text</td>
+</tr>
+<tr>
+<td>writing</td>
+<td>寫作</td>
+<td>C, K</td>
+<td>theme — communicating an organised, supported idea</td>
+</tr>
+<tr>
+<td>listening</td>
+<td>聆聽</td>
+<td>C</td>
+<td>theme — accurately interpreting and responding to another person</td>
+</tr>
+<tr>
+<td>speaking</td>
+<td>口述</td>
+<td>C</td>
+<td>theme — explaining something clearly to an audience</td>
+</tr>
+<tr>
+<td>public-speaking</td>
+<td>演說</td>
+<td>C, P</td>
+<td>theme — preparing and delivering an audience-appropriate presentation</td>
+</tr>
+<tr>
+<td>reasoned-debate</td>
+<td>論辯</td>
+<td>K, C</td>
+<td>theme — reasoning with evidence and responding respectfully</td>
+</tr>
+<tr>
+<td>additional-language</td>
+<td>外語</td>
+<td>C</td>
+<td>theme — practical understanding/expression in a named language</td>
+</tr>
+<tr>
+<td>storytelling</td>
+<td>敘事</td>
+<td>C, K</td>
+<td>theme — organising and communicating a coherent account</td>
+</tr>
+<tr>
+<td>arithmetic</td>
+<td>運算</td>
+<td>C, K</td>
+<td>theme — applying and explaining a calculation</td>
+</tr>
+<tr>
+<td>reasoning</td>
+<td>推理</td>
+<td>K</td>
+<td>theme — drawing justified conclusions</td>
+</tr>
+<tr>
+<td>spatial</td>
+<td>空間</td>
+<td>K, P</td>
+<td>theme — interpreting and applying spatial relationships</td>
+</tr>
+<tr>
+<td>statistics</td>
+<td>統計</td>
+<td>C, K</td>
+<td>theme — representing and interpreting data with limitations</td>
+</tr>
+<tr>
+<td>observation</td>
+<td>觀察</td>
+<td>K, P</td>
+<td>theme — noticing and recording relevant evidence</td>
+</tr>
+<tr>
+<td>experimentation</td>
+<td>實驗</td>
+<td>P, K, A</td>
+<td>theme — testing a question and taking responsibility for procedure</td>
+</tr>
+<tr>
+<td>verification</td>
+<td>查證</td>
+<td>K, C</td>
+<td>theme — evaluating sources and explaining reliability</td>
+</tr>
+<tr>
+<td>problem-solving</td>
+<td>解難</td>
+<td>K, P</td>
+<td>theme — testing options and checking outcomes</td>
+</tr>
+<tr>
+<td>digital-literacy</td>
+<td>數碼</td>
+<td>C, P</td>
+<td>theme — purposeful, safe use of digital tools</td>
+</tr>
+<tr>
+<td>programming</td>
+<td>編程</td>
+<td>P, K, C</td>
+<td>theme — creating, debugging and explaining a functioning program</td>
+</tr>
+<tr>
+<td>ai-literacy</td>
+<td>智用</td>
+<td>K, C, A</td>
+<td>theme — checking generated content, disclosing use and protecting information</td>
+</tr>
+<tr>
+<td>engineering</td>
+<td>工程</td>
+<td>P, K</td>
+<td>theme — designing and testing against a task constraint</td>
+</tr>
+<tr>
+<td>making</td>
+<td>製作</td>
+<td>P</td>
+<td>theme — selecting materials and executing a documented process</td>
+</tr>
+<tr>
+<td>repair</td>
+<td>修繕</td>
+<td>P, A</td>
+<td>theme — safe, appropriate supervised repair and knowing when to stop</td>
+</tr>
+<tr>
+<td>drawing</td>
+<td>繪畫</td>
+<td>P, C</td>
+<td>context_only — technique or communicating an intended visual idea; aesthetic preference is not a GLD result</td>
+</tr>
+<tr>
+<td>design</td>
+<td>設計</td>
+<td>K, P, C</td>
+<td>theme — responding to a user&#39;s need and explaining design choices</td>
+</tr>
+<tr>
+<td>music</td>
+<td>音樂</td>
+<td>P, C</td>
+<td>context_only — demonstrated musical process or communication; taste is outside this mapping</td>
+</tr>
+<tr>
+<td>performance</td>
+<td>表演</td>
+<td>P, C</td>
+<td>context_only — rehearsed technique or expressive intention, not confidence inferred from personality</td>
+</tr>
+<tr>
+<td>visual-media</td>
+<td>影像</td>
+<td>C, P</td>
+<td>theme — creating a purposeful visual narrative with consent and attribution</td>
+</tr>
+<tr>
+<td>ideation</td>
+<td>創想</td>
+<td>K, P</td>
+<td>theme — generating and comparing possible approaches</td>
+</tr>
+<tr>
+<td>focus</td>
+<td>專注</td>
+<td>A, P</td>
+<td>context_only — choosing supports and sustaining a specific task; no diagnosis or trait ranking</td>
+</tr>
+<tr>
+<td>planning</td>
+<td>規劃</td>
+<td>P, A</td>
+<td>theme — arranging steps/resources and reviewing progress</td>
+</tr>
+<tr>
+<td>time-management</td>
+<td>時間</td>
+<td>A, P</td>
+<td>theme — estimating, prioritising and adjusting a task schedule</td>
+</tr>
+<tr>
+<td>execution</td>
+<td>執行</td>
+<td>P, A</td>
+<td>theme — completing a chosen task with its support context recorded</td>
+</tr>
+<tr>
+<td>organization</td>
+<td>整理</td>
+<td>P, A</td>
+<td>theme — maintaining a useful method for materials/information</td>
+</tr>
+<tr>
+<td>reflection</td>
+<td>反思</td>
+<td>K, A</td>
+<td>theme — using evidence to identify an improvement</td>
+</tr>
+<tr>
+<td>emotional-regulation</td>
+<td>調適</td>
+<td>— (A only when task-specific)</td>
+<td>unmapped_core — emotional wellbeing is not qualification attainment; a chosen coping strategy can be described without a score</td>
+</tr>
+<tr>
+<td>empathy</td>
+<td>同理</td>
+<td>C, A</td>
+<td>context_only — responding to another person&#39;s expressed needs; do not claim knowledge of inner feelings</td>
+</tr>
+<tr>
+<td>cooperation</td>
+<td>合作</td>
+<td>A, C, P</td>
+<td>theme — coordinating contributions and communicating in a group</td>
+</tr>
+<tr>
+<td>negotiation</td>
+<td>協商</td>
+<td>C, K</td>
+<td>theme — explaining needs and finding workable agreement</td>
+</tr>
+<tr>
+<td>leadership</td>
+<td>領導</td>
+<td>A, C</td>
+<td>theme — supporting and coordinating others, without equating authority with worth</td>
+</tr>
+<tr>
+<td>social-connection</td>
+<td>交往</td>
+<td>C only when task-specific</td>
+<td>unmapped_core — friendship/belonging is not a qualification; respectful interaction can provide related evidence</td>
+</tr>
+<tr>
+<td>helpfulness</td>
+<td>助人</td>
+<td>A, C</td>
+<td>context_only — identifying wanted help and following through; never moral ranking</td>
+</tr>
+<tr>
+<td>self-care</td>
+<td>自理</td>
+<td>A, P</td>
+<td>context_only — managing a chosen daily process; record age/context/support, no medical judgement</td>
+</tr>
+<tr>
+<td>cooking</td>
+<td>烹飪</td>
+<td>P, K, A</td>
+<td>theme — following a safe process and explaining ingredients/hygiene choices</td>
+</tr>
+<tr>
+<td>financial-literacy</td>
+<td>理財</td>
+<td>C, K, A</td>
+<td>theme — interpreting a budget and explaining trade-offs in a learning task</td>
+</tr>
+<tr>
+<td>enterprise</td>
+<td>商貿</td>
+<td>K, P, C</td>
+<td>theme — investigating needs and testing a cost/pricing idea</td>
+</tr>
+<tr>
+<td>gardening</td>
+<td>種植</td>
+<td>P, K</td>
+<td>theme — following care procedures and explaining observed changes</td>
+</tr>
+<tr>
+<td>safety</td>
+<td>安全</td>
+<td>A, P, K</td>
+<td>theme — identifying a risk, choosing a safer action and seeking help</td>
+</tr>
+<tr>
+<td>coordination</td>
+<td>協調</td>
+<td>P only when task-specific</td>
+<td>unmapped_core — motor development is not a QF rating; a defined technique can be observed</td>
+</tr>
+<tr>
+<td>endurance</td>
+<td>耐力</td>
+<td>—</td>
+<td>unmapped_core — retain a voluntary activity log outside GLD scoring; no health inference</td>
+</tr>
+<tr>
+<td>sport</td>
+<td>運動</td>
+<td>P, K, A</td>
+<td>context_only — a named technique, tactical explanation or fair participation in context</td>
+</tr>
+</tbody></table>
+<p>For production, convert this table into reviewed <code>FrameworkCrosswalk</code> records rather than adding official-looking fields to the original catalogue. <code>emotional-regulation</code>, <code>social-connection</code>, <code>coordination</code> and <code>endurance</code> must remain usable without any GLD link. None of the 50 is required to be assessed; “not explored” is a valid state.</p>
+<h2>6. Versioned requirements and three-state evaluation</h2>
+<h3>Requirement-set contract</h3>
+<p>Each immutable version contains:</p>
+<pre><code class="language-text">id / version / supersedes_id
+provider_id / programme_id / route_id
+jurisdiction / intake_year / admissions_round
+curriculum_and_qualification_routes[]
+applicant_categories[] with official definitions and evidence needed
+local_status_rule / residency_effective_date
+language_of_instruction / language_requirements
+requirement_expression (all, any, at_least, predicate)
+subject_identity_rules / accepted_grade_scales / exam_sitting_rules
+predicted_or_actual_result_policy / retake_policy
+nonacademic_requirements (portfolio, interview, experience, age if applicable)
+application_channel / deadline_instant / deadline_time_zone
+professional_registration_conditions where applicable
+source_snapshot_ids[] / issued_date / effective_from / effective_to
+scope_status (complete_for_this_check | partial | uncertain)
+reviewed_by / reviewed_at / refresh_due_at / source_change_state
+</code></pre>
+<p>Fees, budget and preferred location are planning constraints, not academic eligibility unless the authoritative rule makes them a formal condition. Keep a qualification&#39;s admission requirement separate from professional registration, practice rights, immigration eligibility and later employment. The rules of each later step need their own sources.</p>
+<h3>Applicability first</h3>
+<p>Before checking grades, match jurisdiction, programme, intake/round, curriculum route and applicant category. A version intended for HKDSE local applicants cannot evaluate an AP non-local application. If context is missing or ambiguous, return <code>unknown</code> and explain the missing classification. An inapplicable version is excluded from evaluation, not recorded as a failed child requirement. When no applicable verified version remains, the route is <code>unknown</code>.</p>
+<p>JUPAS eligibility depends on results and identity conditions; it cannot be inferred solely from school location. <a href="https://web.jupas.edu.hk/en/eligibility/">JUPAS</a>. Institution-specific standards may differ between IB, A-level and SAT/AP and by intake; meeting a published threshold is not an admission guarantee. <a href="https://admissions.hku.hk/apply/international-qualifications">HKU international admissions</a>.</p>
+<h3>Result vocabulary</h3>
+<table>
+<thead>
+<tr>
+<th>Stored result</th>
+<th>Interface label</th>
+<th>Exact meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>eligible</code></td>
+<td>符合已列明要求</td>
+<td>Complete, current and applicable reviewed requirements are satisfied by acceptable evidence for the stated check. This is not an offer or admission probability</td>
+</tr>
+<tr>
+<td><code>not_demonstrated</code></td>
+<td>尚未符合已列明要求</td>
+<td>Acceptable evidence establishes that at least one necessary requirement is currently unmet, or a formal stage is confirmed incomplete; show precisely which and the available next steps</td>
+</tr>
+<tr>
+<td><code>unknown</code></td>
+<td>資料不足／待核實</td>
+<td>Evidence, rule completeness, applicability, source currency or interpretation prevents a supported conclusion</td>
+</tr>
+</tbody></table>
+<p>Never display <code>eligible</code> by itself without the scope, e.g. “符合已列明的2029入學學術要求；錄取另行決定”. Distinguish <code>academic_entry</code>, <code>application_ready</code>, <code>credit_transfer</code> and <code>professional_registration</code> checks. Passing one does not pass the others. Application/offer/acceptance/enrolment are separate factual workflow states supported by their own records.</p>
+<h3>Deterministic logic</h3>
+<p>Each predicate returns a value plus <code>reason_code</code>, input IDs, source locator and any unresolved data. Required evidence absent from the portal is <code>unknown</code>, not failure. A transcript proving a grade below the published minimum is <code>not_demonstrated</code>. A confirmed not-yet-earned prerequisite is <code>not_demonstrated</code> for a current-readiness check, with “not yet earned” rather than “cannot achieve”. A predicted result is <code>unknown</code> when the rule requires final results. Disputed, invalidated or unreviewed extraction cannot satisfy a predicate.</p>
+<ul>
+<li><code>all</code>: any <code>not_demonstrated</code> ⇒ <code>not_demonstrated</code>; otherwise any <code>unknown</code> ⇒ <code>unknown</code>; otherwise <code>eligible</code>.</li>
+<li><code>any</code>: any <code>eligible</code> ⇒ <code>eligible</code>; otherwise any <code>unknown</code> ⇒ <code>unknown</code>; otherwise <code>not_demonstrated</code>.</li>
+<li><code>at_least(n)</code>: if eligible count ≥ n, <code>eligible</code>; if eligible + unknown count &lt; n, <code>not_demonstrated</code>; otherwise <code>unknown</code>.</li>
+<li>A source-level gate runs before the expression: incomplete scope, stale/changed source awaiting review, unresolved applicability or conflicting authoritative rules ⇒ <strong>overall <code>unknown</code></strong>. Preserve individual known shortfalls as findings even when the overall result is unknown.</li>
+<li>A closed application round is a separate application-readiness predicate; it does not erase an academic qualification or change its grade.</li>
+<li>Round numeric values only according to the cited rule. Equality at a threshold passes when the rule says “at least”. Do not add tolerances without an explicit rule.</li>
+<li>Do not infer probability, rank, “safety school”, or a predicted future result from this logic.</li>
+</ul>
+<p>Each evaluation is reproducible from immutable requirement, input and engine versions. Human reviewers may correct data or clarify a rule through a new version, but cannot flip the result without recording the new evidence/rule. A scenario with hypothetical grades uses a distinct <code>scenario_id</code>, visible “假設情境” styling and separate storage; it never modifies actual records.</p>
+<h2>7. Human-reviewed route revision</h2>
+<p>Trigger a draft review when a final result changes, a new comparable assessment identifies a support need, a child changes interests, a subject changes, a requirement/source changes, a deadline approaches/passes, or the family changes a planning constraint. One low homework score alone produces a learning-support suggestion, not an automatic career exclusion.</p>
+<p>Processing sequence:</p>
+<ol>
+<li>Capture an immutable input snapshot and current adopted plan version.</li>
+<li>Re-evaluate only the affected, applicable requirement sets; mark stale or missing sources unknown.</li>
+<li>Generate a deterministic change set: new evidence, changed predicates, missing facts, expired conditions, completed transferable learning and affected actions. Stable-sort by route ID and predicate ID so equal inputs produce equal output.</li>
+<li>Suggest actions using explicit rules. Examples: missing final language evidence → obtain result or ask the institution about alternatives; below a published subject requirement → review accepted retake/bridging routes; reduced interest → offer a different trial rather than an attainment penalty.</li>
+<li>Display the existing and proposed route side-by-side, including rationale, source, time/cost changes and reversibility. Do not hide an aspirational route merely because requirements are not yet met.</li>
+<li>Parent/counsellor reviews source interpretation; student discusses the direction. The plan adopts only after the authorised family member confirms the exact draft revision and records the child&#39;s agreement, disagreement or preference to defer. This is a product workflow, not an external consent assertion.</li>
+<li>Save a new adopted version, retain the prior plan and support rollback. Reject adoption if inputs changed since the draft; re-evaluate before review.</li>
+</ol>
+<p>Every pathway edge has a claim type: <code>illustrative</code>, <code>published_possibility</code>, <code>formal_articulation_agreement</code>, or <code>confirmed_individual_decision</code>. An agreement needs the applicable intake, subject match, grade/credit conditions and source. A published route remains conditional until the receiving institution makes the relevant decision. Credit transfer and admission remain separate. <a href="https://www.hkqf.gov.hk/en/qf-cat">CAT</a>.</p>
+<h2>8. Worked example — synthetic, not a real child&#39;s record</h2>
+<p><strong>Student:</strong> 林同學, age 15, an unnamed international secondary programme, interested in explaining environmental problems through data and pictures. The child has not selected a university or profession. Jurisdiction/local status for eventual applications is unknown.</p>
+<p><strong>Homework:</strong> “Which school spaces are hottest?” Attempt 1 receives <strong>17/25</strong> on a school-created project rubric. Marking breakdown: data collection 4/5; graph labels/units 2/5; interpretation 4/5; explanation 4/5; source notes 3/5. The portal shows the original total and five criteria. No previous task is confirmed comparable, so it does not draw a performance trend.</p>
+<p><strong>Evidence and observations:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Evidence</th>
+<th>Supported observation</th>
+<th>Local ability and GLD theme</th>
+<th>What it does not establish</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Teacher-marked graph, page 2</td>
+<td>Chose a suitable chart after one prompt; omitted two units</td>
+<td><code>statistics</code>: following guidance; C/K</td>
+<td>General mathematical ability, a QF level, or a future admission result</td>
+</tr>
+<tr>
+<td>Notebook entries over three days</td>
+<td>Recorded temperature at the agreed times with reminders</td>
+<td><code>observation</code>: following guidance; K/P</td>
+<td>Independent performance across other contexts</td>
+</tr>
+<tr>
+<td>Two-minute explanation recorded with permission</td>
+<td>Explained a limitation and answered a classmate&#39;s question</td>
+<td><code>speaking</code>: independent in this context; C</td>
+<td>A personality/confidence score</td>
+</tr>
+<tr>
+<td>Child&#39;s voluntary reflection</td>
+<td>“I enjoyed explaining the pictures more than collecting readings”</td>
+<td>Interest statement about visual communication</td>
+<td>Proof the child should abandon science</td>
+</tr>
+</tbody></table>
+<p><strong>Next action:</strong> within one week, revise graph axes/units and give a one-minute explanation of what the data cannot prove. Success evidence is the corrected graph plus the child&#39;s explanation, reviewed by the teacher. The corrected attempt remains linked to the first; it is not a new exam score. A second small data task in another context can later test transfer. The child may instead request a different format or more support.</p>
+<p><strong>Possible directions:</strong></p>
+<ul>
+<li><strong>Route A: environmental/data investigation.</strong> Try a supervised citizen-science or school investigation project, review relevant school subject options, and later identify specific science/data programmes. Formal entry assessment is <code>unknown</code>: no target programme/intake rules or actual leaving qualification are available.</li>
+<li><strong>Route B: visual communication/design.</strong> Try a two-poster explanation of the same environmental issue, obtain audience feedback, build a small portfolio, and later compare design/media courses. Formal entry assessment is also <code>unknown</code>; the homework is portfolio exploration evidence, not admission evidence.</li>
+<li><strong>Route C: practical technical work.</strong> Visit a supervised college taster or workshop, then compare a relevant diploma/higher-diploma route and its possible degree articulation. Keep bridging and transfer conditions as explicit future checks. This is an equal exploratory option, not a consequence or penalty for 17/25.</li>
+</ul>
+<p><strong>Revision event:</strong> the graph correction improves that task, and the child chooses another poster activity. A new draft adds one design experience while retaining the environmental route. It does not convert 17/25 to a percentage of “career readiness”, upgrade a QF level or delete an academic ambition. Family review records whether to adopt the draft and sets a four-week reflection date.</p>
+<p>For rule-engine fixtures only, use a fictional programme with explicit synthetic requirements and sources: verified required grade exactly at threshold → <code>eligible</code>; verified lower grade → <code>not_demonstrated</code>; missing final grade → <code>unknown</code>; even with a passing grade, an unreviewed new requirement version → overall <code>unknown</code>. These fixtures must never appear as real institution advice.</p>
+<h2>9. Acceptance criteria</h2>
+<h3>Evidence and grades</h3>
+<ol>
+<li>Importing 17/25 preserves 17, 25, the original rubric and the source; zero, missing, exempt and pending display differently.</li>
+<li>A missing result never becomes zero unless a recorded school policy explicitly supplies that grade.</li>
+<li>Two assessments with equal denominators cannot automatically join a comparison series. A reviewer action and rationale are required.</li>
+<li>A retake/correction preserves both attempts and uses only the attempt specified by the versioned school/admission policy.</li>
+<li>AP, IB and HKDSE scales remain distinct; categorical labels such as 5** survive round-trip import/export unchanged.</li>
+<li>A weighted aggregate with unknown policy or weights is unavailable; a valid aggregate shows policy, rounding, included records and coverage.</li>
+<li>Clicking a skill summary opens the observations, exact evidence locators, support context and author. No stage appears without reviewed evidence.</li>
+<li>Disputed observations remain visible to authorised reviewers but cannot silently establish a qualification/entry predicate. A withdrawal recalculates derived views.</li>
+<li>All 50 catalogue IDs are represented exactly once in the mapping table. No mapping stores an awarded QF level. Unmapped-core abilities remain usable.</li>
+<li>No screen/API field provides an overall child score, ethics score, popularity score or psychological diagnosis. Interest and attainment can disagree without either being overwritten.</li>
+</ol>
+<h3>Requirements and pathway changes</h3>
+<ol start="11">
+<li>A local-HKDSE requirement version does not evaluate an international/non-local application. Missing applicability returns unknown with a reason.</li>
+<li>Required original/actual evidence cannot be satisfied by a prediction, simulation, unverified attachment or unreviewed extraction unless the rule explicitly permits that type and stage.</li>
+<li>AND/OR/at-least truth tables pass all three-state combinations; exact-threshold, duplicate-result, retake and multi-sitting fixtures follow the declared rule.</li>
+<li>Partial, changed or stale requirements prevent overall eligible status. The UI exposes stale-source date and known shortfalls without asserting final ineligibility.</li>
+<li>Identical inputs, requirement versions and engine version produce identical results and explanation IDs; changes create a new evaluation rather than mutating the old one.</li>
+<li>Academic eligibility, application readiness, credit transfer, offer and enrolment remain distinct. Expired application rounds do not invalidate earned grades or qualifications.</li>
+<li>Every explanation links both the rule&#39;s authoritative source and the student&#39;s relevant evidence, with access controls enforced separately.</li>
+<li>A draft route never becomes adopted automatically. Adoption checks the base-plan/input revision and fails cleanly when outdated.</li>
+<li>A family can retain an aspiration despite a presently unmet requirement; alternatives show required steps and uncertainty without promised admission.</li>
+<li>Scenario grades never enter actual transcripts, observations or awarded-qualification records. Scenario exports are visibly marked hypothetical.</li>
+<li>Every adopted route has version history, reason, reviewer, child&#39;s recorded perspective and rollback. A deleted personal record is removed from derived views and retained snapshots according to the retention policy.</li>
+<li>Student, sibling and family boundaries are enforced by the storage/API layer, including attachments and exports; hiding a panel is not authorisation.</li>
+</ol>
+<h2>10. MVP implementation order</h2>
+<p>First ship manual/CSV assessment entry with original scales, evidence uploads with review, the 50-ability catalogue, voluntary reflections and two or three family-authored aspirations. Add requirements through a small reviewed catalogue, three-state checks and versioned route drafts. Automated extraction, institution integrations and large-scale occupation-to-competency crosswalks follow only after provenance, permissions, correction and evaluation tests work. Source refresh is a review queue; it must not silently replace active rules.</p>
+</section><section id="delivery"><h1>Implementation and delivery plan</h1>
+<p>Version: 20 October 2026. Audience: family sponsor, product designer and implementation team.</p>
+<p>This document separates the reviewable demonstration from the proposed service that would hold actual student records. The demonstration is not a production record system.</p>
+<h2>1. Current demonstration and production decision</h2>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Demonstration</th>
+<th>Proposed production service</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Interface</td>
+<td>Buildless HTML, CSS, SVG and JavaScript in <code>dist/</code></td>
+<td>TypeScript, React and Vite</td>
+</tr>
+<tr>
+<td>Data</td>
+<td>Fictional sample records; browser memory only</td>
+<td>PostgreSQL with authenticated family access</td>
+</tr>
+<tr>
+<td>Changes</td>
+<td>Temporary; refresh restores the demonstration</td>
+<td>Validated writes, audit events and backups</td>
+</tr>
+<tr>
+<td>Files</td>
+<td>Sample information only</td>
+<td>Private object storage with controlled downloads</td>
+</tr>
+<tr>
+<td>Hosting</td>
+<td>Private Sites review target; actual publication state is reported separately</td>
+<td>Region-selected HTTPS application, API, database and storage</td>
+</tr>
+<tr>
+<td>Purpose</td>
+<td>Review the dashboard, education records, exploration and route changes</td>
+<td>Reliable day-to-day tracking across authorised devices</td>
+</tr>
+</tbody></table>
+<p>No game engine is required. Use SVG for simple scenes, portraits and map elements; keep text, tables, forms and charts in ordinary web interface components. A future Phaser scene may receive display data through an adapter, but it must never become the owner of grades, assessment rules, permissions or plans. The design language can be inspired by strategy games while using original artwork and interaction details.</p>
+<p>Recommended development environment: a supported macOS, Windows or Linux workstation; Git; Node.js 24 LTS; npm with a committed lockfile; editor and browser developer tools. Use TypeScript for client, API contracts and domain logic, SQL for migrations and permissions, and HTML/CSS/SVG for the interface. Pin exact package versions at project initiation and update deliberately. Node 24 is currently LTS; Vite documents minimum Node versions below it. <a href="https://nodejs.org/en/about/previous-releases">Node releases</a>, <a href="https://vite.dev/guide/">Vite guide</a>.</p>
+<p>React + Vite is a deliberate fit for a private dashboard without public search-engine requirements. React&#39;s own guidance explains that a build-tool setup leaves additional framework decisions to the application. If requirements later include extensive server rendering, reassess that choice rather than adding complexity prematurely. <a href="https://react.dev/learn/build-a-react-app-from-scratch">React build guidance</a>.</p>
+<h2>2. Production architecture and repository structure</h2>
+<pre><code class="language-text">Mobile/desktop browser, including tested WeChat browsers
+                     |
+             HTTPS application
+                     |
+           authenticated Node API
+             /       |       \
+    PostgreSQL   private files   job worker
+             \       |       /
+         authorisation and audit events
+</code></pre>
+<p>A managed backend can replace individual components if its deployment region, access controls, contracts, backups and export facilities meet the requirements. Supabase is one candidate; a regional Node/PostgreSQL/private-object-storage deployment is another. Do not select a cloud region solely from where its website is hosted: database, files, backups, logs, support access and optional AI processing all matter.</p>
+<p>Recommended future structure:</p>
+<pre><code class="language-text">apps/
+  web/                    React interface, mobile navigation, charts and scenes
+  api/                    authentication integration, validated API, file access
+  worker/                 imports, approved extraction and scheduled reviews
+packages/
+  domain/                 grades, observations, route rules and versioning
+  contracts/              request/response schemas shared by client and API
+  ui/                     reusable accessible interface components
+  reference-data/         versioned official classifications and source metadata
+db/
+  migrations/             schema, constraints and authorisation policies
+  tests/                  family isolation and transaction tests
+tests/
+  journeys/               end-to-end user workflows
+  fixtures/               synthetic records only
+docs/                     product, data, operations and source documentation
+infra/                    deployment templates and environment examples
+dist/                     generated release output; current buildless demo
+</code></pre>
+<p>Do not overwrite the current concept demonstration until the production implementation has equivalent reviewable journeys. Use separate development, staging and production environments and distinct credentials. Production backups and private attachments must never enter a repository, build artifact or public preview.</p>
+<p>Core entities should include family, membership, student, school enrolment, curriculum, course, assignment, submission/attempt, assessment result, observation, evidence, interest, activity, taxonomy version, proposed mapping, pathway requirement, route version, review decision and audit event. Preserve an official requirement&#39;s source URL, applicable intake, checked date and status independently of the student&#39;s progress.</p>
+<p>The domain layer must distinguish participation from competence, an observation from a certified qualification, and a possible route from an admission promise. A new result may raise a review suggestion; it must not silently change the child&#39;s active goal.</p>
+<h2>3. Family isolation, access and storage</h2>
+<p>Every student-owned row belongs to a family and student. A server verifies membership for every operation. The database must also enforce row access or an equivalently tested policy; a hidden button or difficult-to-guess identifier is insufficient. Shared occupational/qualification reference data can be globally readable, while family-created mappings and notes stay within their authorised scope.</p>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Initial scope</th>
+<th>Restrictions</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Family owner/guardian</td>
+<td>Manage own family, invite members, enter records, approve sharing and exports</td>
+<td>No access to another family; administrative privileges do not cross tenants</td>
+</tr>
+<tr>
+<td>Student</td>
+<td>Read agreed records, state interests, add reflection and propose changes</td>
+<td>Cannot alter teacher-issued marks or source requirements; visibility is explained</td>
+</tr>
+<tr>
+<td>Invited mentor</td>
+<td>Explicitly shared student and record categories, optionally time-limited</td>
+<td>No family-wide access by default; no invitation or role administration</td>
+</tr>
+<tr>
+<td>Service operator</td>
+<td>Operational metadata normally; exceptional support access only when justified</td>
+<td>Separate privileged account; logged, limited and revocable access</td>
+</tr>
+</tbody></table>
+<p>For the first private family pilot, an adult owner with manual entry is sufficient; implement independent student and mentor accounts only when their permission model is complete. A child-view switch inside the parent&#39;s authenticated session is presentation, not an independent security boundary. Do not describe a reflection as private from parents unless the actual policy and implementation support that promise.</p>
+<p>Memberships require revocation and expiry where applicable. Enforce least privilege for privileged keys, restrict service accounts, use parent MFA where available, rate-limit authentication and support secure recovery. Prefer secure same-origin session handling; never put long-lived access tokens in shared URLs. Validate file access again when issuing short-lived download links.</p>
+<p>Files use private buckets, non-identifying object keys, a metadata record linked to the student, upload size/type limits and a malware-handling policy. Logs should contain record IDs and operational status rather than homework text, grades, names or access tokens. Define retention, deletion including backup expiry, encrypted transport/storage, key handling and incident response. Export must include evidence files as well as database records.</p>
+<p>If Supabase is selected, enable and test row-level security on exposed tables and separate storage policies. Its documentation explains that table grants and policies both affect access and that storage requires its own controls. Merely enabling authentication does not make every record private. <a href="https://supabase.com/docs/guides/database/postgres/row-level-security">Database security documentation</a>, <a href="https://supabase.com/docs/guides/storage/security/access-control">storage access controls</a>.</p>
+<h2>4. Getting reliable records into the portal</h2>
+<p>Start with manual entry and an agreed CSV template. Record the original grade, maximum/scale, assessment type, date, course, teacher/source, weighting if known, and whether a mark is provisional, final or corrected. Missing is different from zero; submitted is different from marked. Never combine different exam systems or incomparable assessments into a misleading average.</p>
+<p>The import workflow is:</p>
+<ol>
+<li>Select student and source; upload only the intended document or file.</li>
+<li>Parse into a preview with original rows/pages and suspected duplicates.</li>
+<li>Show each proposed record, extracted field and ambiguity; nothing is yet authoritative.</li>
+<li>An authorised adult confirms or corrects the proposed entries.</li>
+<li>Commit a validated batch with import ID, source reference, reviewer and timestamps.</li>
+<li>Report added, updated, skipped and rejected items; allow correction or reversal without erasing provenance.</li>
+</ol>
+<p>A file hash plus source identifiers and assessment context can help find duplicates, but should not replace user review where source identifiers are absent. Re-importing an unchanged batch must not create duplicate assignments, marks, activities or progress credit. Corrected marks need revision history and a visible reason.</p>
+<p>PDF/image extraction is a later assisted step, not a promise of accurate OCR. Retain the source page/region; mark uncertain fields, unsupported scales and unreadable content. Redact unnecessary identifiers. If an external OCR or AI service is considered, review the data flow and provider terms before actual records are sent. Require human verification of marks and deadlines regardless of model confidence.</p>
+<p>Cialfo, school portals, Teams or other systems require documented access and a supported integration route. No Cialfo API entitlement or school-system integration has been verified for this project. A signed-in browser page does not establish API access or permission to bulk extract student records. Use user-provided exports first; do not store school passwords in the application.</p>
+<h2>5. Hosting and WeChat delivery</h2>
+<p>GitHub can hold source, documentation, issues and synthetic fixtures. GitHub Pages is static hosting, and GitHub advises against sensitive transactions there; do not host the private record workflow on Pages. A private repository does not automatically make the published website private. <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages">GitHub Pages overview</a>, <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits">Pages limits</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Variant</th>
+<th>Appropriate use</th>
+<th>Decision before real data</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Private Sites demonstration</td>
+<td>Family reviews fictional screens and workflows</td>
+<td>Verify actual visibility; explain that demo changes are temporary</td>
+</tr>
+<tr>
+<td>GitHub source + Hong Kong-hosted production services</td>
+<td>A private pilot where actual network tests pass</td>
+<td>Operator responsibilities, provider regions, mainland-to-HK data flow, backups and support access</td>
+</tr>
+<tr>
+<td>GitHub source + mainland-hosted production services</td>
+<td>Mainland-oriented operation</td>
+<td>Hosting/domain/ICP requirements, appropriate service classification and accessible dependencies</td>
+</tr>
+<tr>
+<td>Separate mainland/HK deployments</td>
+<td>Larger service with a concrete regional need</td>
+<td>Tenant routing, transfer decisions, region-specific operations and costs; no default cross-region replication</td>
+</tr>
+</tbody></table>
+<p>Tencent&#39;s published hosting requirements distinguish mainland resources requiring filing from Hong Kong resources; this does not establish that every app or service is exempt from all other requirements when hosted in Hong Kong. The MIIT APP filing notice includes Mini Program distribution. Determine the actual operator and service category rather than inferring a licensing conclusion from the portal&#39;s education theme. <a href="https://cloud.tencent.cn/document/product/243/18908">Tencent hosting resources</a>, <a href="https://www.miit.gov.cn/jgsj/xgj/wjfb/art/2023/art_dd783a581c9644a4aee10afa582811db.html">MIIT APP filing notice</a>.</p>
+<h3>WeChat release matrix</h3>
+<table>
+<thead>
+<tr>
+<th>Release capability</th>
+<th>Build approach</th>
+<th>Evidence required for release</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Open and use the portal from a message or QR code</td>
+<td>Normal responsive HTTPS website with ordinary authentication</td>
+<td>Current iOS/Android WeChat on intended mainland/HK networks; full task completion</td>
+</tr>
+<tr>
+<td>Custom WeChat share presentation or native JS features</td>
+<td>Optional JS-SDK adapter</td>
+<td>Actual account entitlement, verified security domain, working server signing, generic non-sensitive sharing</td>
+</tr>
+<tr>
+<td>WeChat identity login</td>
+<td>Optional identity integration, linked to an authorised family membership</td>
+<td>Account entitlement, verified callback domain, state validation, recovery and account-linking tests</td>
+</tr>
+<tr>
+<td>Mini Program</td>
+<td>Separate product deliverable reusing server contracts</td>
+<td>Account/category eligibility, domains, privacy declarations, filing/review and physical-device validation</td>
+</tr>
+<tr>
+<td>PWA install/offline/push</td>
+<td>Optional enhancement</td>
+<td>Proven behaviour in each target browser; core workflows remain usable without it</td>
+</tr>
+</tbody></table>
+<p>Tencent&#39;s official H5 guide verifies JS-interface security-domain setup and distinguishes webpage-authorisation-domain configuration. Precise Weixin account eligibility was not established in this research because the relevant Weixin developer pages could not be retrieved. Verify those conditions in the actual account before committing to a feature. <a href="https://cloud.tencent.com/document/product/1301/100434">Tencent H5 domain guide</a>.</p>
+<p>The test matrix must cover initial load, authentication and return, back navigation, file upload/retry, document viewing, session expiry, logout, reopening a private link, network failure, text zoom and reduced motion. Log device/OS/WeChat version, network, hostname, date and outcome. A desktop mobile viewport does not certify WeChat compatibility. No claim of guaranteed mainland reachability is made; test the site, API, identity provider, message delivery and file storage together.</p>
+<h2>6. Backlog and acceptance gates</h2>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Concrete deliverables</th>
+<th>Acceptance gate</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A. Validate the concept</td>
+<td>Parent/student journeys; terminology; sample academic records; occupation exploration; route comparison</td>
+<td>Family can find a homework, explain its status, inspect evidence and propose a route change without assistance; all data visibly fictional</td>
+</tr>
+<tr>
+<td>B. Establish private records</td>
+<td>Authentication; family membership; student/course schema; manual entry; audit; private files</td>
+<td>Anonymous access denied; family A cannot read/write/download family B data; revoked membership loses access; no privileged secret in browser bundle</td>
+</tr>
+<tr>
+<td>C. Reliable academic tracking</td>
+<td>CSV preview/import; duplicates; original scales; missing/zero distinction; revisions</td>
+<td>A known fixture reconciles exactly; unchanged re-import is idempotent; corrected result retains provenance; incomparable marks are not pooled</td>
+</tr>
+<tr>
+<td>D. Evidence and exploration</td>
+<td>Observations, reflections, evidence links, interests, activity record and reference mappings</td>
+<td>Every competence claim exposes evidence/context; missing evidence stays unknown; custom mappings cannot appear as official certification</td>
+</tr>
+<tr>
+<td>E. Editable pathways</td>
+<td>Versioned requirements; alternative routes; review queue; change reasons; rollback</td>
+<td>Changed intake rule or result produces a review suggestion; approval needed to activate an amended route; history and alternatives remain accessible</td>
+</tr>
+<tr>
+<td>F. Operable family pilot</td>
+<td>Notices; permissions; export/deletion; backup/restore; incident procedure; support contact</td>
+<td>Restore works in a clean environment; complete export includes files; deletion policy demonstrated; real records enter only after access controls pass</td>
+</tr>
+<tr>
+<td>G. WeChat release</td>
+<td>Region/network/device matrix; performance tuning; file handling and session tests</td>
+<td>Intended physical devices complete the full flow using the deployed hostname; no unresolved access or data-exposure failure</td>
+</tr>
+<tr>
+<td>H. Expansion</td>
+<td>Independent student/mentor roles, supported school integrations, optional Mini Program</td>
+<td>Separate estimate and review of operator duties, contracts, privacy, scale and account eligibility</td>
+</tr>
+</tbody></table>
+<p>Meaningful automated tests should cover grading semantics, duplicate imports, transactional writes, route version approval and isolation. Use a small set of browser journeys for actual user outcomes; add accessibility checks and manual keyboard/text-resize verification. Do not write tests that merely repeat the wording of the interface.</p>
+<p>Reference data needs ongoing ownership: identify who checks qualification/programme rules, what triggers a refresh and how an outdated source is marked. A future reminder or scheduled check is a proposed feature, not an automation created by this plan.</p>
+<h2>7. Planning effort and cost drivers</h2>
+<p>The following is a planning envelope for one experienced full-stack developer working with timely family feedback and a narrow first-family scope. It is neither a quotation nor a delivery commitment.</p>
+<table>
+<thead>
+<tr>
+<th>Workstream</th>
+<th align="right">Developer days</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Scope, curriculum model, permissions and detailed design</td>
+<td align="right">3–5</td>
+</tr>
+<tr>
+<td>Production foundation and deployment</td>
+<td align="right">6–10</td>
+</tr>
+<tr>
+<td>Academic records and reviewed import</td>
+<td align="right">6–9</td>
+</tr>
+<tr>
+<td>Evidence, exploration and route versioning</td>
+<td align="right">6–10</td>
+</tr>
+<tr>
+<td>Family controls, export, restore and security validation</td>
+<td align="right">6–9</td>
+</tr>
+<tr>
+<td>Device/network validation and release fixes</td>
+<td align="right">4–7</td>
+</tr>
+<tr>
+<td><strong>Total initial private pilot</strong></td>
+<td align="right"><strong>31–50</strong></td>
+</tr>
+</tbody></table>
+<p>Allow approximately 6–10 working weeks, plus external account/filing delays where applicable. The current demonstration removes some concept uncertainty but is not a partially completed secure backend. School integrations, automated OCR, independent student/mentor roles and Mini Program implementation are separately scoped.</p>
+<p>For budgeting, calculate development cost as 31–50 days multiplied by the agreed day rate. For a small private pilot, a provisional operating allowance of HK$300–1,500 per month can be used for planning discussions only; obtain current region-specific quotes before purchase. This allowance is not a verified package price and excludes development, ongoing support, legal review, school licences, heavy OCR/AI use and unusual storage/traffic.</p>
+<p>The main operating cost drivers are database size and availability, private file volume and downloads, backup retention/restore, hosting region, monitoring, email/SMS delivery, identity features and support. Prefer a modest storage policy and reviewed imports over expensive automation before usage is known. Free React/Phaser/Godot licences do not eliminate operation and maintenance costs.</p>
+<h2>8. Open decisions before a real-data pilot</h2>
+<p>Confirm the child&#39;s age/year and curriculum; parent/student visibility; locations of use; initial source exports; operator and hosting region; permissible data transfers; retention/export expectations; and whether ordinary WeChat web access is sufficient. The project can continue with synthetic data while these are resolved.</p>
+<p>Mainland PIPL includes a personal/family-affairs exception, but it should not be assumed to exempt a provider or school service. Where PIPL applies, under-14 records are sensitive; the general small-volume cross-border exemption does not simply cover all sensitive information. Hong Kong also has domestic-purpose exemptions and child-privacy guidance. Scope and data flow therefore need an applicability check before deployment, rather than blanket conclusions. <a href="https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm">PIPL</a>, <a href="https://www.cac.gov.cn/2024-03/22/c_1712776611649184.htm">CAC cross-border explanation</a>, <a href="https://www.pcpd.org.hk/english/resources_centre/publications/files/guidance_children_e.pdf">PCPD child-service guidance</a>, <a href="https://www.pcpd.org.hk/misc/files/table1_e.pdf">PCPD exemptions</a>.</p>
+<p>Additional technical evidence, source limitations and engine comparison are recorded in <code>research/platform.md</code>.</p>
+</section><section id="abilities"><h1>The 50 proposed Chinese abilities</h1><p>Original product vocabulary, not official ILO/HKQF tests. See the evidence specification for the interpretive crosswalk.</p><div class="table"><table><thead><tr><th>領域</th><th>能力</th><th>English</th><th>示例證據</th></tr></thead><tbody><tr><td>語言表達</td><td>閱讀</td><td>Reading</td><td>閱讀後口述重點</td></tr><tr><td>語言表達</td><td>寫作</td><td>Writing</td><td>保存一篇短文</td></tr><tr><td>語言表達</td><td>聆聽</td><td>Listening</td><td>聽完指示後完成任務</td></tr><tr><td>語言表達</td><td>口述</td><td>Speaking</td><td>錄下事情經過的描述</td></tr><tr><td>語言表達</td><td>演說</td><td>Public speaking</td><td>完成一次簡短報告</td></tr><tr><td>語言表達</td><td>論辯</td><td>Reasoned debate</td><td>比較兩種主張的證據</td></tr><tr><td>語言表達</td><td>外語</td><td>Additional language</td><td>用所學語言完成對話</td></tr><tr><td>語言表達</td><td>敘事</td><td>Storytelling</td><td>說出有起承轉合的故事</td></tr><tr><td>數理探究</td><td>運算</td><td>Arithmetic</td><td>解釋一道計算題的方法</td></tr><tr><td>數理探究</td><td>推理</td><td>Reasoning</td><td>說明規律與下一步</td></tr><tr><td>數理探究</td><td>空間</td><td>Spatial reasoning</td><td>依圖完成積木模型</td></tr><tr><td>數理探究</td><td>統計</td><td>Statistics</td><td>製作並解讀簡單圖表</td></tr><tr><td>數理探究</td><td>觀察</td><td>Observation</td><td>連續記錄植物變化</td></tr><tr><td>數理探究</td><td>實驗</td><td>Experimentation</td><td>記錄一次公平測試</td></tr><tr><td>數理探究</td><td>查證</td><td>Source checking</td><td>用兩個來源核對資料</td></tr><tr><td>數理探究</td><td>解難</td><td>Problem solving</td><td>記下嘗試方法與結果</td></tr><tr><td>科技製作</td><td>數碼</td><td>Digital literacy</td><td>自行整理並找到檔案</td></tr><tr><td>科技製作</td><td>編程</td><td>Programming</td><td>完成可運行的小程式</td></tr><tr><td>科技製作</td><td>智用</td><td>AI literacy</td><td>找出並更正工具回答的錯誤</td></tr><tr><td>科技製作</td><td>工程</td><td>Engineering</td><td>測試模型橋的承重</td></tr><tr><td>科技製作</td><td>製作</td><td>Making</td><td>保存手工作品與步驟</td></tr><tr><td>科技製作</td><td>修繕</td><td>Repair</td><td>在成人指導下修復物件</td></tr><tr><td>藝術創意</td><td>繪畫</td><td>Drawing</td><td>保存有日期的作品</td></tr><tr><td>藝術創意</td><td>設計</td><td>Design</td><td>解釋設計選擇</td></tr><tr><td>藝術創意</td><td>音樂</td><td>Music</td><td>保存演奏錄音</td></tr><tr><td>藝術創意</td><td>表演</td><td>Performance</td><td>完成一段表演</td></tr><tr><td>藝術創意</td><td>影像</td><td>Visual media</td><td>製作一段短片</td></tr><tr><td>藝術創意</td><td>創想</td><td>Ideation</td><td>為同一問題提出數個方案</td></tr><tr><td>自主管理</td><td>專注</td><td>Focus</td><td>記錄完成活動時所需支持</td></tr><tr><td>自主管理</td><td>規劃</td><td>Planning</td><td>擬定並使用任務計劃</td></tr><tr><td>自主管理</td><td>時間</td><td>Time management</td><td>比較預估與實際用時</td></tr><tr><td>自主管理</td><td>執行</td><td>Follow through</td><td>完成自選小項目</td></tr><tr><td>自主管理</td><td>整理</td><td>Organization</td><td>建立並維持整理方法</td></tr><tr><td>自主管理</td><td>反思</td><td>Reflection</td><td>寫下下一次的改進</td></tr><tr><td>自主管理</td><td>調適</td><td>Emotional regulation</td><td>自願記錄有幫助的應對方式</td></tr><tr><td>人際協作</td><td>同理</td><td>Empathy</td><td>描述不同角色的感受</td></tr><tr><td>人際協作</td><td>合作</td><td>Cooperation</td><td>記錄小組中的貢獻</td></tr><tr><td>人際協作</td><td>協商</td><td>Negotiation</td><td>提出雙方可接受的方案</td></tr><tr><td>人際協作</td><td>領導</td><td>Leadership</td><td>帶領一次小組活動</td></tr><tr><td>人際協作</td><td>交往</td><td>Social connection</td><td>觀察邀請與尊重拒絕的行為</td></tr><tr><td>人際協作</td><td>助人</td><td>Helping</td><td>完成對方需要的協助</td></tr><tr><td>生活實務</td><td>自理</td><td>Self care</td><td>獨立完成適齡生活流程</td></tr><tr><td>生活實務</td><td>烹飪</td><td>Cooking</td><td>在適當監督下製作餐點</td></tr><tr><td>生活實務</td><td>理財</td><td>Financial literacy</td><td>記錄一次預算與實際支出</td></tr><tr><td>生活實務</td><td>商貿</td><td>Enterprise</td><td>準備義賣價格與成本表</td></tr><tr><td>生活實務</td><td>種植</td><td>Gardening</td><td>完成種植照護紀錄</td></tr><tr><td>生活實務</td><td>安全</td><td>Safety</td><td>說明情境中的安全選擇</td></tr><tr><td>運動體能</td><td>協調</td><td>Coordination</td><td>完成適齡動作組合</td></tr><tr><td>運動體能</td><td>耐力</td><td>Endurance</td><td>記錄自選活動的舒適持續時間</td></tr><tr><td>運動體能</td><td>運動</td><td>Sport</td><td>示範一項特定運動技巧</td></tr></tbody></table></div></section><details id="ilo"><summary>ILO source investigation — detailed sources & limitations</summary><article><h1>ILO occupation reference and child exploration design</h1>
+<p>Research checked: 20 October 2026. All examples concern a fictional learner. Proposed Chinese labels, exploration families, mappings, activities and product rules below are editorial design, not an ILO standard, assessment or endorsement.</p>
+<h2>1. What the portal should take from ILO</h2>
+<p>Use <strong>ISCO-08</strong> as the versioned reference for occupations. Its hierarchy contains <strong>10 major groups, 43 sub-major groups, 130 minor groups and 436 unit groups</strong>, represented by one to four digits. A unit group can include several occupation titles; 436 is therefore not a count of every individual job title. ISCO classifies work by tasks and duties, with skill level and specialization helping organize the structure. It does not assess an individual child&#39;s character, interests, intelligence or future success. <a href="https://isco.ilo.org/en/isco-08/">ILO ISCO-08 overview</a></p>
+<p>The official revision page still describes work in progress: a near-final draft is scheduled for discussion at the <strong>2028</strong> International Conference of Labour Statisticians, with availability intended for the <strong>2030</strong> census round. This is a published timetable, not proof of future adoption. I found no adopted replacement in the official sources checked. Keep the data model ready for a new version rather than inventing “ISCO-2026”. <a href="https://isco.ilo.org/en/news/">ILO revision notice</a></p>
+<p><strong>Occupation and industry are separate dimensions.</strong> Occupation concerns what a person does; industry concerns the economic activity of the establishment. A software developer can work in a hospital, bank, school or games studio. Store occupation codes separately from optional industry codes; the child-facing exploration categories below deliberately cut across both. <a href="https://ilostat.ilo.org/methods/concepts-and-definitions/classification-economic-activities/">ILOSTAT on economic activities</a></p>
+<h2>2. All ten major groups, displayed neutrally</h2>
+<p>The following Traditional Chinese labels are our explanatory translations of the official English headings, not a claim to be official ILO Chinese terminology. Preserve the English canonical label in the reference database after licensing/import review. These are work categories, not a ranking of people&#39;s worth.</p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Proposed Chinese label</th>
+<th>Portal presentation note</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>管理人員</td>
+<td>Organizing people and resources appears across many exploration families.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>專業人員</td>
+<td>Include the work involved, not just prestigious titles.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>技術員及輔助專業人員</td>
+<td>Show technical and practical routes alongside university routes.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>文書支援人員</td>
+<td>Include coordination, accurate records and information services.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>服務及銷售人員</td>
+<td>Include care, hospitality, retail and public service contexts.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>農林漁業技術人員</td>
+<td>Include cultivation, stewardship and food systems.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>工藝及相關技術工人</td>
+<td>Make skilled making, maintenance and repair visible.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>廠房及機器操作員、裝配員</td>
+<td>Explore systems and production through safe models and visits.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>基層職業</td>
+<td>Avoid “unskilled” in child-facing copy; describe the actual work respectfully.</td>
+</tr>
+<tr>
+<td>0</td>
+<td>軍人職業</td>
+<td>Retain for classification completeness; learning activities focus on history, service and civic discussion.</td>
+</tr>
+</tbody></table>
+<p>Source for membership and codes: <a href="https://isco.ilo.org/en/isco-08/">ILO overview</a> and <a href="https://www.ilo.org/ilostat-files/ISCO/newdocs-08-2021/ISCO-08/ISCO-08%20EN%20Vol%201.pdf">ISCO-08 Volume I</a>.</p>
+<h2>3. Proposed fifteen exploration families</h2>
+<p>These are <strong>child-friendly navigation</strong>, separate from ISCO. Mappings identify relevant examples or portions of the referenced groups, not a declaration that every occupation within a broad group belongs to that family. A single occupation can appear in several families. Store separate mapping rows with scope, reason, source and reviewer. Codes below were checked against the official structure/Volume I; no full occupational corpus has been imported.</p>
+<table>
+<thead>
+<tr>
+<th>Family</th>
+<th>Subfamilies and example roles</th>
+<th>Illustrative ISCO links</th>
+<th>First practical experience</th>
+<th>Reflection prompt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>科學與探索</td>
+<td>Natural science, mathematics, laboratory work, field research</td>
+<td>Major 2/3; sub-major 21/31</td>
+<td>Ask a testable question about paper airplanes or plant growth; record results and one source of error.</td>
+<td>Did I enjoy asking the question, collecting data or explaining the result?</td>
+</tr>
+<tr>
+<td>數碼與人工智能</td>
+<td>Software, data, networks, digital products, responsible AI use</td>
+<td>Major 2/3; 25/35; minor 251; unit 2512</td>
+<td>Build a small quiz or useful webpage; ask two people to try it; fix one problem.</td>
+<td>Did I enjoy building, testing, explaining or helping the user most?</td>
+</tr>
+<tr>
+<td>工程、製造與能源</td>
+<td>Mechanical/electrical systems, manufacturing, maintenance, energy</td>
+<td>Major 2/3/7/8; 21/31/72/74/81/82</td>
+<td>Build a cardboard bridge to a material budget, test it, redesign it.</td>
+<td>Was debugging frustrating, satisfying, or both? What did I change?</td>
+</tr>
+<tr>
+<td>建築、空間與城市</td>
+<td>Architecture, landscape, planning, construction, surveying</td>
+<td>Major 2/3/7; 21/31/71; minor 216; unit 2161</td>
+<td>Measure a room; draw a scale plan; redesign one area for accessibility.</td>
+<td>Whose needs did my design meet or miss?</td>
+</tr>
+<tr>
+<td>醫療、健康與照護</td>
+<td>Medicine, nursing, allied health, laboratory support, care</td>
+<td>Major 2/3/5; 22/32/53; minor 221; unit 2211</td>
+<td>Attend a qualified youth first-aid session or interview a consenting health worker about their day.</td>
+<td>Do I enjoy science, practical care, communication, or some combination?</td>
+</tr>
+<tr>
+<td>教育、心理與助人</td>
+<td>Teaching, learning support, psychology, social work</td>
+<td>Major 2/3/5; 23/34/53; minor 263</td>
+<td>Teach a younger learner a chosen skill, seek feedback, then try a different explanation.</td>
+<td>How did I notice that the other person did or did not understand?</td>
+</tr>
+<tr>
+<td>法律、公共事務與社會</td>
+<td>Law, policy, history, public administration, protective services</td>
+<td>Major 1/2/3/5; 11/26/33/54; minor 261; unit 2611; optional group 0 reference</td>
+<td>Run a mock council on a school issue using several viewpoints and evidence.</td>
+<td>Could I explain a view I disagreed with fairly?</td>
+</tr>
+<tr>
+<td>商業、金融與創業</td>
+<td>Accounts, enterprise, marketing, purchasing, management, retail</td>
+<td>Major 1/2/3/4/5; 12/24/33/43/52</td>
+<td>Design a supervised school fair stall with a simple budget and customer interviews; use pretend money if needed.</td>
+<td>Did I prefer making the offer, understanding people, keeping records or organizing?</td>
+</tr>
+<tr>
+<td>視覺藝術、設計與工藝</td>
+<td>Painting, illustration, graphic/product design, textiles, craft</td>
+<td>Major 2/3/7; minor 216/265/343/731; units 2166/2651</td>
+<td>Answer a real design brief, make two drafts, exhibit them and explain one revision.</td>
+<td>Do I enjoy expression, solving a user&#39;s problem, or the craft of making?</td>
+</tr>
+<tr>
+<td>表演、音樂與舞台</td>
+<td>Acting, music, dance, stage production, sound/light support</td>
+<td>Major 2/3/7; minor 265/343/352/731; unit 2655</td>
+<td>Produce a three-minute performance; rotate performer, director and backstage roles.</td>
+<td>Which role energized me, and would I repeat the rehearsal work?</td>
+</tr>
+<tr>
+<td>語言、媒體與文化</td>
+<td>Writing, journalism, translation, museums, libraries, heritage</td>
+<td>Major 2/3/4; minor 262/264/343/441</td>
+<td>Interview a consenting adult; check two claims; produce a short article, podcast or bilingual museum label.</td>
+<td>Did I prefer research, listening, writing, editing or presenting?</td>
+</tr>
+<tr>
+<td>自然、農業與動物</td>
+<td>Growing food, conservation, forestry, fisheries, animal care</td>
+<td>Major 2/3/5/6/9; 21/31/51/61/62/63/92</td>
+<td>Grow a small herb crop, log care and conditions, compare methods; visit a supervised farm or nature centre.</td>
+<td>Did I enjoy patient routine care as well as the visible result?</td>
+</tr>
+<tr>
+<td>餐飲、旅遊與款待</td>
+<td>Cooking, food production, visitor experience, guiding, hotel operations</td>
+<td>Major 1/3/4/5/7/9; 14/42/51/75/94; minor 343; unit 3434</td>
+<td>Plan and prepare an age-safe family meal or a local visitor itinerary with budget and access needs.</td>
+<td>Did I like preparation, serving people, explaining a place or coordinating details?</td>
+</tr>
+<tr>
+<td>交通、物流與營運</td>
+<td>Transport, aviation/marine roles, dispatch, stock, delivery systems</td>
+<td>Major 1/3/4/8/9; 13/31/43/83/93; minor 315/432</td>
+<td>Design a delivery route for a toy town with time and capacity constraints; visit a transport museum.</td>
+<td>Did I enjoy sequencing, maintaining accuracy or solving disruptions?</td>
+</tr>
+<tr>
+<td>運動、康樂與生活服務</td>
+<td>Coaching, fitness, recreation, event support, personal and community services</td>
+<td>Major 1/3/4/5/9; 14/34/41/44/51/91/96; minor 342</td>
+<td>Help plan an inclusive games session; rotate participant, coach and organizer; gather feedback.</td>
+<td>Did I most enjoy performing, teaching, adapting activities or looking after the group?</td>
+</tr>
+</tbody></table>
+<p>Occupation references: <a href="https://www.ilo.org/resource/isco-08-structure">ILO structure download page</a> and <a href="https://www.ilo.org/ilostat-files/ISCO/newdocs-08-2021/ISCO-08/ISCO-08%20EN%20Vol%201.pdf">Volume I</a>. Family names, grouping, tasks and questions are original proposals. They are broad starting coverage, not a finished crosswalk for every unit group.</p>
+<h2>4. Age adaptation and fair access</h2>
+<p>Use the learner&#39;s actual maturity, access needs, consent and school arrangements to adjust these indicative age bands. They are product defaults, not developmental norms.</p>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Suitable form</th>
+<th>Typical output</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>About 6–9</td>
+<td>Play, short demonstrations, family interviews, supervised making, local visits</td>
+<td>A drawing, photo of work, voice reflection or one sentence.</td>
+</tr>
+<tr>
+<td>About 10–13</td>
+<td>Small projects, clubs, structured visits, practitioner talks, teamwork with rotating roles</td>
+<td>A small artifact, process notes and a short “try again / curious / not for now” reflection.</td>
+</tr>
+<tr>
+<td>About 14–17</td>
+<td>Longer projects, practitioner interviews, supervised job shadowing, permitted volunteering and work experience</td>
+<td>Portfolio evidence, task/working-condition reflection, questions about qualification routes, next experiment.</td>
+</tr>
+</tbody></table>
+<p>Every family should include a free/home-based option and a low-cost community option. Lack of opportunity is not lack of interest or ability. Do not use expenditure, prestigious provider names or number of paid camps as a progress score. Offer simulation or remote practitioner discussion when a workplace visit is unavailable. For health, construction, machinery and sensitive services, use safe demonstrations or supervised observation instead of exposing the child to professional hazards or confidential records.</p>
+<p>ILO career-development materials include career information, mentoring and work exposure as parts of a broader support system. OECD research links teenagers&#39; exploration, workplace exposure and career conversations with later outcomes; these are associations, not individual predictions. The OECD job-shadowing guide commonly discusses ages 13–16, so use formal school/provider safeguards for such visits rather than making them a default for young children. <a href="https://www.ilo.org/career-development-systems">ILO career development</a>, <a href="https://www.ilo.org/resource/other/handbook-career-development">ILO 2024 handbook</a>, <a href="https://www.oecd.org/en/publications/the-state-of-global-teenage-career-preparation_d5f8e3f2-en/full-report/component-9.html">OECD career preparation 2025</a>, <a href="https://www.oecd.org/en/publications/job-shadowing_614f4e25-en.html">OECD job-shadowing guide</a>.</p>
+<h2>5. How this becomes a progress portal</h2>
+<p>Keep <strong>exposure, interest, demonstrated performance and future plans</strong> separate. A child can be interested but inexperienced, competent but uninterested, or undecided. A suggested record contains:</p>
+<ul>
+<li>Family and optional occupation links; activity date and form; opportunity/access context.</li>
+<li>Child&#39;s interest before and after: curious / enjoyed parts / want to repeat / not for now / unsure; no forced answer.</li>
+<li>A concrete artifact or observation, with author and visibility permissions.</li>
+<li>Two or three linked capabilities, each judged against an explicit task rubric; no automatic capability increase because an activity was attended.</li>
+<li>Support needed, degree of independence, feedback and next action.</li>
+<li>Child reflection and adult observation as separate voices, with disagreement retained.</li>
+</ul>
+<p>Show exploration breadth as “6 of 15 families tried” only if useful, with an explanation that it is coverage rather than a target or ranking. Within a family, show the chronology and quality of experiences. A current aspiration should be an editable hypothesis, for example “I want to design things that help people,” which can connect to design, engineering, health and community work.</p>
+<p>Do not map a school mark directly to an ISCO skill level. Do not infer a fixed career, diagnose traits, produce a universal “career fit percentage”, rank children, or assign a moral score. The portal can explain “This experiment suggests you enjoyed user research; try another project” while keeping its evidence visible.</p>
+<p>When circumstances or results change, propose a review: retain the original aspiration, identify the particular requirement affected, distinguish a temporary learning gap from a formal eligibility rule, offer alternative routes, and ask the child/parent/counsellor to select the next plan. A weak exam should never silently delete a career option.</p>
+<h2>6. Import, provenance and licensing</h2>
+<p>The official <a href="https://isco.ilo.org/en/isco-08/">ISCO-08 page</a> links to an Excel structure/definitions file, occupational-title index, skill definitions, CSV structure and Volume I. Use a controlled import from the official file, never scrape a random career website or hand-generate the whole taxonomy.</p>
+<p>Recommended tables:</p>
+<ol>
+<li><code>reference_release</code>: publisher, scheme, version, original release, retrieval date, source URL, file checksum, rights notice, licence review state.</li>
+<li><code>occupation_node</code>: release ID, <strong>string code</strong> preserving leading zeros, hierarchy depth, parent code, canonical title, source locator. Keep translated labels and translation review separately.</li>
+<li><code>occupation_alias</code>: localized job title and disambiguation note, linked to node; identify national variants separately.</li>
+<li><code>exploration_family</code>: our ID, localized label, description, family version.</li>
+<li><code>family_occupation_link</code>: family ID, occupation code, mapping type, scope (<code>whole_group</code> or <code>selected_examples</code>), rationale, editor, reviewed date.</li>
+<li><code>reference_concordance</code>: old and new version codes, relationship and source. Preserve historic records; never silently overwrite a recorded code when ISCO changes.</li>
+</ol>
+<p>Validate unique codes, complete parent chains, leading zeros, level counts and sampled task descriptions. Use the official occupational-title index and descriptions to resolve ambiguities; titles alone are insufficient. The 2023 companion guide is the implementation reference. <a href="https://www.ilo.org/publications/international-standard-classification-occupations-isco-08-companion-guide">ILO companion guide</a></p>
+<p><strong>Rights require file-level verification.</strong> ILO&#39;s policy generally applies CC BY 4.0 to qualifying publications/data from 3 May 2023 onward, but older material is not automatically relicensed. Volume I is copyright 2012; a recent upload/crawl date does not change that. Before bundling the full old taxonomy or extensive definitions/translation in a public repository, check the specific dataset terms and obtain clarification/permission if required. Keep source attribution and the prescribed non-endorsement/translation notices where applicable; do not use the ILO emblem as portal branding. This is a release dependency, not a reason to stop designing original activities or showing limited references. <a href="https://www.ilo.org/rights-and-permissions">ILO rights policy</a></p>
+<h2>7. Verification limitations and source anomalies</h2>
+<ul>
+<li>This research verified the published structure, revision notice and selected code references. It did <strong>not</strong> download, validate or licence-clear a complete 436-unit database.</li>
+<li>The CSV and Excel download links on the current overview returned a tool fetch error during this run. The overview, official PDF structure and Volume I were readable. Retry and checksum the data files during implementation.</li>
+<li>The official resource/history page encountered in search included older draft counts (131 minor / 425 unit groups), whereas the current overview and Volume I give 130 / 436. Use the final structure, not a search snippet.</li>
+<li>The overview&#39;s table currently shows skill level 2 for major group 9; the published classification associates elementary occupations with skill level 1. Avoid copying this summary table uncritically; the portal should not expose occupational skill levels as child scores in any event.</li>
+<li>A regional ILO structure PDF appears to repeat “Police inspectors and detectives” at 3411; use Volume I/current canonical definitions for that record and any import validation. The examples in this design do not rely on 3411.</li>
+<li>The revision page describes a future timetable and may lag working-group activity. Recheck before production release and when preparing a new reference version.</li>
+</ul>
+<h2>8. Source ledger</h2>
+<p>All checked 20 October 2026. Titles and publication dates below refer to the document itself where available, not search-engine crawl dates.</p>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Purpose</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ILO ISCO-08 overview</td>
+<td>Counts, hierarchy, concepts, download entry point</td>
+<td><a href="https://isco.ilo.org/en/isco-08/">https://isco.ilo.org/en/isco-08/</a></td>
+</tr>
+<tr>
+<td>ILO revision notice</td>
+<td>Planned 2028/2030 milestones</td>
+<td><a href="https://isco.ilo.org/en/news/">https://isco.ilo.org/en/news/</a></td>
+</tr>
+<tr>
+<td>ISCO-08 Volume I, 2012</td>
+<td>Canonical definitions, sample codes, copyright page</td>
+<td><a href="https://www.ilo.org/ilostat-files/ISCO/newdocs-08-2021/ISCO-08/ISCO-08%20EN%20Vol%201.pdf">https://www.ilo.org/ilostat-files/ISCO/newdocs-08-2021/ISCO-08/ISCO-08%20EN%20Vol%201.pdf</a></td>
+</tr>
+<tr>
+<td>ILO structure resource, 13 Sep 2014</td>
+<td>Readable structure download; validate anomalies against Volume I</td>
+<td><a href="https://www.ilo.org/resource/isco-08-structure">https://www.ilo.org/resource/isco-08-structure</a></td>
+</tr>
+<tr>
+<td>ILO companion guide, 3 Oct 2023</td>
+<td>Implementation guidance</td>
+<td><a href="https://www.ilo.org/publications/international-standard-classification-occupations-isco-08-companion-guide">https://www.ilo.org/publications/international-standard-classification-occupations-isco-08-companion-guide</a></td>
+</tr>
+<tr>
+<td>ILOSTAT economic-activity classification</td>
+<td>Industry dimension</td>
+<td><a href="https://ilostat.ilo.org/methods/concepts-and-definitions/classification-economic-activities/">https://ilostat.ilo.org/methods/concepts-and-definitions/classification-economic-activities/</a></td>
+</tr>
+<tr>
+<td>ILO rights and permissions</td>
+<td>Dataset/publication reuse rules</td>
+<td><a href="https://www.ilo.org/rights-and-permissions">https://www.ilo.org/rights-and-permissions</a></td>
+</tr>
+<tr>
+<td>ILO career-development systems</td>
+<td>Work exposure and broader guidance</td>
+<td><a href="https://www.ilo.org/career-development-systems">https://www.ilo.org/career-development-systems</a></td>
+</tr>
+<tr>
+<td>ILO handbook, 12 July 2024</td>
+<td>Adaptable youth-oriented guidance framework</td>
+<td><a href="https://www.ilo.org/resource/other/handbook-career-development">https://www.ilo.org/resource/other/handbook-career-development</a></td>
+</tr>
+<tr>
+<td>OECD teenage career preparation, 20 May 2025</td>
+<td>Evidence for exploration, experience and reflection</td>
+<td><a href="https://www.oecd.org/en/publications/the-state-of-global-teenage-career-preparation_d5f8e3f2-en/full-report/component-9.html">https://www.oecd.org/en/publications/the-state-of-global-teenage-career-preparation_d5f8e3f2-en/full-report/component-9.html</a></td>
+</tr>
+<tr>
+<td>OECD job shadowing, 17 Nov 2022</td>
+<td>Teen workplace-exploration design</td>
+<td><a href="https://www.oecd.org/en/publications/job-shadowing_614f4e25-en.html">https://www.oecd.org/en/publications/job-shadowing_614f4e25-en.html</a></td>
+</tr>
+</tbody></table>
+<h2>9. Prototype dataset validation — 20 October 2026</h2>
+<p>Reviewed every illustrative code in <code>dist/families.json</code>: <strong>15 product families, 43 distinct four-digit ISCO-08 unit codes</strong>. All 43 are present in the official classification. The product families intentionally differ slightly from the proposed research taxonomy above; both are editorial navigation layers. The roles are example occupations or concise Chinese explanations, not complete official unit-group titles or an official Chinese translation.</p>
+<table>
+<thead>
+<tr>
+<th>Prototype family</th>
+<th>Unit codes checked</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>自然科學與研究</td>
+<td>2131, 2113, 3141</td>
+</tr>
+<tr>
+<td>工程與建造</td>
+<td>2142, 2161, 3112</td>
+</tr>
+<tr>
+<td>數碼與運算</td>
+<td>2512, 2511</td>
+</tr>
+<tr>
+<td>設計與視覺藝術</td>
+<td>2163, 2166, 2651</td>
+</tr>
+<tr>
+<td>環境與農業</td>
+<td>2133, 6113</td>
+</tr>
+<tr>
+<td>健康與照顧</td>
+<td>2211, 2221, 5322</td>
+</tr>
+<tr>
+<td>教育與社會服務</td>
+<td>2341, 2635, 5311</td>
+</tr>
+<tr>
+<td>法律與公共服務</td>
+<td>2611, 2422, 5411</td>
+</tr>
+<tr>
+<td>表演與媒體敘事</td>
+<td>2655, 2652, 2642</td>
+</tr>
+<tr>
+<td>商業與創業</td>
+<td>2431, 1420, 5223</td>
+</tr>
+<tr>
+<td>財務與行政</td>
+<td>2411, 4110, 4311</td>
+</tr>
+<tr>
+<td>餐飲與旅遊服務</td>
+<td>5120, 5113, 4224</td>
+</tr>
+<tr>
+<td>工藝與維修</td>
+<td>7115, 7411, 7231</td>
+</tr>
+<tr>
+<td>運輸與生產系統</td>
+<td>4323, 8332, 8219</td>
+</tr>
+<tr>
+<td>運動與戶外生活</td>
+<td>3422, 3421, 3423</td>
+</tr>
+</tbody></table>
+<p>Sources: <a href="https://www.ilo.org/resource/isco-08-structure">Official ILO structure resource</a>, <a href="https://www.ilo.org/sites/default/files/wcmsp5/groups/public/%40americas/%40ro-lima/%40sro-port_of_spain/documents/genericdocument/wcms_306837.pdf">downloaded-structure PDF</a>, and <a href="https://www.ilo.org/ilostat-files/ISCO/newdocs-08-2021/ISCO-08/ISCO-08%20EN%20Vol%201.pdf">Volume I</a>, including the structure and the 8332/8219 descriptions at PDF pages 344/341 (one-based). This confirms code existence and the fit of the illustrated role, not a complete task-level assessment standard, crosswalk or curriculum.</p>
+<p>Clarified overly broad labels in the JSON, including research technician → non-medical life-science technician; technician → civil-engineering technician; doctor → generalist; care worker → home-based care worker; teacher → primary teacher; mechanical repair worker → motor-vehicle repair worker; vehicle operator → heavy-truck driver; assembler → residual other assemblers. Also clarified retail management, shop sales, transport clerical work and building electrical work. Kept 5120 as a cooking-worker example distinct from 3434 in the research examples. No codes were added or removed.</p>
+<h3>Precise coverage limits</h3>
+<table>
+<thead>
+<tr>
+<th>Major group</th>
+<th align="right">Number of prototype unit codes</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1 管理人員</td>
+<td align="right">1</td>
+<td>Illustrated</td>
+</tr>
+<tr>
+<td>2 專業人員</td>
+<td align="right">21</td>
+<td>Illustrated</td>
+</tr>
+<tr>
+<td>3 技術員及輔助專業人員</td>
+<td align="right">5</td>
+<td>Illustrated</td>
+</tr>
+<tr>
+<td>4 文書支援人員</td>
+<td align="right">4</td>
+<td>Illustrated</td>
+</tr>
+<tr>
+<td>5 服務及銷售人員</td>
+<td align="right">6</td>
+<td>Illustrated</td>
+</tr>
+<tr>
+<td>6 農林漁業技術人員</td>
+<td align="right">1</td>
+<td>Illustrated</td>
+</tr>
+<tr>
+<td>7 工藝及相關技術工人</td>
+<td align="right">3</td>
+<td>Illustrated</td>
+</tr>
+<tr>
+<td>8 廠房及機器操作員、裝配員</td>
+<td align="right">2</td>
+<td>Illustrated</td>
+</tr>
+<tr>
+<td>9 基層職業</td>
+<td align="right">0</td>
+<td>No unit-code example in prototype</td>
+</tr>
+<tr>
+<td>0 軍人職業</td>
+<td align="right">0</td>
+<td>No unit-code example in prototype</td>
+</tr>
+</tbody></table>
+<p>The report&#39;s ten-group reference list is complete at major-group level; the UI&#39;s example occupation dataset covers <strong>8 of 10 major groups and 43 of 436 unit groups</strong>. It must not be described as all occupations or a complete ILO crosswalk. Group 9 can later be represented respectfully through appropriate community-services examples, while group 0 can remain a neutral reference entry without youth recruitment or weapons activities. The sample is weighted toward professional occupations; broader research should add trades, care, service, agricultural, operations and community work instead of treating this sample distribution as the child&#39;s ideal future.</p>
+</article></details><details id="hk"><summary>Hong Kong qualifications investigation — detailed sources & limitations</summary><article><h1>Hong Kong qualifications, competencies and education pathways</h1>
+<p>Research checked: 20 October 2026. Primary sources only. This is a product-design reference, not a qualification assessment or individual admissions recommendation. No student&#39;s curriculum, grades, residency or career choice has been assumed.</p>
+<h2>1. What 香港資歷評審 should mean in this product</h2>
+<p>Several distinct systems must remain separate in the interface and database:</p>
+<table>
+<thead>
+<tr>
+<th>System</th>
+<th>What it does</th>
+<th>Appropriate portal use</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>香港資歷架構 (HKQF)</td>
+<td>Organises quality-assured academic, vocational, professional and continuing-education qualifications into seven levels</td>
+<td>Describe a course or awarded qualification, and explain pathways</td>
+</tr>
+<tr>
+<td>資歷級別通用指標 (GLD)</td>
+<td>Describes learning outcomes across four domains</td>
+<td>Reference tags for designing evidence-based learning observations</td>
+</tr>
+<tr>
+<td>香港學術及職業資歷評審局 (HKCAAVQ)</td>
+<td>Serves as Accreditation Authority and Qualifications Register Authority</td>
+<td>Identify the responsible authority; link accreditation evidence</td>
+</tr>
+<tr>
+<td>資歷名冊 (QR)</td>
+<td>Lists qualifications recognised under HKQF</td>
+<td>Verify programme/qualification identity, level, credits and registration dates</td>
+</tr>
+<tr>
+<td>《能力標準說明》 (SCS)</td>
+<td>Industry-specific competency specifications</td>
+<td>Connect a career exploration to relevant professional tasks</td>
+</tr>
+<tr>
+<td>《通用能力標準說明》 (SGC)</td>
+<td>Cross-industry competency references</td>
+<td>Enrich communication, language, technology and numeracy learning goals</td>
+</tr>
+<tr>
+<td>職業階梯 (VQP)</td>
+<td>Maps progression within occupational areas using required competencies</td>
+<td>Source material for possible career route nodes</td>
+</tr>
+</tbody></table>
+<p>The framework and institutional roles are described by <a href="https://www.hkqf.gov.hk/en/about-hkqf">HKQF</a> and <a href="https://hkcaavq.edu.hk/en/accreditation/">HKCAAVQ</a>. The QF webpage notes exceptions for institutions with self-accrediting status, so the product must not imply that every registered university programme receives individual HKCAAVQ accreditation. SCS, SGC and VQP are explained in <a href="https://www.hkqf.gov.hk/en/application-of-qf-deliverables">HKQF&#39;s applications guide</a>.</p>
+<p><strong>Product decision:</strong> a child&#39;s homework, parent observation or portal badge must never be displayed as an awarded QF qualification. Use “參考香港資歷架構的學習範疇” and “校內／家庭觀察”; reserve “QF Level” and “QF credits” for verified recognised qualifications or their published requirements.</p>
+<p>HKCAAVQ&#39;s separate <strong>學歷評估 / Qualifications Assessment</strong> service considers completed qualifications awarded outside Hong Kong. It provides an opinion on comparability with a Hong Kong qualification; it is not a daily developmental assessment. Its current guidance excludes, among other things, incomplete qualifications, professional-body memberships and work experience from that service. <a href="https://iportal.hkcaavq.edu.hk/process-of-assessment">HKCAAVQ assessment process</a>.</p>
+<h2>2. Use the four GLD domains as a reference lens</h2>
+<p>The current official QF page links the 2018 revised GLD. Its four Chinese headings are:</p>
+<table>
+<thead>
+<tr>
+<th>Official domain</th>
+<th>Proposed child-facing name</th>
+<th>Example evidence, invented for this portal</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>知識及智能</td>
+<td>理解與思考</td>
+<td>Explains why an experiment produced a result and distinguishes observation from inference</td>
+</tr>
+<tr>
+<td>過程</td>
+<td>方法與實踐</td>
+<td>Plans a fair test, uses materials safely and revises the procedure</td>
+</tr>
+<tr>
+<td>自主性及問責性</td>
+<td>自主與責任</td>
+<td>Records what they did independently, seeks help appropriately and explains a mistake</td>
+</tr>
+<tr>
+<td>溝通、資訊及通訊科技及運算</td>
+<td>表達、數碼與數理</td>
+<td>Presents a graph, cites a source and adapts an explanation for another audience</td>
+</tr>
+</tbody></table>
+<p>Official labels: <a href="https://www.hkqf.gov.hk/tc/qf-level">資歷架構級別</a>. The examples and child-facing headings are our adaptation, not official GLD assessments.</p>
+<p>The <a href="https://www.hkqf.gov.hk/files/record/qf-lvl-resources/6/The%20revised%20GLD%20and%20the%20Explanatory%20Notes_Chi_April_2018-1703059802.pdf">2018 GLD and explanatory notes</a> distinguish levels through complexity, contexts, responsibility and performance. They describe qualifications, not a child&#39;s age or fixed intelligence. A strong essay alone cannot establish an overall QF level; similarly, a lower grade cannot reduce a child&#39;s identity or worth.</p>
+<p>A useful private progress scale is therefore separate: <strong>未有證據 → 在協助下嘗試 → 按指引完成 → 能獨立完成 → 能遷移及解釋</strong>. Label this “本平台觀察階段”, not QF levels. Record task difficulty, support received, context, date and observer beside each observation. Let children and teachers disagree with a parent interpretation; keep both perspectives.</p>
+<h2>3. SCS and SGC: where the detailed abilities come from</h2>
+<p>SCS is structured as Units of Competency (UoCs), with code, level, learning volume, scope, performance expectations and assessment requirements. SGC currently covers communication skills, English, Chinese (including Cantonese and Putonghua), information technology and numeracy. VQP connects job roles and needed competencies. <a href="https://www.hkqf.gov.hk/en/application-of-qf-deliverables">HKQF applications</a>.</p>
+<p>The current <a href="https://www.hkqf.gov.hk/files/record/fileupload/584/Communication_Skills-1745834040.pdf">communication SGC PDF</a> is particularly relevant: it contains 26 units at QF levels 2–5 across interpersonal, team, organisational, digital, crisis and creative communication. Example reference codes include 111501L2 for active listening, 111503L3 for emotional understanding and empathy, 111505L4 for constructive feedback, and 111523L3 for storytelling. These are professional reference units; school activities may supply related evidence without satisfying their workplace assessment criteria.</p>
+<p>Suggested crosswalk record:</p>
+<pre><code class="language-text">child_skill_id: listening
+framework: HKQF_SGC
+source_unit: 111501L2
+relationship: related_learning_theme
+official_assessment_claim: false
+local_task: Summarise a teammate&#39;s idea before offering your own
+evidence: teacher rubric + child reflection
+</code></pre>
+<p>This is a many-to-many, human-reviewed relationship. Do not equate an ILO occupation code with a QF level or infer that one hobby qualifies someone for an occupation. Keep the official unit&#39;s wording, version and URL separately from an age-appropriate local task.</p>
+<p>The <a href="https://www.hkqf.gov.hk/ict/en/scs">ICT SCS page</a> offers detailed branches and topic downloads, including software services, digital media, operations, AI, information security and data science. Its prose totals and displayed subtotals are not fully consistent in the current page. Import individual codes from the chosen source version, validate duplicates and counts, and do not hard-code an unverified total. No verified public bulk API was identified in this research.</p>
+<h2>4. Qualification levels, credits and recognition limits</h2>
+<p>The award-title scheme places associate degrees and higher diplomas at QF 4, bachelor&#39;s degrees at QF 5, master&#39;s degrees at QF 6 and doctorates at QF 7. Certificates and diplomas can span levels; the title alone is not enough to identify the level. Check the exact qualification record. <a href="https://hkqf.gov.hk/files/record/fileupload/454/HKQF_ATS_C_2012_10-1716697599.pdf">Official award-title scheme</a>.</p>
+<p>One QF credit represents ten <strong>notional</strong> learning hours, including the learning and assessment effort expected for the outcome. This is a programme-volume measure, not an automatic reward for logging ten hours. <a href="https://www.hkqf.gov.hk/en/qf-credit">QF Credit</a>.</p>
+<p><strong>資歷學分累積及轉移 (CAT)</strong> can support recognition of prior learning and reduce repeated study. Admission and credit transfer remain separate decisions of receiving institutions. A route edge must therefore say “may apply / subject to assessment” unless a specific current articulation agreement establishes the terms. <a href="https://www.hkqf.gov.hk/en/qf-cat">CAT policy and 2024 guidance</a>.</p>
+<p><strong>過往資歷認可 (RPL)</strong> recognises workplace competencies of industry practitioners through appointed assessment agencies, with qualifications at QF levels 1–4. It is a later-life route, not a mechanism by which parents certify schoolchildren. Recognition of professional qualifications is another distinct assessed route; ordinary membership alone is insufficient. <a href="https://www.hkqf.gov.hk/en/thru-assessment">HKQF assessment routes</a>.</p>
+<p>QR entries have registration validity periods. The product should retain the period applicable to the learner&#39;s intake, plus an immutable verification snapshot; an expired listing must not automatically erase a qualification already earned. The official upload guidance controls registration dates and stresses database accuracy. <a href="https://www.hkqr.gov.hk/HKQRPRD/export/sites/default/.content/attachment/en/VQ_QR-Guidance-Notes_PAA-Operators_en.pdf">QR guidance, November 2025</a>. Interpretation of an individual award remains with the provider/authority.</p>
+<h2>5. Education pathways to represent</h2>
+<p>The portal should support parallel routes and switches, not a single ranking from school to an elite university. EDB&#39;s current local-study overview includes degrees, subdegrees, vocational/foundation diplomas, in-service training, applied education and repeating Secondary 6. <a href="https://lifeplanning.edb.gov.hk/tc/study/local-further-study/">EDB local further study</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Route</th>
+<th>Example progression</th>
+<th>Rule to show beside the route</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>HKDSE academic</td>
+<td>Senior secondary → suitable degree programme</td>
+<td>Verify curriculum, subjects, admission year and local/non-local status</td>
+</tr>
+<tr>
+<td>International curriculum</td>
+<td>IB / GCE or International A-level / US school plus relevant external examinations → institution&#39;s international/direct route</td>
+<td>Compare within that institution&#39;s accepted qualification rules; do not invent a universal grade conversion</td>
+</tr>
+<tr>
+<td>Subdegree</td>
+<td>Associate degree / higher diploma → employment, senior-year entry or top-up degree</td>
+<td>Subsequent entry, credit exemption and duration depend on the receiving programme</td>
+</tr>
+<tr>
+<td>Vocational/applied</td>
+<td>VTC diploma/foundation route → higher diploma → relevant applied or other degree</td>
+<td>Preserve required bridging courses and programme-specific admission conditions</td>
+</tr>
+<tr>
+<td>Apprenticeship</td>
+<td>Classroom study + employer training → assessed trade competence and further study possibilities</td>
+<td>Verify trade, age, contract, programme and eligibility requirements</td>
+</tr>
+<tr>
+<td>Alternative preparation</td>
+<td>Applied education diploma or repeated school study → eligible further-study route</td>
+<td>Show exact recognition scope and prerequisites</td>
+</tr>
+<tr>
+<td>Change direction</td>
+<td>Trial experience → new subject/course choice → revised route</td>
+<td>Preserve completed transferable learning and record the student&#39;s reason</td>
+</tr>
+</tbody></table>
+<p>The routes above are a design synthesis; they do not promise places or automatic credit transfer.</p>
+<h3>HKDSE versus international applications</h3>
+<p><a href="https://web.jupas.edu.hk/en/eligibility/">JUPAS eligibility</a> requires relevant HKDSE results/registration and qualifying identity status, among other conditions. Applicants who do not qualify must check direct/non-JUPAS arrangements with each institution. The <a href="https://www.jupas.edu.hk/f/page/267/SummaryChartonEligibilityforApplicationviaJUPAS_en.pdf">official eligibility chart</a> separates local/non-local status and combinations of results. Do not infer status from citizenship or school location alone.</p>
+<p>As an example of why curriculum-specific rules matter, <a href="https://admissions.hku.hk/apply/international-qualifications">HKU&#39;s international admissions page</a> distinguishes international and other national qualifications, with separate programme conditions. Its <a href="https://admissions.hku.hk/sites/default/files/2025-10/HKU-International-Admissions-Information-2026.pdf">2026 admissions standards</a> differentiate IB, A-level and SAT/AP combinations and explicitly do not guarantee admission above published thresholds. That document is <strong>2026-intake evidence</strong>, not a rule to silently reuse for later admissions. The portal must link current intake pages and display “待更新” when the intended year is not yet published.</p>
+<h3>Applied learning and career trials</h3>
+<p>Hong Kong <strong>應用學習 (ApL)</strong> is a senior-secondary elective offering practical and theoretical exposure. Its six study areas span creativity, media, business/law, services, applied science and engineering/production. EDB also lists junior and senior taster programmes, with school-mediated application processes. <a href="https://www.edb.gov.hk/en/curriculum-development/cross-kla-studies/applied-learning/index.html">EDB Applied Learning</a>. The 2026 event dates on that page are historical as of this report; they are examples of event types, not currently bookable recommendations.</p>
+<p>Suggested portal experiences: observe a demonstration, interview a practitioner, complete a safe small project, then reflect on interest, energy, difficulty and desire to repeat. A single trial is exploration evidence, not a career verdict. Local school/provider accessibility must be checked individually.</p>
+<h3>Vocational routes</h3>
+<p><a href="https://www.vtc.edu.hk/admission/en">VTC admissions</a> covers degrees, higher diplomas and vocational/foundation qualifications, with differing entry stages. <a href="https://apprenticeship.vtc.edu.hk/en/earn-and-learn-scheme/what-is-earn-and-learn-scheme">VTC Earn &amp; Learn</a> combines apprenticeship learning and employer participation with scheme support. Treat allowances as dated eligibility-dependent information, not guaranteed family income. A current <a href="https://www.vtc.edu.hk/earnlearn/html/en/industry/s3/Information%20Technology%20-%20Network%20Engineering%20and%20Security.html">network engineering example</a> specifically requires relevant bridging courses for progression from its DVE-ELS qualification to higher diploma study; this is why route edges need conditions.</p>
+<p><strong>應用教育文憑 (DAE)</strong> is distinct from ApL. EDB&#39;s FAQ describes a QF 3 qualification for Secondary 6 leavers or adults meeting the age condition, with specified completion, language and articulation requirements. Its recognition comparisons with HKDSE depend on successful completion and, for mathematics inclusion, the Maths Plus course. Do not label it “a complete HKDSE equivalent”. The current page states a recognition period covering 2026/27–2028/29. <a href="https://www.edb.gov.hk/en/edu-system/other-edu-training/vocational-other-edu-program/Diploma%20of%20Applied%20Education/Frequently%20Asked%20Questions/index.html">EDB DAE FAQ</a>.</p>
+<p>Applied degrees are a real option within the vocational/professional pathway: the <a href="https://www.info.gov.hk/gia/general/202509/09/P2025090900348.htm">EDB announcement for the 2026/27 SSSDP cohort</a> includes designated applied-degree programmes. Admission, subsidies and professional accreditation must be checked per programme and intake.</p>
+<h2>6. Implementation requirements derived from the research</h2>
+<p>These are proposed product rules, not official framework prescriptions:</p>
+<ol>
+<li>Keep five separate entities: school result; observed skill evidence; self-reported interest; course requirement; awarded qualification. Never average them into a single child score.</li>
+<li>Preserve grades in their original scale, with subject, curriculum, assessment type, marking rubric, date, weight and evidence. Only calculate trends across explicitly comparable assessments.</li>
+<li>Each pathway requirement stores: institution, programme, intake year, applicant category, required subjects, grade rule, language rule, application route, deadline/time zone, fees/currency, source URL, verified date, effective dates and reviewer.</li>
+<li>Each edge stores whether it is an example, published possibility, formal agreement or confirmed individual offer. A counsellor may override a suggestion but must record why.</li>
+<li>Route states: <strong>有興趣 / 正在探索 / 已確認要求 / 正在準備 / 待覆核 / 已申請 / 已獲錄取 / 已轉向</strong>. Do not call an aspiration “on track” if prerequisites or current evidence are unknown.</li>
+<li>Recalculate a draft scenario after a new report card, subject change, location/budget change, missed deadline or change in interest. Show old/new differences and ask the child/family to adopt the revision; do not silently replace aspirations.</li>
+<li>Treat wellbeing, belonging, ethics and service as their own evidence-rich areas. Record context, reflection, repair and next action. Do not issue a moral score, diagnose from behaviour, or equate extroversion with social skill.</li>
+<li>Monthly family conversation: what was enjoyable, what became easier, what support is needed, what to try next. Termly pathway review; requirement refresh before a subject choice/application and whenever a cited source changes.</li>
+<li>No automatic conversion from logged activity hours to QF credits, from local skill stages to QF levels, from ISCO skill level to school achievement, or from programme entry minimum to admission probability.</li>
+</ol>
+<h2>7. Source freshness and remaining gaps</h2>
+<ul>
+<li>Research accessed 2026-10-20. The GLD is explicitly the 2018 revision; CAT links 2024 guidance. These are document editions, not research dates.</li>
+<li>Several HKQF pages show a generic last-revision footer of 7 July 2024 while containing later agency appointment dates or more recent linked files. Store each document&#39;s edition and access date independently; do not assume that footer proves the currency of every item.</li>
+<li>EDB local-study overview shows 16 September 2025 as its last modification. VTC example above says information as of May 2026. Admissions are intake-specific.</li>
+<li>The current communication SGC PDF was accessed through the live HKQF page; no explicit publication date was found in extracted text. Do not derive publication date from the URL timestamp.</li>
+<li>No validated complete machine-readable crosswalk exists in this research between ISCO occupations, HK SCS units and the portal&#39;s proposed child skills. Such mappings require an editorial review process and must remain labelled as interpretations.</li>
+<li>No individual QR programme was selected or credential verified. No automatic API, licence for bulk republication, institution integration or real student record was tested.</li>
+<li>Child age, curriculum, actual grades, residence classification, languages, learning support needs, interests and family budget are still needed before personalised pathways can be presented as actionable.</li>
+</ul>
+</article></details><details id="platform"><summary>Web, WeChat & privacy investigation — detailed sources & limitations</summary><article><h1>Platform, WeChat, deployment and privacy investigation</h1>
+<p>Research checked: 20 October 2026. This is an implementation recommendation, not a claim that a production service, WeChat integration or legal review has been completed. Only synthetic student records should be in the demonstration and repository.</p>
+<h2>Recommended decision</h2>
+<p>Build the main portal as a responsive web application using TypeScript, React, Vite, HTML, CSS and SVG. Use Node.js 24 LTS for the development toolchain, with pinned dependency versions and a lockfile. Node&#39;s release page currently lists 24 as LTS and 26 as Current. Vite&#39;s documented minimum is Node 20.19+ or 22.12+, with some templates requiring newer versions. <a href="https://nodejs.org/en/about/previous-releases">Node releases</a>, <a href="https://vite.dev/guide/">Vite guide</a>.</p>
+<p>Use original, simple SVG classroom/home/community scenes and a small avatar. The scene should illustrate the timetable context, not assert the child&#39;s live location. Use ordinary HTML for assignments, results, evidence, route comparisons and forms. The school emblem is a configurable private asset, displayed only where the family is entitled to use it. Do not copy the named commercial games&#39; art, characters, UI assets, audio or code.</p>
+<p>React&#39;s documentation permits a build-tool setup but notes that it leaves routing, data fetching and other framework decisions to the project. This tradeoff is reasonable for a modest authenticated dashboard; adopt a more integrated framework later only if a concrete requirement justifies it. <a href="https://react.dev/learn/build-a-react-app-from-scratch">React build guidance</a>.</p>
+<h3>Engine decision matrix — project assessment</h3>
+<table>
+<thead>
+<tr>
+<th>Approach</th>
+<th>Strength for this portal</th>
+<th>Main cost</th>
+<th>Decision</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>React + HTML/CSS/SVG</td>
+<td>Accessible text, mobile forms, charts, printing and simple scenes share one interface</td>
+<td>Need to implement modest animations</td>
+<td>Use for MVP</td>
+</tr>
+<tr>
+<td>React + Phaser</td>
+<td>Sprite animation, a walkable map, small interactive activities</td>
+<td>A second renderer and event bridge; canvas accessibility requires an HTML equivalent</td>
+<td>Add only when a specific interaction needs it</td>
+</tr>
+<tr>
+<td>Godot web export</td>
+<td>Full scene editor and richer game mechanics</td>
+<td>WebAssembly/WebGL requirements and separate engine workflow; a poor fit for predominantly records and forms</td>
+<td>Do not choose for the initial portal</td>
+</tr>
+<tr>
+<td>Plain HTML/CSS/JavaScript</td>
+<td>Small, inspectable demonstration with no build dependencies</td>
+<td>Becomes harder to maintain as forms, permissions and data grow</td>
+<td>Appropriate for the synthetic concept demo</td>
+</tr>
+</tbody></table>
+<p>Phaser&#39;s framework is MIT-licensed and can be used commercially; retain its required licence notices. Its official templates include React + Vite and TypeScript. Treat a chosen release as a pinned dependency rather than assuming an old tutorial describes the current version. <a href="https://phaser.io/download/license">Phaser licence</a>, <a href="https://docs.phaser.io/phaser/getting-started/project-templates">official project templates</a>.</p>
+<p>Godot is MIT-licensed. Its current stable documentation says web exports require WebAssembly and WebGL 2.0, Godot 4 C# projects cannot currently export to web, and single-threaded export is preferred/default; threaded export needs special headers and cross-origin isolation. These are reasons to test on actual phones, not proof it cannot work. No performance comparison of the engines on the user&#39;s devices has been conducted. <a href="https://godotengine.org/license/">Godot licence</a>, <a href="https://docs.godotengine.org/en/stable/tutorials/export/exporting_for_web.html">stable web-export documentation</a>.</p>
+<h2>What “WeChat compatible” should mean</h2>
+<p><strong>Release 1: a mobile website opened from a WeChat message, bookmark or QR code.</strong> The normal website should work without making WeChat identity mandatory. Use an ordinary HTTPS URL, same-origin authenticated API, explicit log-in/log-out and a mobile layout. A PWA is optional and must not be a dependency for core use. Browser install prompts, service workers, push notifications, camera behaviour, PDF downloads and cookie persistence must not be assumed to work identically inside WeChat.</p>
+<p><strong>Release 2: optional WeChat-specific features.</strong> A customised share card or WeChat identity integration requires separate platform integration. Tencent&#39;s official product guide confirms that H5 pages calling WeChat&#39;s JS interfaces need a configured and verified JS-interface security domain; the guide also documents separate business-domain and webpage-authorisation-domain configuration. This is distinct from merely viewing a web link. <a href="https://cloud.tencent.com/document/product/1301/100434">Tencent domain configuration guide</a>.</p>
+<p>Implementation design: keep the AppSecret and any access-token/ticket work on the server, constrain allowed signing URLs, validate the login callback state, and link a WeChat identity to an already-authorised family membership. A WeChat account identifier is not evidence of parental authority. Share cards should have a generic title and illustration by default; a share URL must not encode grades, names or permanent access tokens.</p>
+<p><strong>Release 3: a WeChat Mini Program only if demand warrants it.</strong> This is a separate platform deliverable, not the automatic result of making a website responsive. Investigate native Mini Program screens versus an approved web-view container, account ownership, allowed category, privacy declarations, domain configuration, filing and review before committing to it. Reuse the server API and data model; do not assume the React browser UI or a Godot export can be copied directly into Mini Program runtime.</p>
+<p>Verification limitation: the following first-party Weixin developer pages could not be retrieved by the research browser in this run. Their precise current account eligibility, quotas and review conditions therefore remain an explicit implementation check in the actual account, rather than asserted facts here:</p>
+<ul>
+<li><a href="https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html">Weixin JS-SDK documentation</a></li>
+<li><a href="https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/Wechat_webpage_authorization.html">Weixin webpage authorisation</a></li>
+<li><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/ability/network.html">Weixin Mini Program network configuration</a></li>
+<li><a href="https://developers.weixin.qq.com/miniprogram/dev/component/web-view.html">Weixin web-view component</a></li>
+</ul>
+<p>Do not substitute Tencent&#39;s separate Super App as a Service documentation for Weixin account eligibility rules; they are different products.</p>
+<h3>WeChat acceptance checklist</h3>
+<p>Test the real deployed hostname in current iOS and Android WeChat, Safari and Chrome, on the actual mainland and Hong Kong networks the family uses. Record device, OS, WeChat version, network, date and outcome. Exercise initial load; log-in and return from authentication; browser back; 200% text zoom; portrait/landscape; assignment filtering; route editing; upload with explicit progress and retry; PDF open/download; session expiry; log-out; reopening a private link; and restricted access from another family account. A desktop mobile viewport is useful but does not certify WeChat compatibility or mainland reachability.</p>
+<p>Bundle fonts/icons locally or use system fonts. Avoid mandatory third-party font/CDN/script requests. Keep the initial interface small and defer optional scenes and attachments. Provide a text/list alternative to every chart. Respect reduced-motion settings. Show a retry screen if an API cannot be reached rather than displaying stale grades as current.</p>
+<h2>GitHub, hosting and region choices</h2>
+<p>GitHub is suitable for source control, issue tracking, project documentation and a demonstration containing fictional records. GitHub Pages serves static HTML/CSS/JavaScript. GitHub&#39;s limits say Pages should not be used for sensitive transactions such as transmitting passwords and it is not intended to host a commercial SaaS. Therefore the recommended production family portal is a separately hosted authenticated application; a private source repository is not a substitute for access control on a deployed site. <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages">What GitHub Pages is</a>, <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits">Pages limits</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Deployment</th>
+<th>Good initial use</th>
+<th>Tradeoffs and unresolved checks</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Local or static synthetic demo</td>
+<td>Review navigation and visual concept</td>
+<td>No multi-device private record service; no claim of durable backup</td>
+</tr>
+<tr>
+<td>GitHub + separate Hong Kong-hosted app/API/database/storage</td>
+<td>Small private pilot if the chosen users&#39; network tests pass</td>
+<td>Cross-border data review for mainland collection; inspect all provider/subprocessor regions, backup and support paths</td>
+</tr>
+<tr>
+<td>Mainland-hosted app/API/database/storage</td>
+<td>Service intended primarily for mainland families or schools</td>
+<td>Provider onboarding, ICP/domain requirements and service classification; choose domestic-accessible dependencies</td>
+</tr>
+<tr>
+<td>Separate mainland and Hong Kong deployments</td>
+<td>Later organisational expansion</td>
+<td>More cost; tenancy routing and selective transfer policy; avoid automatic replication of children&#39;s records across regions</td>
+</tr>
+</tbody></table>
+<p>Tencent&#39;s hosting documentation states that using its Hong Kong servers does not require mainland ICP filing, while mainland-server website deployment does. This is hosting-provider guidance, not a universal exemption for every app or service. The MIIT regulation governs non-commercial internet information service filing, and the 2023 APP notice includes Mini Program distribution and additional requirements for specified service categories. A family organiser and a commercial education platform are different operating models; classify the actual service and account before launch. Do not generalise that “educational content always needs the same licence” or that “Hong Kong hosting removes every mainland obligation.” <a href="https://cloud.tencent.cn/document/product/243/18908">Tencent filing resources</a>, <a href="https://ynca.miit.gov.cn/zwgk/zcwj/flfg/art/2024/art_2e96227c42924af9b49b7f13b81fd124.html">MIIT non-commercial filing regulation, 2024 revision</a>, <a href="https://www.miit.gov.cn/jgsj/xgj/wjfb/art/2023/art_dd783a581c9644a4aee10afa582811db.html">MIIT APP filing notice</a>.</p>
+<p>No host is represented as guaranteeing access from all mainland networks. Test the complete path — site, API, identity service, email/SMS delivery and object storage — before choosing a region. Do not buy infrastructure merely to display the concept. Quote hosting after expected families, file volume, region, backup retention, notifications and operational support are known; free engine licensing does not mean zero hosting or maintenance cost.</p>
+<h2>Proposed production architecture</h2>
+<pre><code class="language-text">WeChat browser / mobile or desktop web
+             |
+      HTTPS web application
+             |
+   authenticated TypeScript API
+      /          |           \
+PostgreSQL   private files   background jobs
+      \          |           /
+      permission checks + audit events
+
+Optional Phaser scene receives view data only.
+It never owns grades, permissions or route decisions.
+</code></pre>
+<p>The database should hold families/memberships, students, curriculum/enrolments, assignments, attempts/results, observations and evidence, interests, exploration activities, official taxonomy versions, proposed mappings, qualification/programme requirements, route versions and review decisions. Store file metadata and permissions in the database; binaries in private object storage. Keep each official source URL, retrieved date, applicable intake/version, and mapping author/rationale. A syllabus or university rule changes independently of a child&#39;s record.</p>
+<p>A managed Postgres/auth/storage service can shorten a pilot, provided its region and transfer terms fit. Supabase is one candidate, not a preselected deployment. Its documentation requires row-level security on exposed tables; file storage also has its own policies. A regional Node/Postgres/private-object-storage stack is a viable alternative where deployment control matters. <a href="https://supabase.com/docs/guides/database/postgres/row-level-security">Supabase row security</a>, <a href="https://supabase.com/docs/guides/storage/security/access-control">Supabase storage policies</a>.</p>
+<p>Build the important calculations as ordinary typed domain functions with tests: preserve original grade scales; distinguish missing, submitted and graded; use only comparable assessments for trends; distinguish unknown prerequisites from failures; version route assumptions; require confirmation before a changed route becomes active. Never derive an admission probability or a personality diagnosis from these records without a separately justified and validated method.</p>
+<p>Import in stages: manual entry and agreed CSV first; PDF/OCR assisted extraction with a review queue second; documented school-system APIs only after access is authorised and supported. A visible school login page does not establish API access, integration permission or permission to bulk copy records. Preserve provenance and links to the original record. Idempotent imports should not double-count the same exam or assignment.</p>
+<h2>Child-data design and operating scope</h2>
+<p>The legal scope depends on the operator, users, location and processing activities. Mainland PIPL Article 72 excludes natural persons processing data for personal/family affairs; that should not automatically be extended to a hosted provider&#39;s own processing or a service offered to schools. Where PIPL applies, under-14 personal information is sensitive, and Article 31 requires parent/guardian consent and dedicated handling rules. Articles 38–39 concern overseas provision. <a href="https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm">PIPL text, especially Articles 28–31, 38–39 and 72</a>.</p>
+<p>The 2024 cross-border rules include exemptions and thresholds, but the general low-volume exemption concerns non-sensitive information; it is unsafe to infer that a small child-data service is automatically exempt. Determine the applicable mechanism and any exemption for the actual data flow before sending real records to an overseas backend or AI processor. <a href="https://www.cac.gov.cn/2024-03/22/c_1712776611649184.htm">CAC official explanation of the 2024 cross-border rules</a>.</p>
+<p>Hong Kong&#39;s PCPD highlights children&#39;s limited ability to appreciate over-sharing and recommends age-appropriate protection. Its principles cover collection, accuracy/retention, use, security, openness, access and correction; domestic-purpose exemptions also exist, so organisational deployment should be reviewed separately from a parent&#39;s private records. <a href="https://www.pcpd.org.hk/english/resources_centre/publications/files/guidance_children_e.pdf">PCPD guidance for services targeting children</a>, <a href="https://www.pcpd.org.hk/childrenprivacy/en/six_data_protection_principles/six_data_protection_principles.html">PCPD principle overview</a>, <a href="https://www.pcpd.org.hk/misc/files/table1_e.pdf">PCPD exemptions table</a>.</p>
+<p>The following are recommended product requirements, not a statement that each is a statutory rule in every setting:</p>
+<ul>
+<li>Private by default, no public student search, no class rankings, no advertising SDKs and no automatic public portfolio.</li>
+<li>Adult owner, student and invited mentor roles with tested access to only their authorised child and evidence. A “child view” toggle in a parent&#39;s session is not a security boundary.</li>
+<li>Invite expiry/revocation, session revocation, password recovery, rate limits and parent MFA. Server enforcement for every read, write and file operation.</li>
+<li>Explicit child-friendly visibility labels: “my reflection”, “shared with parent”, “shared with mentor”. Do not promise confidentiality inconsistent with actual guardian access and safeguarding duties.</li>
+<li>Collect grade/year instead of full birth date where sufficient; avoid identity documents, precise live location, diagnoses and sensitive family notes unless a defined necessary function needs them.</li>
+<li>No “morality”, “loyalty” or overall child-quality score. Ethical growth uses contextual observations and the child&#39;s reflection; a disagreement is not a permanent trait label.</li>
+<li>Allow corrections and alternative interpretations while preserving proportionate audit history. Explain what changed, who changed it and why.</li>
+<li>Private object buckets, short-lived download access, file type/size controls, malware handling, metadata stripping where appropriate, encrypted transport and backups, and no credentials/student content in logs.</li>
+<li>Define retention by record purpose, deletion handling including backup expiry, export of both records and evidence files, incident response and restore testing.</li>
+<li>AI, if added, only drafts summaries or alternatives from approved sources. Give users a review step and provenance; do not automatically send attachments or private reflections to an external model, or use them for training by default.</li>
+</ul>
+<h2>Delivery sequence and gates</h2>
+<ol>
+<li><strong>Design validation:</strong> synthetic data; validate navigation, Chinese terminology, original grade display, interest exploration and editable route scenarios. Confirm age/curriculum and guardian/student visibility needs.</li>
+<li><strong>Private family pilot:</strong> choose region and operator; implement identity, memberships, database, private files, consent/notice, records import and export. Pass cross-family denial tests and a backup restore before real uploads.</li>
+<li><strong>Evidence and route pilot:</strong> review official mappings with an educator/counsellor; test missing prerequisites, changed intake rules, conflicting observations and route rollback. Verify that an exam result never silently closes a future option.</li>
+<li><strong>WeChat release:</strong> test real devices and networks and resolve account/domain requirements for any WeChat-specific feature. Keep normal web access working if WeChat integration is unavailable.</li>
+<li><strong>School/multiple-family expansion:</strong> revisit operator responsibilities, contracts, region/transfer rules, support, access segregation, incident response and hosting costs. Add a Mini Program only when its benefit exceeds its extra operation and review work.</li>
+</ol>
+<p>Indicative planning estimate for one experienced full-stack developer: concept demo in several days; a narrowly scoped private family pilot in roughly 6–10 weeks; school integrations, Mini Program approval and multi-region deployment are separately estimated. These are planning assumptions, not a quotation or verified schedule. Security, import quality and data modelling are likely to dominate effort more than the rudimentary scene art.</p>
+<h2>Evidence limitations</h2>
+<p>No real student account, school integration, WeChat account entitlement, production host or billing has been inspected or configured. No mainland network or physical-phone acceptance testing was performed during research. The engine comparison is an engineering fit assessment based on official documentation, not a measured benchmark. Legal notes identify relevant issues and boundaries; deployment scope must be settled before an applicability conclusion is made.</p>
+</article></details></main></div><footer>Original product proposal · Source-linked research · No student records or official qualifications were assessed.</footer><script>document.querySelector('#expand').onclick=()=>document.querySelectorAll('details').forEach(x=>x.open=true);document.querySelector('#print').onclick=()=>{document.querySelectorAll('details').forEach(x=>x.open=true);window.print()};document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>{const d=document.querySelector(a.hash);if(d?.tagName==='DETAILS')d.open=true}));</script></body></html>

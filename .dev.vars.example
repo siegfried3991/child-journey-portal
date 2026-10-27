@@ -1,0 +1,3 @@
+ERP_IMPORT_KEY="replace-with-a-local-development-secret"
+ERP_WORKSPACE_EMAIL="seedy@sites.test"
+ERP_WORKSPACE_ID="local-private-workspace"

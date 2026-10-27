@@ -1,0 +1,502 @@
+[
+  {
+    "id": "reading",
+    "category_id": "language",
+    "category_zh": "語言表達",
+    "name_zh": "閱讀",
+    "name_en": "Reading",
+    "description_zh": "理解文章與故事",
+    "example_evidence_zh": "閱讀後口述重點",
+    "catalogue_version": 1
+  },
+  {
+    "id": "writing",
+    "category_id": "language",
+    "category_zh": "語言表達",
+    "name_zh": "寫作",
+    "name_en": "Writing",
+    "description_zh": "有條理地寫出想法",
+    "example_evidence_zh": "保存一篇短文",
+    "catalogue_version": 1
+  },
+  {
+    "id": "listening",
+    "category_id": "language",
+    "category_zh": "語言表達",
+    "name_zh": "聆聽",
+    "name_en": "Listening",
+    "description_zh": "聽懂內容與指示",
+    "example_evidence_zh": "聽完指示後完成任務",
+    "catalogue_version": 1
+  },
+  {
+    "id": "speaking",
+    "category_id": "language",
+    "category_zh": "語言表達",
+    "name_zh": "口述",
+    "name_en": "Speaking",
+    "description_zh": "清楚描述與解釋",
+    "example_evidence_zh": "錄下事情經過的描述",
+    "catalogue_version": 1
+  },
+  {
+    "id": "public-speaking",
+    "category_id": "language",
+    "category_zh": "語言表達",
+    "name_zh": "演說",
+    "name_en": "Public speaking",
+    "description_zh": "面向群體有組織地表達",
+    "example_evidence_zh": "完成一次簡短報告",
+    "catalogue_version": 1
+  },
+  {
+    "id": "reasoned-debate",
+    "category_id": "language",
+    "category_zh": "語言表達",
+    "name_zh": "論辯",
+    "name_en": "Reasoned debate",
+    "description_zh": "提出理由與回應觀點",
+    "example_evidence_zh": "比較兩種主張的證據",
+    "catalogue_version": 1
+  },
+  {
+    "id": "additional-language",
+    "category_id": "language",
+    "category_zh": "語言表達",
+    "name_zh": "外語",
+    "name_en": "Additional language",
+    "description_zh": "實際運用其他語言",
+    "example_evidence_zh": "用所學語言完成對話",
+    "catalogue_version": 1
+  },
+  {
+    "id": "storytelling",
+    "category_id": "language",
+    "category_zh": "語言表達",
+    "name_zh": "敘事",
+    "name_en": "Storytelling",
+    "description_zh": "組織人物情節與事件",
+    "example_evidence_zh": "說出有起承轉合的故事",
+    "catalogue_version": 1
+  },
+  {
+    "id": "arithmetic",
+    "category_id": "inquiry",
+    "category_zh": "數理探究",
+    "name_zh": "運算",
+    "name_en": "Arithmetic",
+    "description_zh": "理解數字與計算",
+    "example_evidence_zh": "解釋一道計算題的方法",
+    "catalogue_version": 1
+  },
+  {
+    "id": "reasoning",
+    "category_id": "inquiry",
+    "category_zh": "數理探究",
+    "name_zh": "推理",
+    "name_en": "Reasoning",
+    "description_zh": "找規律與作合理推論",
+    "example_evidence_zh": "說明規律與下一步",
+    "catalogue_version": 1
+  },
+  {
+    "id": "spatial",
+    "category_id": "inquiry",
+    "category_zh": "數理探究",
+    "name_zh": "空間",
+    "name_en": "Spatial reasoning",
+    "description_zh": "理解位置方向與立體結構",
+    "example_evidence_zh": "依圖完成積木模型",
+    "catalogue_version": 1
+  },
+  {
+    "id": "statistics",
+    "category_id": "inquiry",
+    "category_zh": "數理探究",
+    "name_zh": "統計",
+    "name_en": "Statistics",
+    "description_zh": "整理與解讀數據",
+    "example_evidence_zh": "製作並解讀簡單圖表",
+    "catalogue_version": 1
+  },
+  {
+    "id": "observation",
+    "category_id": "inquiry",
+    "category_zh": "數理探究",
+    "name_zh": "觀察",
+    "name_en": "Observation",
+    "description_zh": "留意細節與變化",
+    "example_evidence_zh": "連續記錄植物變化",
+    "catalogue_version": 1
+  },
+  {
+    "id": "experimentation",
+    "category_id": "inquiry",
+    "category_zh": "數理探究",
+    "name_zh": "實驗",
+    "name_en": "Experimentation",
+    "description_zh": "提出假設與測試",
+    "example_evidence_zh": "記錄一次公平測試",
+    "catalogue_version": 1
+  },
+  {
+    "id": "verification",
+    "category_id": "inquiry",
+    "category_zh": "數理探究",
+    "name_zh": "查證",
+    "name_en": "Source checking",
+    "description_zh": "比較來源與核實說法",
+    "example_evidence_zh": "用兩個來源核對資料",
+    "catalogue_version": 1
+  },
+  {
+    "id": "problem-solving",
+    "category_id": "inquiry",
+    "category_zh": "數理探究",
+    "name_zh": "解難",
+    "name_en": "Problem solving",
+    "description_zh": "拆解問題與檢查成效",
+    "example_evidence_zh": "記下嘗試方法與結果",
+    "catalogue_version": 1
+  },
+  {
+    "id": "digital-literacy",
+    "category_id": "technology",
+    "category_zh": "科技製作",
+    "name_zh": "數碼",
+    "name_en": "Digital literacy",
+    "description_zh": "使用常見數碼工具",
+    "example_evidence_zh": "自行整理並找到檔案",
+    "catalogue_version": 1
+  },
+  {
+    "id": "programming",
+    "category_id": "technology",
+    "category_zh": "科技製作",
+    "name_zh": "編程",
+    "name_en": "Programming",
+    "description_zh": "用指令與流程製作程式",
+    "example_evidence_zh": "完成可運行的小程式",
+    "catalogue_version": 1
+  },
+  {
+    "id": "ai-literacy",
+    "category_id": "technology",
+    "category_zh": "科技製作",
+    "name_zh": "智用",
+    "name_en": "AI literacy",
+    "description_zh": "提出清楚要求並核查人工智能輸出",
+    "example_evidence_zh": "找出並更正工具回答的錯誤",
+    "catalogue_version": 1
+  },
+  {
+    "id": "engineering",
+    "category_id": "technology",
+    "category_zh": "科技製作",
+    "name_zh": "工程",
+    "name_en": "Engineering",
+    "description_zh": "設計能完成任務的結構",
+    "example_evidence_zh": "測試模型橋的承重",
+    "catalogue_version": 1
+  },
+  {
+    "id": "making",
+    "category_id": "technology",
+    "category_zh": "科技製作",
+    "name_zh": "製作",
+    "name_en": "Making",
+    "description_zh": "把構想做成實物",
+    "example_evidence_zh": "保存手工作品與步驟",
+    "catalogue_version": 1
+  },
+  {
+    "id": "repair",
+    "category_id": "technology",
+    "category_zh": "科技製作",
+    "name_zh": "修繕",
+    "name_en": "Repair",
+    "description_zh": "作適齡的小型修復",
+    "example_evidence_zh": "在成人指導下修復物件",
+    "catalogue_version": 1
+  },
+  {
+    "id": "drawing",
+    "category_id": "arts",
+    "category_zh": "藝術創意",
+    "name_zh": "繪畫",
+    "name_en": "Drawing",
+    "description_zh": "用線條色彩與構圖表達",
+    "example_evidence_zh": "保存有日期的作品",
+    "catalogue_version": 1
+  },
+  {
+    "id": "design",
+    "category_id": "arts",
+    "category_zh": "藝術創意",
+    "name_zh": "設計",
+    "name_en": "Design",
+    "description_zh": "兼顧美觀用途與需要",
+    "example_evidence_zh": "解釋設計選擇",
+    "catalogue_version": 1
+  },
+  {
+    "id": "music",
+    "category_id": "arts",
+    "category_zh": "藝術創意",
+    "name_zh": "音樂",
+    "name_en": "Music",
+    "description_zh": "理解並演唱或演奏音樂",
+    "example_evidence_zh": "保存演奏錄音",
+    "catalogue_version": 1
+  },
+  {
+    "id": "performance",
+    "category_id": "arts",
+    "category_zh": "藝術創意",
+    "name_zh": "表演",
+    "name_en": "Performance",
+    "description_zh": "用戲劇舞蹈或肢體表達",
+    "example_evidence_zh": "完成一段表演",
+    "catalogue_version": 1
+  },
+  {
+    "id": "visual-media",
+    "category_id": "arts",
+    "category_zh": "藝術創意",
+    "name_zh": "影像",
+    "name_en": "Visual media",
+    "description_zh": "用照片與影片敘事",
+    "example_evidence_zh": "製作一段短片",
+    "catalogue_version": 1
+  },
+  {
+    "id": "ideation",
+    "category_id": "arts",
+    "category_zh": "藝術創意",
+    "name_zh": "創想",
+    "name_en": "Ideation",
+    "description_zh": "提出並組合不同點子",
+    "example_evidence_zh": "為同一問題提出數個方案",
+    "catalogue_version": 1
+  },
+  {
+    "id": "focus",
+    "category_id": "self-management",
+    "category_zh": "自主管理",
+    "name_zh": "專注",
+    "name_en": "Focus",
+    "description_zh": "持續投入適當活動",
+    "example_evidence_zh": "記錄完成活動時所需支持",
+    "catalogue_version": 1
+  },
+  {
+    "id": "planning",
+    "category_id": "self-management",
+    "category_zh": "自主管理",
+    "name_zh": "規劃",
+    "name_en": "Planning",
+    "description_zh": "安排目標步驟與資源",
+    "example_evidence_zh": "擬定並使用任務計劃",
+    "catalogue_version": 1
+  },
+  {
+    "id": "time-management",
+    "category_id": "self-management",
+    "category_zh": "自主管理",
+    "name_zh": "時間",
+    "name_en": "Time management",
+    "description_zh": "估時排序與準時完成",
+    "example_evidence_zh": "比較預估與實際用時",
+    "catalogue_version": 1
+  },
+  {
+    "id": "execution",
+    "category_id": "self-management",
+    "category_zh": "自主管理",
+    "name_zh": "執行",
+    "name_en": "Follow through",
+    "description_zh": "開始並完成工作",
+    "example_evidence_zh": "完成自選小項目",
+    "catalogue_version": 1
+  },
+  {
+    "id": "organization",
+    "category_id": "self-management",
+    "category_zh": "自主管理",
+    "name_zh": "整理",
+    "name_en": "Organization",
+    "description_zh": "管理物品與資料",
+    "example_evidence_zh": "建立並維持整理方法",
+    "catalogue_version": 1
+  },
+  {
+    "id": "reflection",
+    "category_id": "self-management",
+    "category_zh": "自主管理",
+    "name_zh": "反思",
+    "name_en": "Reflection",
+    "description_zh": "回顧並調整方法",
+    "example_evidence_zh": "寫下下一次的改進",
+    "catalogue_version": 1
+  },
+  {
+    "id": "emotional-regulation",
+    "category_id": "self-management",
+    "category_zh": "自主管理",
+    "name_zh": "調適",
+    "name_en": "Emotional regulation",
+    "description_zh": "察覺情緒與選擇應對方法",
+    "example_evidence_zh": "自願記錄有幫助的應對方式",
+    "catalogue_version": 1
+  },
+  {
+    "id": "empathy",
+    "category_id": "relationships",
+    "category_zh": "人際協作",
+    "name_zh": "同理",
+    "name_en": "Empathy",
+    "description_zh": "理解他人感受與需要",
+    "example_evidence_zh": "描述不同角色的感受",
+    "catalogue_version": 1
+  },
+  {
+    "id": "cooperation",
+    "category_id": "relationships",
+    "category_zh": "人際協作",
+    "name_zh": "合作",
+    "name_en": "Cooperation",
+    "description_zh": "分工與共同完成任務",
+    "example_evidence_zh": "記錄小組中的貢獻",
+    "catalogue_version": 1
+  },
+  {
+    "id": "negotiation",
+    "category_id": "relationships",
+    "category_zh": "人際協作",
+    "name_zh": "協商",
+    "name_en": "Negotiation",
+    "description_zh": "表達需要並尋找共識",
+    "example_evidence_zh": "提出雙方可接受的方案",
+    "catalogue_version": 1
+  },
+  {
+    "id": "leadership",
+    "category_id": "relationships",
+    "category_zh": "人際協作",
+    "name_zh": "領導",
+    "name_en": "Leadership",
+    "description_zh": "協調與鼓勵團隊",
+    "example_evidence_zh": "帶領一次小組活動",
+    "catalogue_version": 1
+  },
+  {
+    "id": "social-connection",
+    "category_id": "relationships",
+    "category_zh": "人際協作",
+    "name_zh": "交往",
+    "name_en": "Social connection",
+    "description_zh": "建立友誼並尊重界線",
+    "example_evidence_zh": "觀察邀請與尊重拒絕的行為",
+    "catalogue_version": 1
+  },
+  {
+    "id": "helpfulness",
+    "category_id": "relationships",
+    "category_zh": "人際協作",
+    "name_zh": "助人",
+    "name_en": "Helping",
+    "description_zh": "提供合適支持",
+    "example_evidence_zh": "完成對方需要的協助",
+    "catalogue_version": 1
+  },
+  {
+    "id": "self-care",
+    "category_id": "practical-life",
+    "category_zh": "生活實務",
+    "name_zh": "自理",
+    "name_en": "Self care",
+    "description_zh": "處理日常個人需要",
+    "example_evidence_zh": "獨立完成適齡生活流程",
+    "catalogue_version": 1
+  },
+  {
+    "id": "cooking",
+    "category_id": "practical-life",
+    "category_zh": "生活實務",
+    "name_zh": "烹飪",
+    "name_en": "Cooking",
+    "description_zh": "準備食物並保持衞生",
+    "example_evidence_zh": "在適當監督下製作餐點",
+    "catalogue_version": 1
+  },
+  {
+    "id": "financial-literacy",
+    "category_id": "practical-life",
+    "category_zh": "生活實務",
+    "name_zh": "理財",
+    "name_en": "Financial literacy",
+    "description_zh": "安排收支儲蓄與預算",
+    "example_evidence_zh": "記錄一次預算與實際支出",
+    "catalogue_version": 1
+  },
+  {
+    "id": "enterprise",
+    "category_id": "practical-life",
+    "category_zh": "生活實務",
+    "name_zh": "商貿",
+    "name_en": "Enterprise",
+    "description_zh": "理解成本定價與交易",
+    "example_evidence_zh": "準備義賣價格與成本表",
+    "catalogue_version": 1
+  },
+  {
+    "id": "gardening",
+    "category_id": "practical-life",
+    "category_zh": "生活實務",
+    "name_zh": "種植",
+    "name_en": "Gardening",
+    "description_zh": "照顧植物與觀察生長",
+    "example_evidence_zh": "完成種植照護紀錄",
+    "catalogue_version": 1
+  },
+  {
+    "id": "safety",
+    "category_id": "practical-life",
+    "category_zh": "生活實務",
+    "name_zh": "安全",
+    "name_en": "Safety",
+    "description_zh": "辨識風險並懂得求助",
+    "example_evidence_zh": "說明情境中的安全選擇",
+    "catalogue_version": 1
+  },
+  {
+    "id": "coordination",
+    "category_id": "movement",
+    "category_zh": "運動體能",
+    "name_zh": "協調",
+    "name_en": "Coordination",
+    "description_zh": "控制身體與保持平衡",
+    "example_evidence_zh": "完成適齡動作組合",
+    "catalogue_version": 1
+  },
+  {
+    "id": "endurance",
+    "category_id": "movement",
+    "category_zh": "運動體能",
+    "name_zh": "耐力",
+    "name_en": "Endurance",
+    "description_zh": "逐步維持適齡運動表現",
+    "example_evidence_zh": "記錄自選活動的舒適持續時間",
+    "catalogue_version": 1
+  },
+  {
+    "id": "sport",
+    "category_id": "movement",
+    "category_zh": "運動體能",
+    "name_zh": "運動",
+    "name_en": "Sport",
+    "description_zh": "學習運動技巧規則與戰術",
+    "example_evidence_zh": "示範一項特定運動技巧",
+    "catalogue_version": 1
+  }
+]
