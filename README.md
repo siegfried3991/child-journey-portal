@@ -1,6 +1,6 @@
 # 成長志 · Student Development ERP
 
-A web portal for keeping school results, source evidence and learning progress in one private student record. The implemented first phase supports **US-style courses and weighted grades**. Career exploration, activities, achievements, pathways and a revision-system connection remain planned modules.
+A web portal for keeping school results, source evidence and learning progress in one private student record. The portal supports **US-style school records**, school-published results, subject trends from Grade 7 onward, and a customizable US/UK/Hong Kong admissions planner. Full activity, achievement and revision-system management remain planned modules.
 
 This repository publishes the **source code only**. It includes fictional examples and synthetic test fixtures. Real student records, report cards, uploaded photographs, storage contents, runtime credentials and the deployed Site identity are excluded. No GitHub Pages website is configured.
 
@@ -11,12 +11,17 @@ This repository publishes the **source code only**. It includes fictional exampl
 - Editable category weights and total-points or equal-percentage calculations; unconfirmed rules withhold the overall calculated grade.
 - Separate graded, pending, missing, absent, exempt and score-not-shown states. A blank score remains blank.
 - Report library for historical quarter/final grades, current snapshots, handwritten progress, MAP RIT/percentile records and summer mastery ratings.
+- School-published quarter/year-end results, original report attachments and teacher comments, kept separate from calculations.
+- Clickable subject trends with Grade 7/8/9 annual summaries and quarter drill-down. School-reported subject YTD takes priority; otherwise the simple mean of available quarters is labelled as calculated. Split English courses share earlier English history.
+- US/UK/Hong Kong admissions routes with common preparation in Grades 9–10, later branching, editable milestones, university comparisons and source-linked timelines. Future-cycle dates remain estimates.
 - Explicit estimated dates and parent-confirmed corrections in imported reference data.
 - Source-linked attachments, checksum-verified reference uploads, source-photo deduplication and repeat-safe imports.
 - Teacher feedback, next steps, topics, comparable-assessment charts and CSV preview/export.
 - Revision history, correction reasons, stale-edit protection, archive/restore and owner-scoped storage.
 
 The original game-inspired concept and source-backed ILO/Hong Kong QF research remain under `public/concept/`, `docs/` and `research/`. The ERP uses ordinary web interfaces; no game engine is required.
+
+Download the current source using GitHub’s **Code → Download ZIP**. The obsolete initial snapshot archive and its expansion workflow have been removed.
 
 ## Stack
 
@@ -39,13 +44,13 @@ The documented portable development profile uses a localhost-only mock identity.
 
 ```sh
 npx tsc --noEmit
-node --experimental-strip-types --test tests/academic.test.ts tests/reference.test.ts
+node --experimental-strip-types --test tests/academic.test.ts tests/reference.test.ts tests/admissions.test.ts tests/routes.test.ts tests/school-report.test.ts tests/subject-trends.test.ts
 node --test verification/domain.test.mjs
 # Requires the localhost preview at port 5174; creates synthetic test records:
 node tests/api-smoke.mjs
 ```
 
-The academic/reference tests cover weighting, blank scores, preserved letter grades, relationship validation, duplicates, CSV parsing, deterministic imports, source references and estimated dates. The eight preserved concept tests cover its fictional data and exploration rules.
+The 50 domain tests cover admissions routes, school-report imports, subject annual/quarter trends, as well as weighting, blank scores, preserved letter grades, relationship validation, duplicates, CSV parsing, deterministic imports, source references and estimated dates. The eight preserved concept tests cover its fictional data and exploration rules.
 
 ## Production hosting
 
@@ -67,6 +72,7 @@ Store server configuration and secrets in the hosting platform. Do not commit da
 | `docs/06-academic-module.md` | Academic rules and acceptance criteria |
 | `docs/07-erp-implementation.md` | Runtime, identity and release operations |
 | `docs/08-academic-reference-import.md` | Evidence-linked import workflow |
+| `docs/09-university-applications.md` | Admissions planning, dates and research boundaries |
 | `research/` | ILO, Hong Kong qualifications and platform investigations |
 | `public/concept/` | Preserved fictional concept and research report |
 

@@ -1,7 +1,8 @@
 import {z} from 'zod';
+import {applicationPlanSchema,type ApplicationPlan} from './admissions.ts';
 const short=z.string().trim().min(1).max(160); const optional=z.string().trim().max(2000).default('');
 const date=z.string().regex(/^\d{4}-\d{2}-\d{2}$/,'請使用有效日期').refine(v=>{const d=new Date(v+'T12:00:00Z');return !Number.isNaN(d.getTime())&&d.toISOString().slice(0,10)===v},'日期不存在');
-export const kinds=['student','term','course','result','report'] as const;
+export const kinds=['student','term','course','result','report','applicationPlan'] as const;
 export type Kind=typeof kinds[number];
 export const categorySchema=z.object({id:short,name:short,weight:z.number().min(0).max(100).nullable(),method:z.enum(['points','equal'])});
 export const policySchema=z.object({confirmed:z.boolean(),categories:z.array(categorySchema).min(1).max(12),emptyCategories:z.enum(['require_all','available']),bands:z.array(z.object({label:short,min:z.number().min(0).max(100)})).max(16)}).superRefine((p,ctx)=>{
@@ -12,6 +13,7 @@ export const policySchema=z.object({confirmed:z.boolean(),categories:z.array(cat
  if(new Set(p.bands.map(b=>b.min)).size!==p.bands.length)ctx.addIssue({code:'custom',message:'等級分界不可重複'});
 });
 export const schemas={
+ applicationPlan:applicationPlanSchema,
  student:z.object({name:short,school:z.string().trim().max(160),grade:z.string().trim().max(80),curriculum:z.string().trim().max(120),isDemo:z.boolean().default(false)}).strict(),
  term:z.object({name:short,year:short,start:date.nullable(),end:date.nullable()}).strict().refine(t=>!t.start||!t.end||t.start<=t.end,'學期結束日期必須晚於開始日期'),
  course:z.object({studentId:short,termId:short,name:short,code:z.string().trim().max(80),teacher:z.string().trim().max(160),level:z.enum(['Regular','Honors','AP','Other']),credits:z.number().min(0).max(20).nullable(),reportedGrade:z.string().trim().max(80),reportedSource:z.string().trim().max(300),policy:policySchema}).strict(),
@@ -27,12 +29,18 @@ export const schemas={
 };
 export type Student=z.infer<typeof schemas.student>;export type Term=z.infer<typeof schemas.term>;export type Course=z.infer<typeof schemas.course>;export type Result=z.infer<typeof schemas.result>;export type Policy=z.infer<typeof policySchema>;
 export type Report=z.infer<typeof schemas.report>;
-export type Body=Student|Term|Course|Result|Report;
+export type Body=Student|Term|Course|Result|Report|ApplicationPlan;
 export interface Entry<T=Body>{id:string;kind:Kind;body:T;revision:number;archived:boolean;createdAt:string;updatedAt:string}
 export interface FileInfo{id:string;recordId:string;name:string;size:number;contentType:string;createdAt:string}
 export interface Snapshot{records:Entry[];attachments:FileInfo[]}
 export function validate(kind:Kind,body:unknown):Body{return schemas[kind].parse(body)}
 export function validateRelations(kind:Kind,body:Body,records:Entry[],existing?:Entry){
+ if(kind==='applicationPlan'){
+ const p=body as ApplicationPlan;
+ if(!records.some(r=>r.kind==='student'&&!r.archived&&r.id===p.studentId))throw Error('學生不存在，或已封存');
+ if(existing&&(existing.body as ApplicationPlan).studentId!==p.studentId)throw Error('不可更換計劃所屬學生');
+ if(p.academicIds.some(id=>!records.some(r=>r.id===id&&!r.archived&&r.kind==='result'&&(r.body as Result).studentId===p.studentId)))throw Error('連結學業記錄不屬於此學生或已封存');
+ }
  if(kind==='course'||kind==='result'||kind==='report'){
  const b=body as Course|Result|Report;const student=records.find(r=>r.id===b.studentId&&r.kind==='student'&&!r.archived);const term=records.find(r=>r.id===b.termId&&r.kind==='term'&&!r.archived);
  if(!student||!term)throw Error('學生或學期不存在，或已封存');

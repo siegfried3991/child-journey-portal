@@ -10,6 +10,7 @@ export const referenceSchema=z.object({
  source_documents:z.array(source).min(1).max(100),
  historical_course_results:z.array(z.object({school_year:short,grade:z.number().int(),course:short,source_id:short,results:z.record(mark)}).passthrough()).max(300),
  primary_school_results:z.array(z.object({school_year:short,grade:z.number().int(),semester:z.number().int(),subject_raw:short,final_exam_raw:text,comprehensive_evaluation_raw:text,source_id:short}).passthrough()).max(300),
+ published_course_results:z.array(z.object({report_id:short,source_id:short,school_year:short,grade:z.number().int(),course:short,teacher:text,comment:text,results:z.record(mark)}).passthrough()).max(500).optional(),
  current_school_snapshots:z.array(z.object({id:short,school_year:short,course:short,class_code_raw:text,teacher_raw:text,reported_percent:number.max(100),reported_letter:text,printed_date:text.nullable(),source_ids:z.array(short)}).passthrough()).max(30),
  category_summaries:z.array(z.object({report_id:short,source_id:short,category_raw:short,points_earned:number,points_possible:number.positive(),reported_percent:number,reported_letter:text}).passthrough()).max(300),
  assignments:z.array(z.object({id:short,report_id:short,source_id:short,date:short,category_raw:short,title:short,score:number.nullable(),points_possible:number.positive(),reported_percent:number.nullable(),reported_letter:text.nullable(),score_status:text,note:text.nullable()}).passthrough()).max(500),
@@ -21,7 +22,7 @@ export const referenceSchema=z.object({
  const ids=new Set(d.source_documents.map(s=>s.id));
  if(ids.size!==d.source_documents.length)ctx.addIssue({code:'custom',message:'來源編號不可重複'});
  const reports=new Set(d.current_school_snapshots.map(s=>s.id));
- for(const r of [...d.historical_course_results,...d.primary_school_results,...d.standardized_assessments,...d.assignments,...d.category_summaries,d.handwritten_tracker,d.summer_report])if(!ids.has(r.source_id))ctx.addIssue({code:'custom',message:'記錄引用了不存在的來源'});
+ for(const r of [...(d.published_course_results||[]),...d.historical_course_results,...d.primary_school_results,...d.standardized_assessments,...d.assignments,...d.category_summaries,d.handwritten_tracker,d.summer_report])if(!ids.has(r.source_id))ctx.addIssue({code:'custom',message:'記錄引用了不存在的來源'});
  for(const r of d.current_school_snapshots)for(const id of r.source_ids)if(!ids.has(id))ctx.addIssue({code:'custom',message:'成績單來源不存在'});
  for(const r of [...d.assignments,...d.category_summaries])if(!reports.has(r.report_id))ctx.addIssue({code:'custom',message:'評估引用了不存在的成績單'});
  for(const r of d.assignments)if((r.score===null)!==(r.score_status==='blank_in_source'))ctx.addIssue({code:'custom',message:'空白分數狀態與原件不符'});

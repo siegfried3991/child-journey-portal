@@ -25,3 +25,9 @@ The same endpoint accepts a multipart `sourceId` and `file`. Each upload must ma
 ## Validation
 
 Run the academic and reference domain tests, TypeScript checking, a production build, and local API/browser checks. Verify unauthorized imports are rejected, repeated imports skip existing records, changed imports refuse to overwrite edits, and checksum mismatches are rejected. After deployment, reconcile every live record with the expected converted dataset and every R2 file with its source hash. Native deployment success and live database/file reconciliation are recorded separately from browser sign-in verification.
+
+## Later school reports
+
+`POST /api/school-report` accepts a reviewed `patch` JSON file and matching original PDF through the signed-in, same-origin owner's interface. It checks the student number, source hash/size, reference revision and course/student/year relationships before saving. Existing snapshots, assignments and handwritten evidence remain in the report record. The full quarter table and comments use `published_course_results`; future periods remain absent. The importer updates only the course's school-published fields and original title/teacher/level, retaining course IDs, category policies and assessment records; an additional official course can be created. All record edits use ordinary revision history.
+
+Steps save report, source attachment and course updates separately. If interrupted, refresh and retry the same files; identical records/files are skipped, source-ID collisions with different content are rejected. The UI reports partial completion as a retryable state rather than claiming an atomic import. Reviewed student payloads and PDFs belong outside the source checkout and are uploaded only to private runtime storage.

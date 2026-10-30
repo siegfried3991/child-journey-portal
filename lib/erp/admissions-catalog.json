@@ -1,0 +1,1836 @@
+[
+  {
+    "id": "mit",
+    "name": "MIT",
+    "region": "US",
+    "rank": 1,
+    "rounds": [
+      {
+        "id": "early-action0",
+        "label": "Early action",
+        "date": "2026-11-01"
+      },
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2027-01-04"
+      }
+    ],
+    "references": "2 teachers + school report/counsellor",
+    "tests": "Required SAT/ACT",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "No routine AP minimum; English evidence may be strongly recommended.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://mitadmissions.org/apply/firstyear/deadlines-requirements/",
+      "https://mitadmissions.org/apply/firstyear/tests-scores/"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "princeton",
+    "name": "Princeton",
+    "region": "US",
+    "rank": 2,
+    "rounds": [
+      {
+        "id": "early-action0",
+        "label": "Single-choice early action",
+        "date": "2026-11-01"
+      },
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2027-01-01"
+      }
+    ],
+    "references": "2 teachers + counsellor",
+    "tests": "Optional for 2027; required for fall 2028",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "Graded written paper required; arts supplement has separate deadlines.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://admission.princeton.edu/apply/application-checklist",
+      "https://admission.princeton.edu/apply/first-year-application-dates-deadlines"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "harvard",
+    "name": "Harvard",
+    "region": "US",
+    "rank": 3,
+    "rounds": [
+      {
+        "id": "early-action0",
+        "label": "Restrictive early action",
+        "date": "2026-11-01"
+      },
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2027-01-01"
+      }
+    ],
+    "references": "2 teachers + counsellor",
+    "tests": "Required SAT/ACT; exceptional access alternatives",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "AP can substitute only under exceptional SAT/ACT access circumstances.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://college.harvard.edu/admissions/apply/first-year-applicants",
+      "https://college.harvard.edu/admissions/apply/application-requirements"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "yale",
+    "name": "Yale",
+    "region": "US",
+    "rank": 4,
+    "rounds": [
+      {
+        "id": "early-action0",
+        "label": "Single-choice early action",
+        "date": "2026-11-01"
+      },
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2027-01-02"
+      }
+    ],
+    "references": "2 teachers + counsellor",
+    "tests": "Required SAT/ACT",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "2027 policy supersedes former AP/IB test-flexible option.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://admissions.yale.edu/apply",
+      "https://admissions.yale.edu/standardized-testing"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "caltech",
+    "name": "Caltech",
+    "region": "US",
+    "rank": 5,
+    "rounds": [
+      {
+        "id": "early-action0",
+        "label": "Restrictive early action",
+        "date": "2026-11-01"
+      },
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2027-01-04"
+      }
+    ],
+    "references": "2 teachers (STEM and humanities/social science) + school report",
+    "tests": "Required SAT/ACT",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "All AP/IB examination results taken must be reported; calculus, chemistry and physics preparation.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://www.admissions.caltech.edu/apply/first-year-applicants/deadlines",
+      "https://www.admissions.caltech.edu/apply/first-year-applicants/standardized-tests"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "stanford",
+    "name": "Stanford",
+    "region": "US",
+    "rank": 5,
+    "rounds": [
+      {
+        "id": "early-action0",
+        "label": "Restrictive early action",
+        "date": "2026-11-01"
+      },
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2027-01-05"
+      }
+    ],
+    "references": "2 teachers + counsellor",
+    "tests": "Required SAT/ACT",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "Arts applicants: application Oct 15 / Dec 5; portfolio Oct 20 / Dec 10.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://admission.stanford.edu/apply/first-year/index.html",
+      "https://admission.stanford.edu/apply/first-year/testing.html"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "penn",
+    "name": "Penn",
+    "region": "US",
+    "rank": 7,
+    "rounds": [
+      {
+        "id": "early-decision-i0",
+        "label": "Early decision I",
+        "date": "2026-11-01"
+      },
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2027-01-05"
+      }
+    ],
+    "references": "1 teacher + counsellor",
+    "tests": "Required SAT/ACT; hardship waiver available",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "School-specific supplements and prerequisites apply.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://admissions.upenn.edu/how-to-apply/first-year-applicants",
+      "https://admissions.upenn.edu/how-to-apply/preparing-your-application/testing"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "duke",
+    "name": "Duke",
+    "region": "US",
+    "rank": 8,
+    "rounds": [
+      {
+        "id": "early-decision-i0",
+        "label": "Early decision I",
+        "date": "2026-11-02"
+      },
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2027-01-04"
+      }
+    ],
+    "references": "2 teachers + counsellor",
+    "tests": "Optional in 2026–27 cycle",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "Engineering preparation and arts supplements require separate review.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://admissions.duke.edu/checklist/",
+      "https://admissions.duke.edu/apply/"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "johns-hopkins",
+    "name": "Johns Hopkins",
+    "region": "US",
+    "rank": 9,
+    "rounds": [
+      {
+        "id": "early-decision-i0",
+        "label": "Early decision I",
+        "date": "2026-11-01"
+      },
+      {
+        "id": "early-decision-ii0",
+        "label": "Early decision II",
+        "date": "2027-01-02"
+      },
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2027-01-02"
+      }
+    ],
+    "references": "2 teachers + counsellor",
+    "tests": "Required SAT/ACT",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "Biomedical Engineering selection and Peabody applications have additional requirements.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://apply.jhu.edu/how-to-apply/application-deadlines-requirements/",
+      "https://apply.jhu.edu/how-to-apply/standardized-testing/"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "northwestern",
+    "name": "Northwestern",
+    "region": "US",
+    "rank": 9,
+    "rounds": [
+      {
+        "id": "early-decision-i0",
+        "label": "Early decision I",
+        "date": "2026-11-01"
+      },
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2027-01-04"
+      }
+    ],
+    "references": "1 teacher + counsellor",
+    "tests": "Optional for 2027",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "Bienen, ISP and MMSS have additional materials; Northwestern writing supplement.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://admissions.northwestern.edu/apply/application-deadlines.html",
+      "https://admissions.northwestern.edu/apply/requirements.html"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "chicago",
+    "name": "Chicago",
+    "region": "US",
+    "rank": 9,
+    "rounds": [
+      {
+        "id": "early-action0",
+        "label": "Early action",
+        "date": "2026-11-02"
+      },
+      {
+        "id": "early-decision-i0",
+        "label": "Early decision I",
+        "date": "2026-11-02"
+      },
+      {
+        "id": "early-decision-ii0",
+        "label": "Early decision II",
+        "date": "2027-01-04"
+      },
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2027-01-04"
+      }
+    ],
+    "references": "2 teachers + counsellor",
+    "tests": "Optional",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "Institutional essays required; no routine major-level AP cutoff.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://collegeadmissions.uchicago.edu/apply/application/",
+      "https://collegeadmissions.uchicago.edu/apply/application/required-materials/"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "columbia",
+    "name": "Columbia",
+    "region": "US",
+    "rank": 12,
+    "rounds": [
+      {
+        "id": "early-decision-i0",
+        "label": "Early decision I",
+        "date": "2026-11-01"
+      },
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2027-01-01"
+      }
+    ],
+    "references": "2 teachers + counsellor",
+    "tests": "Optional for 2027; required for fall 2028",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "Current Common App grid used for dates; Columbia College/Engineering scope.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://content.commonapp.org/Files/ReqGrid.pdf",
+      "https://communications.news.columbia.edu/news/update-columbia-college-and-columbia-engineering-testing-policy"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "dartmouth",
+    "name": "Dartmouth",
+    "region": "US",
+    "rank": 12,
+    "rounds": [
+      {
+        "id": "early-decision-i0",
+        "label": "Early decision I",
+        "date": "2026-11-01"
+      },
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2027-01-01"
+      }
+    ],
+    "references": "2 teachers + counsellor; peer letter encouraged",
+    "tests": "Required testing; overseas AP alternative possible",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "Official apply page says Jan 2; glossary and 2026–27 Common App grid say Jan 1. Plan for Jan 1 pending confirmation.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://admissions.dartmouth.edu/glossary-term/application-deadline",
+      "https://admissions.dartmouth.edu/apply/testing-policy"
+    ],
+    "conflict": true
+  },
+  {
+    "id": "carnegie-mellon",
+    "name": "Carnegie Mellon",
+    "region": "US",
+    "rank": 14,
+    "rounds": [
+      {
+        "id": "early-decision-i0",
+        "label": "Early decision I",
+        "date": "2026-11-02"
+      },
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2027-01-04"
+      }
+    ],
+    "references": "1 teacher + counsellor",
+    "tests": "Varies by college: required / flexible / optional",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "Drama/Music RD Dec 1; fine arts portfolios/auditions; SCS requires SAT/ACT.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://coursecatalog.web.cmu.edu/aboutcmu/undergraduateadmission/",
+      "https://www.cmu.edu/admission/admission/standardized-testing"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "cornell",
+    "name": "Cornell",
+    "region": "US",
+    "rank": 14,
+    "rounds": [
+      {
+        "id": "early-decision-i0",
+        "label": "Early decision I",
+        "date": "2026-11-01"
+      },
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2027-01-02"
+      }
+    ],
+    "references": "2 teachers + counsellor",
+    "tests": "Required SAT/ACT",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "College-specific essays, subject preparation and portfolios where applicable.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://admissions.cornell.edu/how-to-apply/first-year-applicants",
+      "https://admissions.cornell.edu/policies/standardized-testing-policy"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "brown",
+    "name": "Brown",
+    "region": "US",
+    "rank": 16,
+    "rounds": [
+      {
+        "id": "early-decision-i0",
+        "label": "Early decision I",
+        "date": "2026-11-01"
+      },
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2027-01-05"
+      }
+    ],
+    "references": "2 teachers + counsellor",
+    "tests": "Required SAT/ACT",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "For BS/PLME one teacher should be STEM; PLME/RISD dual-degree supplements.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://admission.brown.edu/first-year/application-checklist",
+      "https://admission.brown.edu/first-year/application-checklist"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "rice",
+    "name": "Rice",
+    "region": "US",
+    "rank": 16,
+    "rounds": [
+      {
+        "id": "early-decision-i0",
+        "label": "Early decision I",
+        "date": "2026-11-01"
+      },
+      {
+        "id": "early-decision-ii0",
+        "label": "Early decision II",
+        "date": "2027-01-04"
+      },
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2027-01-04"
+      }
+    ],
+    "references": "2 teachers + counsellor",
+    "tests": "SAT/ACT recommended, not required",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "Music deadline Dec 1; architecture/music portfolios or auditions; international checklist also applies.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://admission.rice.edu/apply/first-year-domestic-applicants",
+      "https://admission.rice.edu/apply/first-year-international-applicants"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "vanderbilt",
+    "name": "Vanderbilt",
+    "region": "US",
+    "rank": 16,
+    "rounds": [
+      {
+        "id": "early-decision-i0",
+        "label": "Early decision I",
+        "date": "2026-11-01"
+      },
+      {
+        "id": "early-decision-ii0",
+        "label": "Early decision II",
+        "date": "2027-01-01"
+      },
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2027-01-01"
+      }
+    ],
+    "references": "2 teachers + counsellor",
+    "tests": "Optional through fall 2028; required fall 2029",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "Blair Music and merit scholarship priority Dec 1.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://admissions.vanderbilt.edu/apply/",
+      "https://admissions.vanderbilt.edu/apply/testing-policies/"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "washington-university-in-st-louis",
+    "name": "Washington University in St. Louis",
+    "region": "US",
+    "rank": 16,
+    "rounds": [
+      {
+        "id": "early-action0",
+        "label": "Early action",
+        "date": "2026-11-02"
+      },
+      {
+        "id": "early-decision-i0",
+        "label": "Early decision I",
+        "date": "2026-11-02"
+      },
+      {
+        "id": "early-decision-ii0",
+        "label": "Early decision II",
+        "date": "2027-01-04"
+      },
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2027-01-04"
+      }
+    ],
+    "references": "1 teacher + counsellor",
+    "tests": "Optional for 2027",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "New EA option; recommendations due Nov 9 / Jan 11; arts supplements as applicable.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://admissions.washu.edu/how-to-apply/application-dates-deadlines/",
+      "https://admissions.washu.edu/whats-new-at-washu/"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "uc-berkeley",
+    "name": "UC Berkeley",
+    "region": "US",
+    "rank": 20,
+    "rounds": [
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2026-11-30"
+      }
+    ],
+    "references": "No routine letters; invited applicants may submit",
+    "tests": "SAT/ACT not considered for admission",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "UC application and four personal insight responses; Berkeley may request letters.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://admission.universityofcalifornia.edu/how-to-apply/applying-as-a-first-year/dates-and-deadlines.html",
+      "https://www.universityofcalifornia.edu/news/press-releases-and-statements/academic-senate-review-admissions"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "ucla",
+    "name": "UCLA",
+    "region": "US",
+    "rank": 20,
+    "rounds": [
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2026-11-30"
+      }
+    ],
+    "references": "No routine letters; only if requested",
+    "tests": "SAT/ACT not considered for admission",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "Arts and other specialised programmes have supplemental submissions.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://admission.ucla.edu/apply",
+      "https://www.universityofcalifornia.edu/news/press-releases-and-statements/academic-senate-review-admissions"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "notre-dame",
+    "name": "Notre Dame",
+    "region": "US",
+    "rank": 20,
+    "rounds": [
+      {
+        "id": "early-action0",
+        "label": "Restrictive early action",
+        "date": "2026-11-01"
+      },
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2027-01-04"
+      }
+    ],
+    "references": "1 core teacher required; second evaluation highly recommended",
+    "tests": "Optional for 2027; required fall 2028",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "Supporting materials Nov 15 / Jan 15; writing supplement required.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://admissions.nd.edu/apply/how-to-apply/",
+      "https://admissions.nd.edu/apply/standardized-testing-policy/"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "emory",
+    "name": "Emory",
+    "region": "US",
+    "rank": 23,
+    "rounds": [
+      {
+        "id": "early-decision-i0",
+        "label": "Early decision I",
+        "date": "2026-11-01"
+      },
+      {
+        "id": "early-decision-ii0",
+        "label": "Early decision II",
+        "date": "2027-01-01"
+      },
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2027-01-01"
+      }
+    ],
+    "references": "2 teachers + counsellor",
+    "tests": "Optional in 2026–27 cycle",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "Scholars deadline Nov 15; Emory College and Oxford College options.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://apply.emory.edu/apply/first-year/plans-deadlines/index.html",
+      "https://apply.emory.edu/apply/requirements/exams"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "georgetown",
+    "name": "Georgetown",
+    "region": "US",
+    "rank": 23,
+    "rounds": [
+      {
+        "id": "early-action0",
+        "label": "Early action",
+        "date": "2026-11-01"
+      },
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2027-01-01"
+      }
+    ],
+    "references": "1 teacher + counsellor",
+    "tests": "Required SAT/ACT",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "Alumni interview where available; AP results recommended if taken; EA restrictions.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://uadmissions.georgetown.edu/apply/first-year-applicants/",
+      "https://bulletin.georgetown.edu/admissions/undergraduate-admissions/"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "michigan-ann-arbor",
+    "name": "Michigan Ann Arbor",
+    "region": "US",
+    "rank": 25,
+    "rounds": [
+      {
+        "id": "early-action0",
+        "label": "Early action",
+        "date": "2026-11-01"
+      },
+      {
+        "id": "early-decision-i0",
+        "label": "Early decision I",
+        "date": "2026-11-01"
+      },
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2027-02-01"
+      }
+    ],
+    "references": "1 teacher evaluation + school report; counsellor letter encouraged",
+    "tests": "Optional for 2027",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "Music/Theatre/Dance Dec 1; ED eligibility restrictions for dual/preferred admission.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://admissions.umich.edu/apply/first-year-applicants/requirements-deadlines",
+      "https://admissions.umich.edu/apply/first-year-applicants/requirements-deadlines/application-changes"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "virginia",
+    "name": "Virginia",
+    "region": "US",
+    "rank": 26,
+    "rounds": [
+      {
+        "id": "early-action0",
+        "label": "Early action",
+        "date": "2026-11-01"
+      },
+      {
+        "id": "early-decision-i0",
+        "label": "Early decision I",
+        "date": "2026-11-01"
+      },
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2027-01-05"
+      }
+    ],
+    "references": "1 teacher required; counsellor letter optional, school report required",
+    "tests": "Optional for 2027",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "School supporting materials Nov 8 / Jan 10.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://admission.virginia.edu/admission/deadlines-instructions",
+      "https://admission.virginia.edu/admission/deadlines-instructions"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "unc-chapel-hill",
+    "name": "UNC Chapel Hill",
+    "region": "US",
+    "rank": 27,
+    "rounds": [
+      {
+        "id": "early-action0",
+        "label": "Early action",
+        "date": "2026-10-15"
+      },
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2027-01-15"
+      }
+    ],
+    "references": "1 core academic teacher + school materials",
+    "tests": "Conditional: optional if GPA meets system threshold",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "Weighted GPA 2.8 threshold; below it SAT/ACT required. International grade equivalence must be checked.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://admissions.unc.edu/apply/types-of-applications/first-year/",
+      "https://admissions.unc.edu/apply/types-of-applications/first-year/"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "southern-california",
+    "name": "Southern California",
+    "region": "US",
+    "rank": 27,
+    "rounds": [
+      {
+        "id": "early-action0",
+        "label": "Early action",
+        "date": "2026-11-01"
+      },
+      {
+        "id": "early-decision-i0",
+        "label": "Early decision I",
+        "date": "2026-11-01"
+      },
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2027-01-10"
+      }
+    ],
+    "references": "1 teacher or counsellor; school/program exceptions",
+    "tests": "Optional for 2027",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "Dance/Music/Dramatic Arts Dec 1 RD; portfolios/auditions. ED is a new 2027 option.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://www.admissionblog.usc.edu/p/early-action-and-early-decision-application",
+      "https://viterbiadmission.usc.edu/apply/"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "georgia-tech",
+    "name": "Georgia Tech",
+    "region": "US",
+    "rank": 29,
+    "rounds": [
+      {
+        "id": "early-action0",
+        "label": "EA1 GA",
+        "date": "2026-10-15"
+      },
+      {
+        "id": "early-action1",
+        "label": "EA2 others",
+        "date": "2026-11-02"
+      },
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2027-01-06"
+      }
+    ],
+    "references": "Letters optional: up to 1 counsellor + 2 teachers",
+    "tests": "Required SAT/ACT",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "International applicants use EA2; supporting documents/tests have later deadlines.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://admission.gatech.edu/first-year/deadlines/",
+      "https://admission.gatech.edu/first-year/recommendations"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "uc-san-diego",
+    "name": "UC San Diego",
+    "region": "US",
+    "rank": 29,
+    "rounds": [
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2026-11-30"
+      }
+    ],
+    "references": "No routine letters; only if requested",
+    "tests": "SAT/ACT not considered for admission",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "Selective majors and optional arts portfolios require attention.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://admission.universityofcalifornia.edu/how-to-apply/applying-as-a-first-year/dates-and-deadlines.html",
+      "https://www.universityofcalifornia.edu/news/press-releases-and-statements/academic-senate-review-admissions"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "boston-college",
+    "name": "Boston College",
+    "region": "US",
+    "rank": 31,
+    "rounds": [
+      {
+        "id": "early-decision-i0",
+        "label": "Early decision I",
+        "date": "2026-11-01"
+      },
+      {
+        "id": "early-decision-ii0",
+        "label": "Early decision II",
+        "date": "2027-01-04"
+      },
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2027-01-04"
+      }
+    ],
+    "references": "2 teachers + counsellor",
+    "tests": "Optional",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "Priority scholarship consideration Nov 1.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://www.bc.edu/bc-web/admission/apply/",
+      "https://www.bc.edu/content/bc-web/admission/apply/test-optional.html"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "new-york-university",
+    "name": "New York University",
+    "region": "US",
+    "rank": 31,
+    "rounds": [
+      {
+        "id": "early-decision-i0",
+        "label": "Early decision I",
+        "date": "2026-11-01"
+      },
+      {
+        "id": "early-decision-ii0",
+        "label": "Early decision II",
+        "date": "2027-01-01"
+      },
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2027-01-05"
+      }
+    ],
+    "references": "1 recommendation + school report",
+    "tests": "Optional through 2027–28 application cycle",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "Tisch/Steinhardt portfolios/auditions; campus and programme rules vary.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://content.commonapp.org/Files/ReqGrid.pdf",
+      "https://nyuad.nyu.edu/en/home/apply/undergraduate/apply.html"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "tufts",
+    "name": "Tufts",
+    "region": "US",
+    "rank": 31,
+    "rounds": [
+      {
+        "id": "early-decision-i0",
+        "label": "Early decision I",
+        "date": "2026-11-02"
+      },
+      {
+        "id": "early-decision-ii0",
+        "label": "Early decision II",
+        "date": "2027-01-04"
+      },
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2027-01-04"
+      }
+    ],
+    "references": "1 teacher + counsellor",
+    "tests": "Optional",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "SMFA and combined-degree applicants submit portfolio as required.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://admissions.tufts.edu/apply/",
+      "https://admissions.tufts.edu/apply/applying-to-tufts/sat-and-act-tests/"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "boston-university",
+    "name": "Boston University",
+    "region": "US",
+    "rank": 34,
+    "rounds": [
+      {
+        "id": "early-decision-i0",
+        "label": "Early decision I",
+        "date": "2026-11-02"
+      },
+      {
+        "id": "early-decision-ii0",
+        "label": "Early decision II",
+        "date": "2027-01-05"
+      },
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2027-01-05"
+      }
+    ],
+    "references": "1 teacher + counsellor",
+    "tests": "Optional through fall 2028 / spring 2029",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "Music/Theatre prescreen Dec 1; scholarship Dec 1; engineering calculus requirement.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://www.bu.edu/admissions/apply/deadlines/",
+      "https://www.bu.edu/admissions/apply/first-year/"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "uc-davis",
+    "name": "UC Davis",
+    "region": "US",
+    "rank": 34,
+    "rounds": [
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2026-11-30"
+      }
+    ],
+    "references": "No routine letters; only if requested",
+    "tests": "SAT/ACT not considered for admission",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "UC application, course/grade reporting, four personal insight responses.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://admission.universityofcalifornia.edu/how-to-apply/applying-as-a-first-year/dates-and-deadlines.html",
+      "https://www.universityofcalifornia.edu/news/press-releases-and-statements/academic-senate-review-admissions"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "uc-irvine",
+    "name": "UC Irvine",
+    "region": "US",
+    "rank": 34,
+    "rounds": [
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2026-11-30"
+      }
+    ],
+    "references": "No routine letters; only if requested",
+    "tests": "SAT/ACT not considered for admission",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "Arts/other selective programmes may require supplements.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://admission.universityofcalifornia.edu/how-to-apply/applying-as-a-first-year/dates-and-deadlines.html",
+      "https://www.universityofcalifornia.edu/news/press-releases-and-statements/academic-senate-review-admissions"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "florida",
+    "name": "Florida",
+    "region": "US",
+    "rank": 34,
+    "rounds": [
+      {
+        "id": "early-action0",
+        "label": "Early action",
+        "date": "2026-11-01"
+      },
+      {
+        "id": "early-decision-i0",
+        "label": "Early decision I",
+        "date": "2026-10-15"
+      },
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2027-01-15"
+      }
+    ],
+    "references": "Letters not accepted",
+    "tests": "Required SAT/ACT/CLT",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "New ED option; academic record and test supporting deadlines generally one week later.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://admissions.ufl.edu/apply/freshman//deadlines",
+      "https://admissions.ufl.edu/english-common-app-guide"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "illinois-urbana-champaign",
+    "name": "Illinois Urbana-Champaign",
+    "region": "US",
+    "rank": 34,
+    "rounds": [
+      {
+        "id": "early-action0",
+        "label": "Early action",
+        "date": "2026-11-01"
+      },
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2027-01-05"
+      }
+    ],
+    "references": "Letters not accepted",
+    "tests": "Optional",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "Major-specific admission; self-reported academic record; arts audition/portfolio when required.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://www.admissions.illinois.edu/first-year/",
+      "https://www.admissions.illinois.edu/first-year-apply-faq/"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "texas-austin",
+    "name": "Texas Austin",
+    "region": "US",
+    "rank": 34,
+    "rounds": [
+      {
+        "id": "early-action0",
+        "label": "Early action",
+        "date": "2026-10-15"
+      },
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2026-12-01"
+      }
+    ],
+    "references": "Optional, maximum 2; some honours exceptions",
+    "tests": "Required SAT/ACT/CLT",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "Supporting materials Oct 22 / Dec 10; calculus readiness for specified STEM majors.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://admissions.utexas.edu/apply/freshman/",
+      "https://admissions.utexas.edu/apply/application-materials/high-school-prerequisites/"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "wisconsin-madison",
+    "name": "Wisconsin Madison",
+    "region": "US",
+    "rank": 34,
+    "rounds": [
+      {
+        "id": "early-action0",
+        "label": "Early action",
+        "date": "2026-11-01"
+      },
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2027-01-15"
+      }
+    ],
+    "references": "1 academic recommendation (teacher or counsellor)",
+    "tests": "Optional through spring 2028",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "Supporting materials Nov 9 / Jan 22; music/dance have additional submissions.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://admissions.wisc.edu/apply-as-a-freshman/",
+      "https://admissions.wisc.edu/apply-as-a-freshman/"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "wake-forest",
+    "name": "Wake Forest",
+    "region": "US",
+    "rank": 34,
+    "rounds": [
+      {
+        "id": "early-action0",
+        "label": "Early action",
+        "date": "2026-11-15"
+      },
+      {
+        "id": "early-decision-i0",
+        "label": "Early decision I",
+        "date": "2026-11-15"
+      },
+      {
+        "id": "early-decision-ii0",
+        "label": "Early decision II",
+        "date": "2027-01-01"
+      },
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2027-01-01"
+      }
+    ],
+    "references": "1 letter from teacher or counsellor/advisor",
+    "tests": "Optional",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "ED1 decisions are rolling within the early plan; not a general late application round.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://admissions.wfu.edu/become-a-deacon/first-year/",
+      "https://admissions.wfu.edu/apply/"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "northeastern",
+    "name": "Northeastern",
+    "region": "US",
+    "rank": 42,
+    "rounds": [
+      {
+        "id": "early-action0",
+        "label": "Early action",
+        "date": "2026-11-01"
+      },
+      {
+        "id": "early-decision-i0",
+        "label": "Early decision I",
+        "date": "2026-11-01"
+      },
+      {
+        "id": "early-decision-ii0",
+        "label": "Early decision II",
+        "date": "2027-01-01"
+      },
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2027-01-01"
+      }
+    ],
+    "references": "1 teacher + counsellor",
+    "tests": "Optional",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "Campus/entry programme options affect binding ED commitment; review choices carefully.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://admissions.northeastern.edu/academics/specialized-entry-programs/admissions-deadlines-decisions/",
+      "https://admissions.northeastern.edu/application-information/first-year-applicants/"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "villanova",
+    "name": "Villanova",
+    "region": "US",
+    "rank": 42,
+    "rounds": [
+      {
+        "id": "early-action0",
+        "label": "Early action",
+        "date": "2026-11-01"
+      },
+      {
+        "id": "early-decision-i0",
+        "label": "Early decision I",
+        "date": "2026-11-01"
+      },
+      {
+        "id": "early-decision-ii0",
+        "label": "Early decision II",
+        "date": "2027-01-15"
+      },
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2027-01-15"
+      }
+    ],
+    "references": "1 recommendation + school report/counsellor materials",
+    "tests": "Optional for 2026–27; nontraditional exceptions",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "Honours and scholarship requirements may have additional dates.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://www.villanova.edu/university/undergraduate-admission/applying-to-villanova/dates-and-deadlines.html",
+      "https://www.villanova.edu/university/undergraduate-admission/faqs.html"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "case-western-reserve",
+    "name": "Case Western Reserve",
+    "region": "US",
+    "rank": 44,
+    "rounds": [
+      {
+        "id": "early-action0",
+        "label": "Early action",
+        "date": "2026-11-01"
+      },
+      {
+        "id": "early-decision-i0",
+        "label": "Early decision I",
+        "date": "2026-11-01"
+      },
+      {
+        "id": "early-decision-ii0",
+        "label": "Early decision II",
+        "date": "2027-01-15"
+      },
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2027-01-15"
+      }
+    ],
+    "references": "2 teachers + counsellor",
+    "tests": "Optional",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "Pre-Professional Scholars deadline Dec 1; arts auditions/portfolios as applicable.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://case.edu/admission/apply/first-year-applicants",
+      "https://case.edu/admission/apply/deadlines-and-requirements"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "lehigh",
+    "name": "Lehigh",
+    "region": "US",
+    "rank": 44,
+    "rounds": [
+      {
+        "id": "early-decision-i0",
+        "label": "Early decision I",
+        "date": "2026-11-01"
+      },
+      {
+        "id": "early-decision-ii0",
+        "label": "Early decision II",
+        "date": "2027-01-01"
+      },
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2027-01-01"
+      }
+    ],
+    "references": "1 teacher + counsellor",
+    "tests": "Optional",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "Architecture/design and specialised programmes may request additional materials.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://www2.lehigh.edu/admissions/admissions-requirements",
+      "https://www2.lehigh.edu/admissions/admissions-requirements"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "ohio-state-columbus",
+    "name": "Ohio State Columbus",
+    "region": "US",
+    "rank": 44,
+    "rounds": [
+      {
+        "id": "early-action0",
+        "label": "Early action",
+        "date": "2026-11-01"
+      },
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2027-01-15"
+      }
+    ],
+    "references": "Optional, up to 2 letters",
+    "tests": "Required SAT/ACT",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "Columbus scope; regional campus policy differs; some majors/scholarships prioritise EA.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://undergrad.osu.edu/apply/freshmen-columbus/apply-step-by-step",
+      "https://hscounselors.osu.edu/web_resources/HSCounselors/prod/emails/COL-EM-CORP-CNSLR-Recruit2027-AdmissionsNews-Sept-OH.html"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "rutgers-new-brunswick",
+    "name": "Rutgers New Brunswick",
+    "region": "US",
+    "rank": 44,
+    "rounds": [
+      {
+        "id": "early-action0",
+        "label": "Early action",
+        "date": "2026-11-01"
+      },
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2026-12-01"
+      }
+    ],
+    "references": "Letters not used for admission",
+    "tests": "Optional through 2027",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "After Dec 1, applications may remain open by school on a space-available basis; STARS required.",
+    "late": "Space-available by school; no guaranteed late closing date",
+    "sources": [
+      "https://admissions.rutgers.edu/apply/dates-deadlines/new-brunswick",
+      "https://admissions.rutgers.edu/apply/first-year-applicants"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "uc-santa-barbara",
+    "name": "UC Santa Barbara",
+    "region": "US",
+    "rank": 44,
+    "rounds": [
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2026-11-30"
+      }
+    ],
+    "references": "No routine letters; only if requested",
+    "tests": "SAT/ACT not considered for admission",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "College of Creative Studies and arts may require additional applications.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://admission.universityofcalifornia.edu/how-to-apply/applying-as-a-first-year/dates-and-deadlines.html",
+      "https://www.universityofcalifornia.edu/news/press-releases-and-statements/academic-senate-review-admissions"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "maryland-college-park",
+    "name": "Maryland College Park",
+    "region": "US",
+    "rank": 49,
+    "rounds": [
+      {
+        "id": "early-action0",
+        "label": "Early action",
+        "date": "2026-11-01"
+      },
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2027-01-20"
+      }
+    ],
+    "references": "1 teacher + counsellor",
+    "tests": "Optional for 2027",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "After Jan 20 space-available review may occur; EA matters for scholarships and limited-enrolment programmes.",
+    "late": "Space-available by school; no guaranteed late closing date",
+    "sources": [
+      "https://admissions.umd.edu/apply/freshman-application-faqs",
+      "https://admissions.umd.edu/apply/freshman-applicants"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "rochester",
+    "name": "Rochester",
+    "region": "US",
+    "rank": 49,
+    "rounds": [
+      {
+        "id": "early-decision-i0",
+        "label": "Early decision I",
+        "date": "2026-11-01"
+      },
+      {
+        "id": "early-decision-ii0",
+        "label": "Early decision II",
+        "date": "2027-01-05"
+      },
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2027-01-05"
+      }
+    ],
+    "references": "1 teacher + counsellor",
+    "tests": "Optional",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "Priority scholarship Dec 1; Eastman School of Music uses a separate process.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://admissions.rochester.edu/applying/dates-and-deadlines/",
+      "https://admissions.rochester.edu/applying/first-year-students/"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "washington-seattle",
+    "name": "Washington Seattle",
+    "region": "US",
+    "rank": 49,
+    "rounds": [
+      {
+        "id": "regular-decision0",
+        "label": "Regular decision",
+        "date": "2026-11-15"
+      }
+    ],
+    "references": "Letters not accepted",
+    "tests": "Optional for most; exceptions apply",
+    "ap": "See qualification and subject rules; historical AP percentiles not located.",
+    "notes": "Direct-to-major/college selection; English proficiency separate; homeschool/nonstandard-grading exceptions.",
+    "late": "No routine late round listed in reviewed calendar",
+    "sources": [
+      "https://admit.washington.edu/apply/first-year/",
+      "https://admit.washington.edu/apply/first-year/how-to-apply/test-scores/"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "imperial-college-london",
+    "name": "Imperial College London",
+    "region": "UK",
+    "rank": 2,
+    "rounds": [
+      {
+        "id": "october",
+        "label": "Medicine (October deadline)",
+        "date": "2026-10-15"
+      },
+      {
+        "id": "regular",
+        "label": "Most courses (UCAS equal consideration)",
+        "date": "2027-01-13"
+      }
+    ],
+    "references": "1 academic UCAS reference; predicted grades",
+    "tests": "ESAT/TMUA/UCAT depending on course; English evidence",
+    "ap": "General AP-only minimum 55544; alternative 554 + SAT1460/ACT31 + acceptable leaving certificate; course may require more.",
+    "notes": "Electrical engineering has substantially higher subject-specific requirements.",
+    "late": "Later applications only where course remains open",
+    "sources": [
+      "https://www.imperial.ac.uk/study/apply/undergraduate/process/deadlines/",
+      "https://www.imperial.ac.uk/study/apply/undergraduate/entry-requirements/accepted-qualifications/"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "oxford",
+    "name": "Oxford",
+    "region": "UK",
+    "rank": 4,
+    "rounds": [
+      {
+        "id": "october",
+        "label": "All courses (October deadline)",
+        "date": "2026-10-15"
+      }
+    ],
+    "references": "1 academic UCAS reference; predicted grades",
+    "tests": "ESAT/TARA/TMUA, LNAT or UCAT by course; interviews/written work as required",
+    "ap": "4 APs at 5, or 3 APs at 5 + SAT/ACT: 1480/33 (A*A*A); 1470/32 (A*AA); 1460/31 (AAA).",
+    "notes": "Required subjects must be included. Oxford and Cambridge normally cannot both be selected in same UCAS cycle.",
+    "late": "No normal late round",
+    "sources": [
+      "https://www.ox.ac.uk/admissions/undergraduate/courses/admissions-requirements/international-qualifications",
+      "https://www.ox.ac.uk/admissions/undergraduate/applying/guide-for-applicants/admissions-tests"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "cambridge",
+    "name": "Cambridge",
+    "region": "UK",
+    "rank": 6,
+    "rounds": [
+      {
+        "id": "october",
+        "label": "All courses (October deadline)",
+        "date": "2026-10-15"
+      }
+    ],
+    "references": "1 academic UCAS reference; predicted grades",
+    "tests": "SAT/ACT normally alongside AP; course admission tests/interview; English evidence",
+    "ap": "Typically 5 APs at 5, completed within two years; high-school diploma and usually SAT/ACT also expected.",
+    "notes": "SAT generally 1500 with Math750 for science/economics; 1460 with EBRW730 for other courses. College/course requirements control.",
+    "late": "No normal late round",
+    "sources": [
+      "https://www.undergraduate.study.cam.ac.uk/apply/before/accepted-qualifications",
+      "https://www.undergraduate.study.cam.ac.uk/apply/before/application-statistics"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "ucl",
+    "name": "UCL",
+    "region": "UK",
+    "rank": 8,
+    "rounds": [
+      {
+        "id": "october",
+        "label": "Medicine (October deadline)",
+        "date": "2026-10-15"
+      },
+      {
+        "id": "regular",
+        "label": "Most courses (UCAS equal consideration)",
+        "date": "2027-01-13"
+      }
+    ],
+    "references": "1 academic UCAS reference; predicted grades",
+    "tests": "Course-specific ESAT/TARA/TMUA/TST/LNAT/UCAT; English level varies",
+    "ap": "3–5 APs, or 2 APs + SAT/ACT + diploma; exact grades on course page.",
+    "notes": "APs in final three years. AB/BC do not count twice; mathematics/physics subject restrictions apply.",
+    "late": "Late/Extra to Jun 30 only if course open; no guarantee",
+    "sources": [
+      "https://www.ucl.ac.uk/digital-presence-services/webapps-drupal-cms/www/international-country-information-undergraduate.php?country=US&ug_year=2027",
+      "https://www.ucl.ac.uk/study/prospective-students/undergraduate/how-apply/how-we-assess-your-application"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "edinburgh",
+    "name": "Edinburgh",
+    "region": "UK",
+    "rank": 35,
+    "rounds": [
+      {
+        "id": "october",
+        "label": "Medicine / Veterinary Medicine (October deadline)",
+        "date": "2026-10-15"
+      },
+      {
+        "id": "regular",
+        "label": "Most courses (UCAS equal consideration)",
+        "date": "2027-01-13"
+      }
+    ],
+    "references": "1 academic UCAS reference; predicted grades",
+    "tests": "SAT/ACT optional via AP-only route; UCAT Medicine; English evidence",
+    "ap": "General: 3 APs at 4+, or 2 APs at 4+ with SAT1290 (RW650/Math620) or ACT27.",
+    "notes": "Medicine/veterinary medicine excluded from this general route; subject and competitive offer requirements can be higher.",
+    "late": "Only if course open / vacancies; verify course",
+    "sources": [
+      "https://www.ed.ac.uk/studying/international/country/americas/united-states-of-america",
+      "https://science-engineering.ed.ac.uk/studying/undergraduate/applying/entrancerequirements/entry-requirements-for-usa-qualifications"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "king-s-college-london",
+    "name": "King's College London",
+    "region": "UK",
+    "rank": 37,
+    "rounds": [
+      {
+        "id": "october",
+        "label": "Medicine / Dentistry (October deadline)",
+        "date": "2026-10-15"
+      },
+      {
+        "id": "regular",
+        "label": "Most courses (UCAS equal consideration)",
+        "date": "2027-01-13"
+      }
+    ],
+    "references": "1 academic UCAS reference; predicted grades",
+    "tests": "SAT/ACT route or AP-only; LNAT Law, UCAT Medicine/Dentistry; English evidence",
+    "ap": "AP-only typically 5 APs, with grades matched to course A-level offer; alternative 3 APs + SAT/ACT.",
+    "notes": "Examples: A*A*A = 55555 or 555+SAT1410/ACT30; AAA = 55544 or 555+SAT1380/ACT28.",
+    "late": "Only if open / vacancies; verify course",
+    "sources": [
+      "https://www.kcl.ac.uk/study/undergraduate/how-to-apply/entry-requirements",
+      "https://www.ucas.com/events/2027-entry-deadline-for-all-undergraduate-courses-except-those-with-a-15-october-deadline-475546"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "manchester",
+    "name": "Manchester",
+    "region": "UK",
+    "rank": 40,
+    "rounds": [
+      {
+        "id": "october",
+        "label": "Medicine / Dentistry (October deadline)",
+        "date": "2026-10-15"
+      },
+      {
+        "id": "regular",
+        "label": "Most courses (UCAS equal consideration)",
+        "date": "2027-01-13"
+      }
+    ],
+    "references": "1 academic UCAS reference; predicted grades",
+    "tests": "AP qualification routes vary by department; UCAT Medicine/Dentistry; English evidence",
+    "ap": "No single AP score formula for all subjects; consult department and country entry routes.",
+    "notes": "Math example: AP555 including Calculus BC plus GPA3.2. Computer science has a different AP/GPA combination.",
+    "late": "Only if course remains open / Clearing vacancies",
+    "sources": [
+      "https://www.manchester.ac.uk/study/international/country-specific-information/usa/",
+      "https://www.maths.manchester.ac.uk/study/international-students/country-specific-information/"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "bristol",
+    "name": "Bristol",
+    "region": "UK",
+    "rank": 57,
+    "rounds": [
+      {
+        "id": "october",
+        "label": "Medicine / Dentistry / Veterinary courses (October deadline)",
+        "date": "2026-10-15"
+      },
+      {
+        "id": "regular",
+        "label": "Most courses (UCAS equal consideration)",
+        "date": "2027-01-13"
+      }
+    ],
+    "references": "1 academic UCAS reference; predicted grades",
+    "tests": "AP route; LNAT Law, UCAT Medicine/Dentistry; English evidence",
+    "ap": "China route: senior high-school diploma or accredited US diploma plus at least 3 APs, normally 5s; strong school record.",
+    "notes": "Math-required courses normally require Calculus BC at 5. Country/qualification route must match applicant.",
+    "late": "Only if open / Clearing vacancies",
+    "sources": [
+      "https://www.bristol.ac.uk/international/countries/china.html",
+      "https://www.bristol.ac.uk/study/undergraduate/entry-requirements-qualifications/"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "hong-kong-hku",
+    "name": "Hong Kong (HKU)",
+    "region": "HK",
+    "rank": 11,
+    "rounds": [
+      {
+        "id": "priority-/-advance-round0",
+        "label": "Priority / advance round",
+        "date": "2026-11-25"
+      },
+      {
+        "id": "final-rolling-close0",
+        "label": "Final rolling close",
+        "date": "2027-08-25"
+      }
+    ],
+    "references": "Counsellor/referee support via portal; fixed minimum count not confirmed in reviewed page",
+    "tests": "SAT/ACT combination or extra AP alternative; English and second-language requirements",
+    "ap": "3 APs at 3+ with SAT1380, or 5 APs at 3+ (specified subjects excluded); programme expectations often much higher.",
+    "notes": "First-round references/predicted grades: Dec 1. General eligibility is not an offer threshold.",
+    "late": "Final close: 2027-08-25, noon HKT",
+    "sources": [
+      "https://www.admissions.hku.hk/apply/international-qualifications",
+      "https://admissions.hku.hk/node/2303",
+      "https://www.admissions.hku.hk/apply/international-qualifications/information-for-counsellors"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "chinese-university-of-hong-kong",
+    "name": "Chinese University of Hong Kong",
+    "region": "HK",
+    "rank": 18,
+    "rounds": [
+      {
+        "id": "priority-/-advance-round0",
+        "label": "Priority / advance round",
+        "date": "2026-11-12"
+      },
+      {
+        "id": "regular-round0",
+        "label": "Regular round",
+        "date": "2027-01-07"
+      }
+    ],
+    "references": "At least 1 academic recommendation (local non-JUPAS FAQ); verify selected applicant route",
+    "tests": "AP/SAT/ACT qualification route; English and other language requirements",
+    "ap": "Local non-JUPAS US route: diploma + SAT1190 or ACT24 + 2 APs at 3+; programme requirements can be higher.",
+    "notes": "Non-local applicants use overseas-qualifications route. Local/non-local status is not inferred from school location.",
+    "late": "Late applications may be considered if places available; no guaranteed final date verified",
+    "sources": [
+      "https://admission.cuhk.edu.hk/application/non-jupas/important-dates/",
+      "https://admission.cuhk.edu.hk/application/overseas-other-qualifications-non-local-international-team/faq/",
+      "https://admission.cuhk.edu.hk/application/non-jupas/general-requirements/"
+    ],
+    "conflict": false
+  },
+  {
+    "id": "hong-kong-university-of-science-and-technology",
+    "name": "Hong Kong University of Science and Technology",
+    "region": "HK",
+    "rank": 33,
+    "rounds": [
+      {
+        "id": "priority-/-advance-round0",
+        "label": "Priority / advance round",
+        "date": "2026-11-25"
+      },
+      {
+        "id": "regular-round0",
+        "label": "Rolling applications — final close (rolling starts 26 Nov 2026)",
+        "date": "2027-06-30"
+      },
+      {
+        "id": "final-rolling-close0",
+        "label": "Final rolling close",
+        "date": "2027-06-30"
+      }
+    ],
+    "references": "Academic referee nominated through application; verify portal completion requirement",
+    "tests": "AP/SAT/ACT qualifying routes; English evidence",
+    "ap": "US route shown: SAT1190 or ACT24 (including Science) + 2 APs at 3+; programme prerequisites also apply.",
+    "notes": "Current 2027 calendar has priority then rolling review, rather than a separate January main deadline. Scholarship AP thresholds are separate. · 2026-10-30 corrected: 26 Nov is the rolling-review start, not a Regular Round deadline; final close is 30 Jun 2027.",
+    "late": "Final close: 2027-06-30",
+    "sources": [
+      "https://join.hkust.edu.hk/admissions/international-qualifications",
+      "https://www.join.hkust.edu.hk/zh-hant/admissions/international-qualifications?general_requirement=46180",
+      "https://join.hkust.edu.hk/zh-hant/node/27"
+    ],
+    "conflict": false
+  }
+]
