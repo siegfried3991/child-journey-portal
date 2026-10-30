@@ -16,3 +16,13 @@ export const evidenceObjects=sqliteTable('erp_evidence_objects',{
 export const evidenceChunks=sqliteTable('erp_evidence_chunks',{
  objectKey:text('object_key').notNull().references(()=>evidenceObjects.objectKey,{onDelete:'cascade'}),part:integer('part').notNull(),data:blob('data').notNull(),
 },t=>[primaryKey({columns:[t.objectKey,t.part]})]);
+
+export const portalUsers=sqliteTable('portal_users',{
+ id:text('id').primaryKey().notNull(),username:text('username').unique(),passwordHash:text('password_hash'),role:text('role').notNull(),mustChange:integer('must_change').notNull().default(1),disabled:integer('disabled').notNull().default(0),created:integer('created').notNull(),
+},t=>[check('portal_role',sql`${t.role} IN ('owner','viewer')`)]);
+export const portalSessions=sqliteTable('portal_sessions',{
+ tokenHash:text('token_hash').primaryKey().notNull(),userId:text('user_id').notNull().references(()=>portalUsers.id),method:text('method').notNull(),created:integer('created').notNull(),lastSeen:integer('last_seen').notNull(),expires:integer('expires').notNull(),
+},t=>[index('portal_sessions_expiry').on(t.expires),index('portal_sessions_user').on(t.userId)]);
+export const portalLoginLimits=sqliteTable('portal_login_limits',{
+ key:text('key').primaryKey().notNull(),window:integer('window').notNull(),hits:integer('hits').notNull(),
+});

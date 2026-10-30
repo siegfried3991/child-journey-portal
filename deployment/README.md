@@ -45,7 +45,7 @@ D1 chunks each evidence file into 256 KiB rows, verifies SHA-256 on download, re
 ## Runtime and authentication
 
 - `vite.cloudflare.config.ts` uses the same ERP UI/API and database schema through a separate Worker entry. Existing Sites deployments can continue using R2; the independent profile sets `ERP_EVIDENCE_STORAGE=d1` and has no R2 binding. It does not use the Sites mock identity plugin.
-- `worker/cloudflare.ts` validates a signed Access JWT before serving any route; the generated config sets `assets.run_worker_first=true` and disables preview URLs. Invalid/missing credentials return 403, even if the Access edge policy is accidentally absent.
+- `worker/cloudflare.ts` guards all ERP routes, APIs and assets with a server-side session. Anonymous API calls return 401; page requests redirect to `/login`. Signed Cloudflare Access JWTs are accepted only at `/owner-login` as an owner bootstrap/recovery route. The generated config sets `assets.run_worker_first=true` and disables preview URLs.
 - Verification checks the configured issuer, specific application audience, RS256 signature, expiry, age and owner allowlist. All client-provided `oai-authenticated-*` headers are removed before the verified identity is supplied to existing ERP handlers.
 - Incomplete configuration denies access. The deployment token is a GitHub secret, not an app runtime variable. No import-service secret is configured by default.
 - The generated `.cloudflare/wrangler.json` contains private settings and is ignored. Do not upload it or build archives to GitHub artifacts.
@@ -83,3 +83,16 @@ Do not use the existing `npm run dev` mock profile as proof of standalone produc
 - https://developers.cloudflare.com/workers/ci-cd/external-cicd/github-actions/
 - https://developers.cloudflare.com/cloudflare-one/access-controls/applications/http-apps/authorization-cookie/validating-json/
 - https://developers.cloudflare.com/workers/static-assets/routing/worker-script/
+
+
+## Username/password access
+
+Apply `drizzle/0002_portal_accounts.sql` before deploying this version. First deploy the Worker while the existing Cloudflare Access gate still covers production. Verify `/owner-login` creates an owner session and `/account` opens. Then scope the existing Access application to the **exact production hostname plus `/owner-login`**, with the existing owner-only policy; keep preview Worker URLs protected. Production routes outside `/owner-login` use application sessions. Do not simply remove the owner recovery destination. Verify anonymous `/login` returns 200, `/api/erp` and attachment APIs return 401, and `/owner-login` redirects to Cloudflare Access.
+
+The owner opens `/owner-login` → `/account`, chooses their own username and password, and creates invited viewer accounts. There is no registration endpoint. Viewers can read all records and attachments in this family workspace, but cannot change records, import, upload or administer users. Do not use this version for per-child or per-course sharing. Password reset is performed by the owner; owner recovery uses Cloudflare Access. No outgoing email service or paid product is required.
+
+Passwords use native `node:crypto` scrypt (N=32768, r=8, p=3, 32 MiB; per-user random salt), not plaintext or reversible encryption. Password length is 14–128 characters. Sessions use random 256-bit bearer tokens, only SHA-256 digests in D1, Secure/HttpOnly/SameSite=Lax host-only cookies, 12-hour absolute and one-hour idle expiry. Disabling or resetting an invited account revokes its sessions immediately. New/reset viewer passwords must be changed before access. Self-service password changes require the current password, except a freshly authenticated Cloudflare owner during a 15-minute recovery window. Mutation endpoints require exact same Origin; authentication pages have a restrictive CSP. Login limits are enforced in D1 per username, IP and globally over fixed 15-minute windows. These limits can cause a temporary lockout; the owner recovery path stays available.
+
+Check `tests/password-auth.test.ts` alongside the existing auth/domain suites. Live smoke tests should cover native scrypt on the Free Worker, first-login change, viewer denial, owner recovery, logout and anonymous API denial. Keep test accounts temporary and revoke/remove them after verification. Never put real account credentials or session values in the repository.
+
+References: [Cloudflare native crypto](https://developers.cloudflare.com/workers/runtime-apis/nodejs/crypto/), [OWASP password storage](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html), [OWASP sessions](https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html).
