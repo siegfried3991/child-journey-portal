@@ -1,0 +1,12 @@
+import {mkdirSync,writeFileSync} from 'node:fs';
+import {resolve} from 'node:path';
+const required=['CF_WORKER_NAME','CF_D1_DATABASE_ID','CF_R2_BUCKET','CF_ACCESS_TEAM_DOMAIN','CF_ACCESS_AUD','ERP_OWNER_EMAILS','ERP_WORKSPACE_ID'];
+const values=Object.fromEntries(required.map(k=>{const value=process.env[k]?.trim();if(!value)throw new Error('Missing deployment setting: '+k);return[k,value]}));
+if(!/^[a-z0-9][a-z0-9-]{0,62}$/.test(values.CF_WORKER_NAME)||!/^[a-z0-9][a-z0-9.-]{1,61}[a-z0-9]$/.test(values.CF_R2_BUCKET))throw new Error('Invalid Worker or R2 name');
+if(!/^[a-f0-9-]{36}$/i.test(values.CF_D1_DATABASE_ID))throw new Error('Invalid D1 ID');
+if(!/^https:\/\/[a-z0-9-]+\.cloudflareaccess\.com$/.test(values.CF_ACCESS_TEAM_DOMAIN))throw new Error('Access issuer must be the HTTPS team domain without a trailing slash');
+const owners=values.ERP_OWNER_EMAILS.split(',').map(x=>x.trim()).filter(Boolean);
+if(!owners.length||owners.some(x=>!/^\S+@\S+\.\S+$/.test(x)))throw new Error('Invalid owner email list');
+const config={name:values.CF_WORKER_NAME,main:resolve('worker/cloudflare.ts'),compatibility_date:'2026-05-15',compatibility_flags:['nodejs_compat'],workers_dev:true,preview_urls:false,assets:{binding:'ASSETS',run_worker_first:true},d1_databases:[{binding:'DB',database_name:values.CF_WORKER_NAME+'-db',database_id:values.CF_D1_DATABASE_ID,migrations_dir:resolve('drizzle')}],r2_buckets:[{binding:'BUCKET',bucket_name:values.CF_R2_BUCKET}],vars:{CF_ACCESS_TEAM_DOMAIN:values.CF_ACCESS_TEAM_DOMAIN,CF_ACCESS_AUD:values.CF_ACCESS_AUD,ERP_OWNER_EMAILS:values.ERP_OWNER_EMAILS,ERP_WORKSPACE_EMAIL:owners[0],ERP_WORKSPACE_ID:values.ERP_WORKSPACE_ID}};
+mkdirSync('.cloudflare',{recursive:true});writeFileSync('.cloudflare/wrangler.json',JSON.stringify(config,null,2));
+console.log('Standalone configuration prepared; private values were not printed.');

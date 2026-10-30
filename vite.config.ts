@@ -39,6 +39,9 @@ const localBindingConfig = {
 
 export default defineConfig(async ({ command }) => {
   configureToolEnvironment(process.cwd());
+  if (process.env.ERP_DEPLOY_TARGET === "cloudflare") {
+    return (await import("./vite.cloudflare.config")).default;
+  }
 
   // Wrangler snapshots its log path while the Cloudflare plugin is imported.
   const { cloudflare } = await import("@cloudflare/vite-plugin");

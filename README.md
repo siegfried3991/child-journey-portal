@@ -52,6 +52,10 @@ node tests/api-smoke.mjs
 
 The 50 domain tests cover admissions routes, school-report imports, subject annual/quarter trends, as well as weighting, blank scores, preserved letter grades, relationship validation, duplicates, CSV parsing, deterministic imports, source references and estimated dates. The eight preserved concept tests cover its fictional data and exploration rules.
 
+## Independent full private deployment
+
+A GitHub-to-Cloudflare deployment path is prepared in [deployment/README.md](deployment/README.md), including a separate signed-JWT authentication boundary and a deployment workflow disabled until account configuration is complete. It requires a new Cloudflare account, private D1/R2 resources and Access setup. The existing private portal continues running separately; live data migration is not yet performed.
+
 ## Production hosting
 
 This is a full-stack application. GitHub stores the code; GitHub Pages cannot provide its Worker APIs, authentication, D1 database or R2 evidence storage.

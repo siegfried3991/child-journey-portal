@@ -57,3 +57,6 @@ yarn-error.log*
 *.sqlite
 *.sqlite3
 *.db
+
+# Independent hosting configuration contains private account settings
+/.cloudflare/
