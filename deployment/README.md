@@ -1,6 +1,6 @@
 # Complete private portal on your own Cloudflare account
 
-Status: independent deployment support prepared; production login/deployment and data migration still require setup. The existing Sites portal is unchanged. GitHub stores source only; this is not a GitHub Pages deployment.
+Status: the independent deployment profile has been validated, including private login, database/file migration and readback. Each new installation still needs its own account configuration and reconciliation. Keep the previous portal available for rollback. GitHub stores source only; this is not a GitHub Pages deployment.
 
 ## Owner setup
 
@@ -38,7 +38,7 @@ Run **Actions → Deploy complete private portal → Run workflow**. The workflo
 
 ## Free plan boundaries
 
-Workers and D1 must remain on their Free plans; platform quotas stop requests/queries instead of authorizing paid overages. No R2, paid Worker plan, paid domain or other usage-billed add-on is required by this profile. Cloudflare Access has a Free plan, but the account onboarding inspected on 30 October 2026 requires payment details, agreement to terms and authorization to charge for excess usage. It was not activated. No subscription activation or payment authorization is assumed. An alternative GitHub sign-in adapter is proposed if the owner declines Access onboarding; it is not yet implemented in this source revision. Check actual SSR/JWT CPU use on the free Worker before migration; local builds are not evidence that all free production runtime limits are met.
+Workers and D1 must remain on their Free plans; platform quotas stop requests/queries instead of authorizing paid overages. No R2, paid Worker plan, paid domain or other usage-billed add-on is required by this profile. Cloudflare Access has a Free plan, but the account onboarding inspected on 30 October 2026 requires payment details, agreement to terms and authorization to charge for excess usage. Activation is handled by the account owner; automation does not accept billing terms. No subscription activation or payment authorization is assumed. An alternative GitHub sign-in adapter is proposed if the owner declines Access onboarding; it is not yet implemented in this source revision. Check actual SSR/JWT CPU use on the free Worker before migration; local builds are not evidence that all free production runtime limits are met.
 
 D1 chunks each evidence file into 256 KiB rows, verifies SHA-256 on download, refuses same-key content replacement, and reserves quota plus chunks in a single transaction. This is intended for a small family collection, not large media storage.
 
@@ -54,7 +54,7 @@ D1 chunks each evidence file into 256 KiB rows, verifies SHA-256 on download, re
 
 New D1 resources are empty. A successful deployment does not transfer the existing Sites data. Keep the old portal available and do not delete or modify its database during preparation.
 
-After validating private login, use a private export/import operation to transfer records, revision history and binary attachments. The existing UI JSON export is **not a full backup**: it omits history and binaries. A full migration tool/reconciliation run is still required. Preserve record/file IDs, owner/workspace mapping, relationships, file metadata, SHA-256 checksums and revisions. Transfer existing binary evidence into D1 using the private evidence adapter; verify it fits the 64 MB evidence budget first. Store transfer files outside Git; do not send them as build artifacts.
+After validating private login, use a private export/import operation to transfer records, revision history and binary attachments. The existing UI JSON export is **not a full backup**: it omits history and binaries. Perform a complete migration and reconciliation; do not substitute a partial UI export. Preserve record/file IDs, owner/workspace mapping, relationships, file metadata, SHA-256 checksums and revisions. Transfer existing binary evidence into D1 using the private evidence adapter; verify it fits the 64 MB evidence budget first. Store transfer files outside Git; do not send them as build artifacts.
 
 Before switching the family to the new URL:
 

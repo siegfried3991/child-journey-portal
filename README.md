@@ -44,17 +44,17 @@ The documented portable development profile uses a localhost-only mock identity.
 
 ```sh
 npx tsc --noEmit
-node --experimental-strip-types --test tests/academic.test.ts tests/reference.test.ts tests/admissions.test.ts tests/routes.test.ts tests/school-report.test.ts tests/subject-trends.test.ts
+node --experimental-strip-types --test tests/*.test.ts
 node --test verification/domain.test.mjs
 # Requires the localhost preview at port 5174; creates synthetic test records:
 node tests/api-smoke.mjs
 ```
 
-The 50 domain tests cover admissions routes, school-report imports, subject annual/quarter trends, as well as weighting, blank scores, preserved letter grades, relationship validation, duplicates, CSV parsing, deterministic imports, source references and estimated dates. The eight preserved concept tests cover its fictional data and exploration rules.
+The 56 domain tests cover admissions routes, school-report imports, subject annual/quarter trends, as well as weighting, blank scores, preserved letter grades, relationship validation, duplicates, CSV parsing, deterministic imports, source references and estimated dates. The eight preserved concept tests cover its fictional data and exploration rules.
 
 ## Independent full private deployment
 
-A GitHub-to-Cloudflare deployment path is prepared in [deployment/README.md](deployment/README.md), including a separate signed-JWT authentication boundary and a deployment workflow disabled until account configuration is complete. It requires a new Cloudflare account, a free D1 database and Access setup. The existing private portal continues running separately; live data migration is not yet performed. The standalone free profile stores small private attachments in D1 (10 MB per file, 64 MB evidence budget) without an R2 subscription.
+A GitHub-to-Cloudflare deployment path is implemented in [deployment/README.md](deployment/README.md), including a separate signed-JWT authentication boundary and a deployment workflow disabled until account configuration is complete. It requires a new Cloudflare account, a free D1 database and Access setup. Account provisioning and data migration are separate per-installation operations; keep any previous portal available until reconciliation succeeds. The standalone free profile stores small private attachments in D1 (10 MB per file, 64 MB evidence budget) without an R2 subscription.
 
 ## Production hosting
 
