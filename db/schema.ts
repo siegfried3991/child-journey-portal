@@ -1,4 +1,5 @@
-import { sqliteTable, text, integer, index, uniqueIndex } from 'drizzle-orm/sqlite-core';
+import {sql} from 'drizzle-orm';
+import { sqliteTable, text, integer, index, uniqueIndex, blob, primaryKey, check } from 'drizzle-orm/sqlite-core';
 export const erpRecords=sqliteTable('erp_records',{
  id:text('id').primaryKey(),ownerId:text('owner_id').notNull(),kind:text('kind').notNull(),studentId:text('student_id'),termId:text('term_id'),courseId:text('course_id'),body:text('body').notNull(),dedupeKey:text('dedupe_key'),revision:integer('revision').notNull().default(1),archived:integer('archived').notNull().default(0),createdAt:text('created_at').notNull(),updatedAt:text('updated_at').notNull(),
 },t=>[index('records_owner_kind').on(t.ownerId,t.kind),index('records_course').on(t.ownerId,t.courseId),uniqueIndex('records_owner_dedupe').on(t.ownerId,t.dedupeKey)]);
@@ -8,3 +9,10 @@ export const changes=sqliteTable('erp_changes',{
 export const attachments=sqliteTable('erp_attachments',{
  id:text('id').primaryKey(),ownerId:text('owner_id').notNull(),recordId:text('record_id').notNull(),name:text('name').notNull(),contentType:text('content_type').notNull(),size:integer('size').notNull(),objectKey:text('object_key').notNull(),createdAt:text('created_at').notNull(),
 },t=>[index('attachments_owner_record').on(t.ownerId,t.recordId)]);
+
+export const evidenceObjects=sqliteTable('erp_evidence_objects',{
+ objectKey:text('object_key').primaryKey(),size:integer('size').notNull(),sha256:text('sha256').notNull(),
+},t=>[check('evidence_size_limit',sql`${t.size} > 0 AND ${t.size} <= 10485760`)]);
+export const evidenceChunks=sqliteTable('erp_evidence_chunks',{
+ objectKey:text('object_key').notNull().references(()=>evidenceObjects.objectKey,{onDelete:'cascade'}),part:integer('part').notNull(),data:blob('data').notNull(),
+},t=>[primaryKey({columns:[t.objectKey,t.part]})]);

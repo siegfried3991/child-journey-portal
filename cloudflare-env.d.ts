@@ -5,5 +5,6 @@ declare namespace Cloudflare {
     ERP_WORKSPACE_EMAIL?: string;
     ERP_WORKSPACE_ID?: string;
     BUCKET?: R2Bucket;
+    ERP_EVIDENCE_STORAGE?: string;
   }
 }

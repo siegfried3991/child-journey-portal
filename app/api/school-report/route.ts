@@ -1,10 +1,11 @@
+import {evidenceStore} from '@/lib/erp/evidence-store';
 import {env} from 'cloudflare:workers';
 import {ApiError,database,failure,identity,records,response,save} from '@/lib/erp/server';
 import {REFERENCE_ID,referenceSchema,termId} from '@/lib/erp/reference';
 import {schoolReportImport,mergeSchoolReport} from '@/lib/erp/school-report';
 import {validate,type Report,type Course} from '@/lib/erp/academic';
 export async function POST(req:Request){try{
- const owner=await identity(req);if(!env.BUCKET)throw new ApiError('檔案儲存尚未連接。',503);
+ const owner=await identity(req);evidenceStore();
  if(Number(req.headers.get('content-length'))>11*1024*1024)throw new ApiError('檔案太大。',413);
  const form=await req.formData(),file=form.get('file'),patch=form.get('patch');if(!(file instanceof File)||!(patch instanceof File)||patch.size>200000||file.size>10*1024*1024)throw new ApiError('請選擇核對資料及不超過 10 MB 的原始 PDF。');
  const p=schoolReportImport.parse(JSON.parse(await patch.text())),bytes=new Uint8Array(await file.arrayBuffer());if(![37,80,68,70,45].every((v,i)=>bytes[i]===v))throw new ApiError('原件必須是 PDF。');
@@ -19,7 +20,7 @@ export async function POST(req:Request){try{
  if(JSON.stringify(rb)!==JSON.stringify(reportBody))await save(owner,{id:report.id,kind:'report',body:reportBody,revision:report.revision,reason});
  const fileId='reference-'+p.sourceId+'-'+hash.slice(0,16),key=owner+'/'+fileId;
  if(!await database().prepare('SELECT id FROM erp_attachments WHERE owner_id=? AND id=?').bind(owner,fileId).first()){
- await env.BUCKET.put(key,bytes,{httpMetadata:{contentType:'application/pdf'}});
+ await evidenceStore().put(key,bytes);
  await database().prepare('INSERT INTO erp_attachments (id,owner_id,record_id,name,content_type,size,object_key,created_at) VALUES (?,?,?,?,?,?,?,?)').bind(fileId,owner,report.id,p.sourceId+' · '+file.name,'application/pdf',bytes.length,key,new Date().toISOString()).run();}
  for(const u of updates)if(!u.old||JSON.stringify(u.old.body)!==JSON.stringify(u.body))await save(owner,{id:u.id,kind:'course',body:u.body,revision:u.old?.revision,reason});
  return response({imported:p.rows.length,sourceId:p.sourceId,fileId,sha256:hash});

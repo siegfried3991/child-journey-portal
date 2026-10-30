@@ -1,3 +1,4 @@
+import {evidenceStore} from '@/lib/erp/evidence-store';
 import {env} from 'cloudflare:workers';
 import {ApiError,createStatements,database,failure,records,response} from '@/lib/erp/server';
 import {buildReferenceEntries,REFERENCE_ID,referenceSchema} from '@/lib/erp/reference';
@@ -18,13 +19,13 @@ export async function GET(req:Request){try{
  const owner=await authorize(req),all=await records(owner);
  const files=await database().prepare('SELECT id,record_id,name,content_type,size,object_key FROM erp_attachments WHERE owner_id=? ORDER BY name').bind(owner).all();
  const check=new URL(req.url).searchParams.get('verifyFiles')==='1';
- const evidence=[];for(const f of files.results as any[]){let sha256:string|null=null;if(check){const o=await env.BUCKET?.get(f.object_key);if(o)sha256=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',await o.arrayBuffer()))).map(v=>v.toString(16).padStart(2,'0')).join('');}evidence.push({id:f.id,name:f.name,size:f.size,sha256});}
+ const evidence=[];for(const f of files.results as any[]){let sha256:string|null=null;if(check){const o=await evidenceStore().get(f.object_key);if(o)sha256=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',await o.arrayBuffer()))).map(v=>v.toString(16).padStart(2,'0')).join('');}evidence.push({id:f.id,name:f.name,size:f.size,sha256});}
  return response({records:all,attachments:evidence});
 }catch(e){return failure(e)}}
 export async function POST(req:Request){try{
  const owner=await authorize(req);
  if(req.headers.get('content-type')?.includes('multipart/form-data')){
-  if(!env.BUCKET)throw new ApiError('檔案儲存尚未連接。',503);
+  evidenceStore();
   if(Number(req.headers.get('content-length'))>11*1024*1024)throw new ApiError('檔案太大。',413);
   const form=await req.formData(),sid=String(form.get('sourceId')||''),file=form.get('file');
   if(!(file instanceof File)||!file.size||file.size>10*1024*1024)throw new ApiError('檔案上限為 10 MB。',413);
@@ -41,8 +42,8 @@ export async function POST(req:Request){try{
   const id='reference-'+sid+'-'+sha.slice(0,16),key=owner+'/'+id;
   const existing=await database().prepare('SELECT id FROM erp_attachments WHERE owner_id=? AND id=?').bind(owner,id).first();
   if(existing)return response({id,skipped:true});
-  await env.BUCKET.put(key,bytes,{httpMetadata:{contentType:type}});
-  try{await database().prepare('INSERT INTO erp_attachments (id,owner_id,record_id,name,content_type,size,object_key,created_at) VALUES (?,?,?,?,?,?,?,?)').bind(id,owner,REFERENCE_ID,sid+' · '+s.name,type,bytes.length,key,new Date().toISOString()).run()}catch(e){await env.BUCKET.delete(key);throw e;}
+  await evidenceStore().put(key,bytes);
+  try{await database().prepare('INSERT INTO erp_attachments (id,owner_id,record_id,name,content_type,size,object_key,created_at) VALUES (?,?,?,?,?,?,?,?)').bind(id,owner,REFERENCE_ID,sid+' · '+s.name,type,bytes.length,key,new Date().toISOString()).run()}catch(e){await evidenceStore().delete(key);throw e;}
   return response({id,uploaded:true});
  }
  if(!req.headers.get('content-type')?.includes('application/json'))throw new ApiError('需要 JSON 資料。');

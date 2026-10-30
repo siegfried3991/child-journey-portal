@@ -1,0 +1,14 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {DatabaseSync} from 'node:sqlite';
+import {readFileSync} from 'node:fs';
+import {d1Evidence,EVIDENCE_CHUNK_BYTES,EVIDENCE_MAX_BYTES} from '../lib/erp/d1-evidence.ts';
+function setup(){
+ const sql=new DatabaseSync(':memory:');sql.exec(readFileSync(new URL('../drizzle/0001_private_evidence.sql',import.meta.url),'utf8'));
+ function prepare(query:string){let args:any[]=[];return {bind(...values:any[]){args=values.map(v=>v instanceof ArrayBuffer?new Uint8Array(v):v);return this},async first(){return sql.prepare(query).get(...args)||null},async all(){return {results:sql.prepare(query).all(...args)}},run(){const result=sql.prepare(query).run(...args);return {meta:{changes:Number(result.changes)},results:[]}}}}
+ const db={prepare,async batch(items:any[]){sql.exec('BEGIN');try{const result=items.map(x=>x.run());sql.exec('COMMIT');return result}catch(e){sql.exec('ROLLBACK');throw e}}} as unknown as D1Database;
+ return {sql,store:d1Evidence(db)};
+}
+test('private evidence round trips across chunks, retries idempotently and deletes completely',async()=>{const {sql,store}=setup();const bytes=new Uint8Array(EVIDENCE_CHUNK_BYTES+59).map((_,i)=>i%251);await store.put('owner-a/file',bytes);await store.put('owner-a/file',bytes);assert.equal((sql.prepare('SELECT COUNT(*) n FROM erp_evidence_chunks').get() as any).n,2);const object=await store.get('owner-a/file');assert.deepEqual(new Uint8Array(await object!.arrayBuffer()),bytes);assert.equal(await store.get('owner-b/file'),null);await assert.rejects(store.put('owner-a/file',new Uint8Array([1])));await store.delete('owner-a/file');assert.equal(await store.get('owner-a/file'),null);assert.equal((sql.prepare('SELECT COUNT(*) n FROM erp_evidence_chunks').get() as any).n,0);sql.close()});
+test('storage quota stops the upload atomically without creating partial chunks',async()=>{const {sql,store}=setup();for(let i=0;i<7;i++)sql.prepare('INSERT INTO erp_evidence_objects VALUES (?,?,?)').run('seed-'+i,9*1024*1024,'synthetic-quota');await assert.rejects(store.put('owner/file',new Uint8Array(2*1024*1024)),/64 MB/);assert.equal(await store.get('owner/file'),null);assert.equal((sql.prepare('SELECT COUNT(*) n FROM erp_evidence_chunks').get() as any).n,0);await assert.rejects(store.put('empty',new Uint8Array()));await assert.rejects(store.put('large',new Uint8Array(EVIDENCE_MAX_BYTES+1)));sql.close()});
+test('corrupt or incomplete evidence is refused instead of returning altered source bytes',async()=>{const {sql,store}=setup();await store.put('owner/file',new Uint8Array([1,2,3]));sql.prepare('UPDATE erp_evidence_chunks SET data=?').run(new Uint8Array([3,2,1]));await assert.rejects(store.get('owner/file'),/完整性/);sql.exec('DELETE FROM erp_evidence_chunks');await assert.rejects(store.get('owner/file'),/完整性/);sql.close()});

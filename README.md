@@ -54,7 +54,7 @@ The 50 domain tests cover admissions routes, school-report imports, subject annu
 
 ## Independent full private deployment
 
-A GitHub-to-Cloudflare deployment path is prepared in [deployment/README.md](deployment/README.md), including a separate signed-JWT authentication boundary and a deployment workflow disabled until account configuration is complete. It requires a new Cloudflare account, private D1/R2 resources and Access setup. The existing private portal continues running separately; live data migration is not yet performed.
+A GitHub-to-Cloudflare deployment path is prepared in [deployment/README.md](deployment/README.md), including a separate signed-JWT authentication boundary and a deployment workflow disabled until account configuration is complete. It requires a new Cloudflare account, a free D1 database and Access setup. The existing private portal continues running separately; live data migration is not yet performed. The standalone free profile stores small private attachments in D1 (10 MB per file, 64 MB evidence budget) without an R2 subscription.
 
 ## Production hosting
 
