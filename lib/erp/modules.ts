@@ -1,4 +1,5 @@
 export const modules=[
+{id:'lessons',label:'補習課與進度',status:'ready',description:'記錄額外課程、課後作業、訂正及學習證據。'},
 {id:'overview',label:'學生總覽',status:'ready',description:'把學期、課程與需要處理的事項放在一起。'},
 {id:'academics',label:'校內學業',status:'ready',description:'課程、成績、老師回饋、加權計算與原始證據。'},
 {id:'published',label:'學校公布成績',status:'ready',description:'按學校原件列示各季、期末及公布總值。'},

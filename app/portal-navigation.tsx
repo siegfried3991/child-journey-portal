@@ -2,7 +2,7 @@
 import {useState,useEffect} from 'react';
 import {BookOpen,Compass,Award,Home,Settings,ChevronRight,Files} from 'lucide-react';
 export const navigationGroups=[
- {id:'learning',label:'目前成績',icon:BookOpen,start:'published',items:[['published','本期成績'],['trends','科目趨勢'],['academics','功課與考試'],['revision','復習安排']]},
+ {id:'learning',label:'目前成績',icon:BookOpen,start:'published',items:[['published','本期成績'],['trends','科目趨勢'],['academics','功課與考試'],['lessons','補習課與進度'],['revision','復習安排']]},
  {id:'admissions',label:'大學申請',icon:Compass,start:'pathways',items:[['pathways','路線、選校與時間線']]},
  {id:'growth',label:'活動與外部考試',icon:Award,start:'activities',items:[['activities','活動與暑期學習'],['achievements','成就與作品'],['external','外部考試']]},
 ] as const;

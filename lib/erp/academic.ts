@@ -1,8 +1,9 @@
 import {z} from 'zod';
+import {lessonSchema,type Lesson} from './lessons.ts';
 import {applicationPlanSchema,type ApplicationPlan} from './admissions.ts';
 const short=z.string().trim().min(1).max(160); const optional=z.string().trim().max(2000).default('');
 const date=z.string().regex(/^\d{4}-\d{2}-\d{2}$/,'請使用有效日期').refine(v=>{const d=new Date(v+'T12:00:00Z');return !Number.isNaN(d.getTime())&&d.toISOString().slice(0,10)===v},'日期不存在');
-export const kinds=['student','term','course','result','report','applicationPlan'] as const;
+export const kinds=['student','term','course','result','report','applicationPlan','lesson'] as const;
 export type Kind=typeof kinds[number];
 export const categorySchema=z.object({id:short,name:short,weight:z.number().min(0).max(100).nullable(),method:z.enum(['points','equal'])});
 export const policySchema=z.object({confirmed:z.boolean(),categories:z.array(categorySchema).min(1).max(12),emptyCategories:z.enum(['require_all','available']),bands:z.array(z.object({label:short,min:z.number().min(0).max(100)})).max(16)}).superRefine((p,ctx)=>{
@@ -13,6 +14,7 @@ export const policySchema=z.object({confirmed:z.boolean(),categories:z.array(cat
  if(new Set(p.bands.map(b=>b.min)).size!==p.bands.length)ctx.addIssue({code:'custom',message:'等級分界不可重複'});
 });
 export const schemas={
+ lesson:lessonSchema,
  applicationPlan:applicationPlanSchema,
  student:z.object({name:short,school:z.string().trim().max(160),grade:z.string().trim().max(80),curriculum:z.string().trim().max(120),isDemo:z.boolean().default(false)}).strict(),
  term:z.object({name:short,year:short,start:date.nullable(),end:date.nullable()}).strict().refine(t=>!t.start||!t.end||t.start<=t.end,'學期結束日期必須晚於開始日期'),
@@ -29,7 +31,7 @@ export const schemas={
 };
 export type Student=z.infer<typeof schemas.student>;export type Term=z.infer<typeof schemas.term>;export type Course=z.infer<typeof schemas.course>;export type Result=z.infer<typeof schemas.result>;export type Policy=z.infer<typeof policySchema>;
 export type Report=z.infer<typeof schemas.report>;
-export type Body=Student|Term|Course|Result|Report|ApplicationPlan;
+export type Body=Student|Term|Course|Result|Report|ApplicationPlan|Lesson;
 export interface Entry<T=Body>{id:string;kind:Kind;body:T;revision:number;archived:boolean;createdAt:string;updatedAt:string}
 export interface FileInfo{id:string;recordId:string;name:string;size:number;contentType:string;createdAt:string}
 export interface Snapshot{records:Entry[];attachments:FileInfo[]}
@@ -41,11 +43,12 @@ export function validateRelations(kind:Kind,body:Body,records:Entry[],existing?:
  if(existing&&(existing.body as ApplicationPlan).studentId!==p.studentId)throw Error('不可更換計劃所屬學生');
  if(p.academicIds.some(id=>!records.some(r=>r.id===id&&!r.archived&&r.kind==='result'&&(r.body as Result).studentId===p.studentId)))throw Error('連結學業記錄不屬於此學生或已封存');
  }
- if(kind==='course'||kind==='result'||kind==='report'){
- const b=body as Course|Result|Report;const student=records.find(r=>r.id===b.studentId&&r.kind==='student'&&!r.archived);const term=records.find(r=>r.id===b.termId&&r.kind==='term'&&!r.archived);
+ if(kind==='course'||kind==='result'||kind==='report'||kind==='lesson'){
+ const b=body as Course|Result|Report|Lesson;const student=records.find(r=>r.id===b.studentId&&r.kind==='student'&&!r.archived);const term=records.find(r=>r.id===b.termId&&r.kind==='term'&&!r.archived);
  if(!student||!term)throw Error('學生或學期不存在，或已封存');
- if(existing){const prev=existing.body as Course|Result|Report;if(prev.studentId!==b.studentId||prev.termId!==b.termId)throw Error('已建立記錄不可更換學生或學期')}
+ if(existing){const prev=existing.body as Course|Result|Report|Lesson;if(prev.studentId!==b.studentId||prev.termId!==b.termId)throw Error('已建立記錄不可更換學生或學期')}
  if(kind==='result'){const result=b as Result;const course=records.find(r=>r.id===result.courseId&&r.kind==='course'&&!r.archived);if(!course)throw Error('課程不存在，或已封存');const c=course.body as Course;if(c.studentId!==b.studentId||c.termId!==b.termId)throw Error('課程與學生、學期不一致');if(!c.policy.categories.some(x=>x.id===result.categoryId))throw Error('此課程沒有選定的評分類別');if(existing&&(existing.body as Result).courseId!==result.courseId)throw Error('已建立成績不可更換課程');}
+ if(kind==='lesson'){const lesson=b as Lesson;if(lesson.courseId){const linked=records.find(r=>r.kind==='course'&&!r.archived&&r.id===lesson.courseId)?.body as Course|undefined;if(!linked||linked.studentId!==lesson.studentId||linked.termId!==lesson.termId)throw Error('關聯課程不屬於此學生及學期')}}
  if(kind==='course'&&existing){const cats=(b as Course).policy.categories;const used=records.filter(r=>r.kind==='result'&&(r.body as Result).courseId===existing.id);if(used.some(r=>!cats.some(c=>c.id===(r.body as Result).categoryId)))throw Error('已有成績使用的評分類別不可移除（包括封存記錄）');}
  }
  if(kind==='course'){const c=body as Course;if(records.some(r=>r.kind==='course'&&!r.archived&&r.id!==existing?.id&&(r.body as Course).studentId===c.studentId&&(r.body as Course).termId===c.termId&&(r.body as Course).name.toLowerCase()===c.name.toLowerCase()))throw Error('此學生在該學期已有同名課程');}
