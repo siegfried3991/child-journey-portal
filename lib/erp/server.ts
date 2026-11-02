@@ -1,3 +1,4 @@
+import {scheduleKey,type AssessmentSchedule} from './assessment-schedule';
 import {env} from 'cloudflare:workers';
 import {lessonExternalKey,type Lesson} from './lessons';
 import {getChatGPTUser} from '@/app/chatgpt-auth';
@@ -10,7 +11,7 @@ export async function records(owner:string){const rows=await database().prepare(
 export function response(body:unknown,status=200){return Response.json(body,{status,headers:{'Cache-Control':'private, no-store','Vary':'Cookie','X-Content-Type-Options':'nosniff'}})}
 export function failure(e:unknown){if(e instanceof ApiError)return response({error:e.message},e.status);if(e instanceof Error&&/UNIQUE constraint/.test(e.message))return response({error:'已有相同記錄。請重新整理並查看原記錄。'},409);if(e instanceof Error&&/D1_ERROR|SQLITE|binding|database/i.test(e.message)){console.error('Academic storage operation failed');return response({error:'資料暫未儲存，請稍後重試。'},503)}return response({error:message(e)},400)}
 export async function readJSON(req:Request){if(!req.headers.get('content-type')?.includes('application/json'))throw new ApiError('需要 JSON 資料');const text=await req.text();if(text.length>600000)throw new ApiError('一次提交的資料太大。',413);try{return JSON.parse(text)}catch{throw new ApiError('資料格式錯誤')}}
-function dedupe(kind:Kind,body:Body){if(kind==='lesson')return lessonExternalKey(body as Lesson);if(kind==='result')return fingerprint(body as Result);if(kind==='course'){const c=body as any;return 'course:'+c.studentId+':'+c.termId+':'+c.name.toLowerCase()}return null}
+function dedupe(kind:Kind,body:Body){if(kind==='assessmentSchedule')return scheduleKey(body as AssessmentSchedule);if(kind==='lesson')return lessonExternalKey(body as Lesson);if(kind==='result')return fingerprint(body as Result);if(kind==='course'){const c=body as any;return 'course:'+c.studentId+':'+c.termId+':'+c.name.toLowerCase()}return null}
 export function createStatements(owner:string,id:string,kind:Kind,body:Body,reason='建立記錄'){
  const now=new Date().toISOString();const b=body as any;const snapshot=JSON.stringify({body,archived:false});const d=database();return[
  d.prepare('INSERT INTO erp_records (id,owner_id,kind,student_id,term_id,course_id,body,revision,archived,created_at,updated_at,dedupe_key) VALUES (?,?,?,?,?,?,?,1,0,?,?,?)').bind(id,owner,kind,b.studentId||null,b.termId||null,b.courseId||null,JSON.stringify(body),now,now,dedupe(kind,body)),
